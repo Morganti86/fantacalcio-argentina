@@ -1,0 +1,51 @@
+.hero {
+  margin: 100px 100px 20px;
+  position: relative;
+}
+
+.container {
+  font-size: 180px;
+  text-align: right; /* Alinea los enlaces a la derecha */
+}
+
+.link {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  /* transform-style: preserve-3d;
+  transform: rotateZ(-3deg);  */
+  animation: dropDown 1.5s ease-in-out;
+}
+
+.link:hover {
+  color: transparent;
+  -webkit-text-stroke: rgb(0,0,0);
+  -webkit-text-stroke-width: 3px;
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-1000%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  font-size: 60px;
+}
+
+.logoContainer {
+  color: ivory;
+  position: fixed;
+  left: 100px;
+  bottom: 50px;
+  text-align: center;
+}
+
+.logo:hover {
+  color: transparent;
+  -webkit-text-stroke: ivory;
+  -webkit-text-stroke-width: 1px;
+}
