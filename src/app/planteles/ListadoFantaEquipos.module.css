@@ -1,0 +1,52 @@
+.container {
+  background-color: #000000;
+  padding: 50px 50px 0;
+  text-align: left;
+  color: ivory;
+  /* background-image: url("/Fondos/tactics.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.title {
+  color: #4801ff;
+  /* padding: 50px; */
+  text-align: center;
+  font-size: 100px;
+}
+
+.grid {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.teamContainer {
+  padding: 10px 5px;
+  border: 2px solid #4801ff;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+}
+
+.fantaName {
+  font-size: 16px;
+  height: 35px;
+}
+
+.crest {
+  width: 60px;
+  height: 60px;
+}
+
+.president {
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.budgetContainer {
+  font-size: 13px;
+}

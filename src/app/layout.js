@@ -1,9 +1,9 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const mainFont = Inter({
+const mainFont = Roboto({
   subsets: ["latin"],
-  weight: ["300"],
+  weight: ["400"],
 });
 
 export const metadata = {
