@@ -138,9 +138,9 @@ async function seedPositions(client) {
   }
 }
 
+
 async function main() {
   const client = await db.connect();
-
   // await seedFantaTeams(client);
   // await seedLeagueTeams(client);
   await seedPositions(client);
