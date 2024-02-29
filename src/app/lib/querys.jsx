@@ -41,7 +41,20 @@ export async function getFantaTeams() {
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch revenue data.");
+    throw new Error("Failed to fetch fantaTeams data.");
+  }
+}
+
+export async function getFantaPlayers({ fantaName }) {
+  noStore();
+  try {
+    const data = await sql`SELECT * FROM players
+    WHERE fantaTeam = ${fantaName}
+    ORDER BY position`;
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch fantaPlayers data.");
   }
 }
 

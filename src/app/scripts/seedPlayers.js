@@ -27,6 +27,9 @@ async function seedPlayers(client) {
     const players = await Promise.all(
       PLAYERS.map(async (player) => {
         const poliValue = player.poli ? true : false;
+        const boughtPrice = player.boughtPrice ? player.boughtPrice : null;
+        const image = player.image ? player.image : null;
+
         const insertedPlayer = await client.sql`
         INSERT INTO players (team, player, basePrice, position, poli, fantaTeam, boughtPrice, image)
         VALUES (
@@ -36,8 +39,8 @@ async function seedPlayers(client) {
         ${player.position}, 
         ${poliValue}, 
         ${player.fantaTeam}, 
-        ${player.boughtPrice}, 
-        ${player.image}
+        ${boughtPrice}, 
+        ${image}
         )
         RETURNING *;
         `;

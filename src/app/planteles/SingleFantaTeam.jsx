@@ -2,7 +2,7 @@ import Link from "next/link";
 import style from "./ListadoFantaEquipos.module.css";
 import Image from "next/image";
 
-export function ListaFantaTeams({ fanta }) {
+export function SingleFantaTeam({ fanta }) {
   const fantaName = fanta.name.toLowerCase();
   return (
     <section>
