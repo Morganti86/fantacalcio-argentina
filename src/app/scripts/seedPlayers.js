@@ -27,6 +27,7 @@ async function seedPlayers(client) {
     const players = await Promise.all(
       PLAYERS.map(async (player) => {
         const poliValue = player.poli ? true : false;
+        const fantaTeam = player.fantaTeam.toUpperCase();
         const boughtPrice = player.boughtPrice ? player.boughtPrice : null;
         const image = player.image ? player.image : null;
 
@@ -38,7 +39,7 @@ async function seedPlayers(client) {
         ${player.basePrice}, 
         ${player.position}, 
         ${poliValue}, 
-        ${player.fantaTeam}, 
+        ${fantaTeam}, 
         ${boughtPrice}, 
         ${image}
         )

@@ -1,6 +1,6 @@
 .hero {
-  margin: 100px 100px 20px;
   position: relative;
+  margin: 100px 100px 20px;
 }
 
 .container {
@@ -18,9 +18,10 @@
 }
 
 .link:hover {
-  color: transparent;
-  -webkit-text-stroke: rgb(0,0,0);
-  -webkit-text-stroke-width: 3px;
+  color: ivory;
+  /* color: transparent;
+  -webkit-text-stroke: #131313;
+  -webkit-text-stroke-width: 3px; */
 }
 
 @keyframes dropDown {

@@ -8,7 +8,7 @@ export default async function Planteles() {
   return (
     <section className={style.container}>
       <h1 className={style.title}>PLANTELES</h1>
-      <div className={style.grid}>
+      <div className={style.flexCenter}>
         {fantaTeams.map((fanta, index) => {
           return <ListaFantaTeams key={index} fanta={fanta} />;
         })}

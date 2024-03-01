@@ -1,9 +1,5 @@
-import { Hero } from "./Hero/Hero";
+import Hero from "./Hero/Hero";
 
 export default function Home() {
-  return (
-    <main>
-      <Hero />
-    </main>
-  );
+  return <Hero />;
 }

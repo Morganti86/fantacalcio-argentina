@@ -1,0 +1,28 @@
+.playerContainer {
+  /* background-image: url("/Backgrounds/elite.webp"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+  width: 235px;
+  display: flex; /* Usar flexbox */
+  flex-direction: column; /* Alinear los elementos en columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+}
+
+.imagePlayer {
+  width: 150px;
+  height: 150px;
+}
+
+.namePlayer {
+  padding: 3px 0;
+  line-height: 20px;
+  font-size: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.imageTeam {
+  width: 25px;
+  height: 25px;
+}

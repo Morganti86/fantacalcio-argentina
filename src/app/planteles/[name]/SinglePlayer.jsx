@@ -1,19 +1,40 @@
 import Image from "next/image";
+import style from "./SinglePlayer.module.css";
 
 export function SinglePlayer(props) {
   const { player } = props;
-  const image = player.image ? player.image : "/notfound.webp"
+  const playerImage = player.image ? player.image : "/notfound.webp";
+  let background;
+  let color = "ivory";
+  if (player.baseprice <= 200) {
+    background = `url("/Backgrounds/normal.webp")`;
+  } else if (player.baseprice > 200 && player.baseprice < 600) {
+    background = `url("/Backgrounds/elite.webp")`;
+  } else {
+    background = `url("/Backgrounds/top.webp")`;
+    color = "black";
+  }
   return (
-    <article>
+    <article
+      className={style.playerContainer}
+      style={{ backgroundImage: background }}>
       <Image
-        src={image}
-        // src="https://cdn.fifacm.com/content/media/imgs/fc24/players/p227903.png?v=22"
-        width={180}
-        height={180}
+        className={style.imagePlayer}
+        src={playerImage}
+        width={100}
+        height={100}
         alt={`${player.player} image`}
       />
-      <h3>{player.player}</h3>
-      {/* <span>{player.poli}</span> */}
+      <h3 className={style.namePlayer} style={{ color: color }}>
+        {player.player}
+      </h3>
+      <Image
+        className={style.imageTeam}
+        src={`/LeagueTeams/${player.team}.webp`}
+        width={25}
+        height={25}
+        alt={`${player.team} image`}
+      />
     </article>
   );
 }
