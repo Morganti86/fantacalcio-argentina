@@ -13,7 +13,7 @@ export const HEROLIST = [
   },
   {
     name: "Nosotros",
-    route: "c",
+    route: "/nosotros",
   },
   {
     name: "Reglamento",

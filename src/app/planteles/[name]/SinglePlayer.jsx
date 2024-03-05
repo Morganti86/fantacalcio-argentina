@@ -5,7 +5,9 @@ export function SinglePlayer(props) {
   const { player } = props;
   const playerImage = player.image ? player.image : "/notfound.webp";
   let background;
+  // let color = "ivory";
   let color = "ivory";
+
   if (player.baseprice <= 200) {
     background = `url("/Backgrounds/normal.webp")`;
   } else if (player.baseprice > 200 && player.baseprice < 600) {
