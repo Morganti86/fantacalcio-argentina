@@ -1,5 +1,6 @@
 .container {
   background-color: #171717;
+  /* background-color: #4801ff; */
   text-align: left;
   color: ivory;
   /* background-image: url("/Fondos/tactics.jpg");
@@ -10,7 +11,6 @@
 
 .title {
   color: #4801ff;
-  /* padding: 50px; */
   text-align: center;
   font-size: 100px;
 }
@@ -36,11 +36,11 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 15px;
   text-align: center;
   align-items: center;
+  margin: 50px 0;
 }
-
 
 .teamContainer {
   min-width: 235px;
@@ -52,6 +52,13 @@
 .fantaName {
   font-size: 18px;
   height: 35px;
+}
+
+.bigCrest {
+  display: flex;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
 }
 
 .crest {
@@ -66,4 +73,16 @@
 
 .budgetContainer {
   font-size: 15px;
+}
+
+/* @media (max-width:768px) {
+  .flex {
+    justify-content: center;
+  }
+} */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 50px 20px;
+  }
 }

@@ -1,6 +1,7 @@
 import style from "../ListadoFantaEquipos.module.css";
 import { getFantaPlayers } from "../../lib/querys";
 import { PositionPlayers } from "./PositionPlayers";
+import Image from "next/image";
 
 export default async function Planteles({ params }) {
   const { name } = params;
@@ -15,7 +16,15 @@ export default async function Planteles({ params }) {
 
   return (
     <section className={style.container}>
-      <h1 className={style.title}>{fantaName}</h1>
+      <Image
+        className={style.bigCrest}
+        src={`/Fantateams/${fantaName}.svg`}
+        width={100}
+        height={100}
+        alt="imagen"
+      />
+      <h1 className="title">{fantaName}</h1>
+
       {/* Utilizamos el componente PositionPlayers para cada posición */}
       <PositionPlayers title="ARQUEROS" players={ARQ} />
       <PositionPlayers title="DEFENSORES" players={DEF} />

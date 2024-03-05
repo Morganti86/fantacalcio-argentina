@@ -1,10 +1,17 @@
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import { Roboto, Bangers } from "next/font/google";
+
 
 const mainFont = Roboto({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+// const titleFont = Bangers({
+//   subsets: ["latin"],
+//   weight: ["400"],
+// });
+
 
 export const metadata = {
   title: "Fantacalcio - Argentina",
