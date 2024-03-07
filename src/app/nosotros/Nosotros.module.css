@@ -1,13 +1,15 @@
 .container {
-  background-color: ivory;
-  color: #2d2e32;
+  /* background-color: ivory; */
+  /* color: #2d2e32; */
   background-color: black;
   color: ivory;
-  padding: 0 100px;
+  padding: 50px 100px 20px;
 }
 
 .imagesContainer {
   display: flex;
+  margin: 20px 0;
+  /* margin: 20px 0; */
   /* justify-content: space-between; */
 }
 
@@ -39,15 +41,16 @@
   max-height: 100%; /* Establece un máximo de altura */
   flex-grow: 1;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   margin: 8px;
+  border: 1px solid ivory;
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
 }
 
 .flexColumn img:hover {
   cursor: crosshair;
   opacity: 1;
-  transform: scale(1.2); /* Escala la imagen al hacer hover */
+  transform: scale(1.5); /* Escala la imagen al hacer hover */
   z-index: 2;
 }
 
@@ -77,6 +80,7 @@
   }
   .imagesContainer {
     display: block;
+    margin: 0;
   }
 
   .flexColumn {
