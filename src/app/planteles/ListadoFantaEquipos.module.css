@@ -1,5 +1,5 @@
 .container {
-  background-color: #171717;
+  background-color: #2D2E32;
   /* background-color: #4801ff; */
   text-align: left;
   color: ivory;
@@ -9,11 +9,11 @@
   padding: 50px 100px 20px;
 }
 
-.title {
+/* .title {
   color: #4801ff;
   text-align: center;
   font-size: 100px;
-}
+} */
 
 .grid {
   padding: 50px 0;
@@ -45,7 +45,7 @@
 .teamContainer {
   min-width: 235px;
   padding: 10px 5px;
-  border: 2px solid #4801ff;
+  border: 3px solid #4801ff;
   /* backdrop-filter: blur(15px); */
 }
 

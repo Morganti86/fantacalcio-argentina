@@ -1,0 +1,91 @@
+.container {
+  background-color: ivory;
+  color: #2d2e32;
+  background-color: black;
+  color: ivory;
+  padding: 0 100px;
+}
+
+.imagesContainer {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+/* .flexColumn {
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  width: calc(100% / 3);
+  height: 100%;
+  transition: 0.5s;
+  overflow: hidden; 
+} */
+
+.flexColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  transition: 0.5s;
+  overflow: hidden;
+  margin: 8px;
+}
+
+.flexColumn img {
+  width: 100%;
+  max-height: 100%; /* Establece un máximo de altura */
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  margin: 8px;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.flexColumn img:hover {
+  cursor: crosshair;
+  opacity: 1;
+  transform: scale(1.2); /* Escala la imagen al hacer hover */
+  z-index: 2;
+}
+
+/* .flexColumn:hover img:not(:hover) {
+  opacity: 0.8;
+} */
+
+.small {
+  height: 40%;
+}
+
+.medium {
+  height: 45%;
+}
+
+.big {
+  height: 55%;
+}
+
+.giant {
+  height: 60%;
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
+  .imagesContainer {
+    display: block;
+  }
+
+  .flexColumn {
+    width: 500px;
+    margin: 0;
+    /* height: 500px; */
+  }
+  .flexColumn img {
+    height: 150px;
+    margin: 0;
+  }
+}
