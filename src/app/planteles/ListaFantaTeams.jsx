@@ -12,7 +12,7 @@ export function ListaFantaTeams({ fanta }) {
         as={`planteles/${fantaName}`}>
         <article className={style.teamContainer}>
           <h1 className={style.fantaName}>{fanta.name}</h1>
-          <Image
+          <img
             className={style.crest}
             src={`/FantaTeams/${fantaName}.svg`}
             width={50}

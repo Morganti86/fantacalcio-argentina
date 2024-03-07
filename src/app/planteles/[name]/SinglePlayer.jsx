@@ -20,7 +20,7 @@ export function SinglePlayer(props) {
     <article
       className={style.playerContainer}
       style={{ backgroundImage: background }}>
-      <Image
+      <img
         className={style.imagePlayer}
         src={playerImage}
         width={100}
@@ -30,7 +30,7 @@ export function SinglePlayer(props) {
       <h3 className={style.namePlayer} style={{ color: color }}>
         {player.player}
       </h3>
-      <Image
+      <img
         className={style.imageTeam}
         src={`/LeagueTeams/${player.team}.webp`}
         width={25}

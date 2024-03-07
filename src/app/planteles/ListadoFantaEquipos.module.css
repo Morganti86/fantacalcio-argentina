@@ -1,19 +1,8 @@
 .container {
-  background-color: #2D2E32;
-  /* background-color: #4801ff; */
   text-align: left;
   color: ivory;
-  /* background-image: url("/Fondos/tactics.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
   padding: 50px 100px 20px;
 }
-
-/* .title {
-  color: #4801ff;
-  text-align: center;
-  font-size: 100px;
-} */
 
 .grid {
   padding: 50px 0;
@@ -45,8 +34,17 @@
 .teamContainer {
   min-width: 235px;
   padding: 10px 5px;
-  border: 3px solid #4801ff;
+  border: 2px solid black;
   /* backdrop-filter: blur(15px); */
+}
+
+.fantaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 30px;
 }
 
 .fantaName {
@@ -55,10 +53,8 @@
 }
 
 .bigCrest {
-  display: flex;
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .crest {
@@ -75,14 +71,29 @@
   font-size: 15px;
 }
 
-/* @media (max-width:768px) {
-  .flex {
-    justify-content: center;
-  }
-} */
+.button {
+  font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto */
+  font-size: 15px;
+  width: 150px;
+  padding: 10px;
+  background-color: black;
+  color: ivory;
+  border-radius: 50px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: ivory;
+  color: black;
+}
 
 @media (max-width: 768px) {
   .container {
     padding: 50px 20px;
+  }
+  .bigCrest {
+    width: 60px;
+    height: 60px;
   }
 }
