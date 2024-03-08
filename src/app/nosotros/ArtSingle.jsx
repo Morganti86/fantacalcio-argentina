@@ -32,8 +32,8 @@ export default function ArtSingle({ images }) {
           // src={currentImageIndices[index] === 0 ? image.image : image.image2}
           src={
             currentImageIndices[index] === 0
-              ? "/images/a.jpeg"
-              : "/images/b.jpeg"
+              ? "/Images/a.jpeg"
+              : "/Images/b.jpeg"
           }
           alt={`Image ${index + 1}`}
           className={style[image.size]}

@@ -35,7 +35,7 @@
 .teamContainer {
   min-width: 235px;
   padding: 10px 5px;
-  border: 1px solid #4801ff;
+  border: 2px solid #2D2E32;
   /* backdrop-filter: blur(15px); */
 }
 
@@ -77,10 +77,10 @@
   font-size: 16px;
   width: 150px;
   padding: 8px;
-  background-color: #2D2E32;
+  background-color: #2d2e32;
   color: ivory;
   border-radius: 50px;
-  border: 1px solid #2D2E32;
+  border: 1px solid #2d2e32;
   cursor: pointer;
 }
 
@@ -96,5 +96,8 @@
   .bigCrest {
     width: 60px;
     height: 60px;
+  }
+  .flexCenter {
+    margin: 30px 0;
   }
 }
