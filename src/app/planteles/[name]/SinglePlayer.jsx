@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "./SinglePlayer.module.css";
 
-export function SinglePlayer(props) {
+export function SinglePlayer(props) { 
   const { player } = props;
   const playerImage = player.image ? player.image : "/notfound.webp";
   let background;
@@ -18,7 +18,7 @@ export function SinglePlayer(props) {
   return (
     <article
       className={style.playerContainer}
-      style={{ backgroundImage: background, color: color, fontWeight: "700" }}>
+      style={{ backgroundImage: background, color: color, fontWeight: "600"}}>
       <img
         className={style.imagePlayer}
         src={playerImage}
@@ -31,7 +31,7 @@ export function SinglePlayer(props) {
       {player.boughtprice ? (
         <span className={style.boughtPricePlayer}>${player.boughtprice}</span>
       ) : (
-        ""
+        <span className={style.boughtPricePlayer}>${player.baseprice}</span>
       )}
       <h3 className={style.namePlayer}>{player.player}</h3>
       <img

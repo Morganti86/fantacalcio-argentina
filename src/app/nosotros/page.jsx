@@ -4,8 +4,8 @@ import { PICTURES } from "./PicturesList";
 
 export default function Nosotros() {
   const imageChunks = [];
-  for (let i = 0; i < PICTURES.length; i += 2) {
-    imageChunks.push(PICTURES.slice(i, i + 2));
+  for (let i = 0; i < PICTURES.length; i += 3) {
+    imageChunks.push(PICTURES.slice(i, i + 3));
   }
 
   return (

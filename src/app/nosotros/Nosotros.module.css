@@ -3,12 +3,14 @@
   /* color: #2d2e32; */
   background-color: black;
   color: ivory;
-  padding: 50px 100px 20px;
+  padding: 50px 10px 20px;
 }
 
 .imagesContainer {
   display: flex;
   margin: 20px 0;
+  overflow: hidden;
+
   /* margin: 20px 0; */
   /* justify-content: space-between; */
 }
@@ -30,7 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 1000px;
   transition: 0.5s;
   overflow: hidden;
   margin: 8px;
@@ -41,7 +43,7 @@
   max-height: 100%; /* Establece un máximo de altura */
   flex-grow: 1;
   object-fit: cover;
-  opacity: 0.9;
+  opacity: 0.8;
   margin: 8px;
   border: 1px solid ivory;
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease,
@@ -51,8 +53,8 @@
 .flexColumn img:hover {
   cursor: crosshair;
   opacity: 1;
-  transform: scale(1.5); /* Escala la imagen al hacer hover */
-  z-index: 2;
+  /* transform: scale(1.5); */
+  /* z-index: 2; */
 }
 
 /* .flexColumn:hover img:not(:hover) {
@@ -60,19 +62,11 @@
 } */
 
 .small {
-  height: 40%;
-}
-
-.medium {
-  height: 45%;
+  height: 20%;
 }
 
 .big {
-  height: 55%;
-}
-
-.giant {
-  height: 60%;
+  height: 40%;
 }
 
 @media (max-width: 500px) {
