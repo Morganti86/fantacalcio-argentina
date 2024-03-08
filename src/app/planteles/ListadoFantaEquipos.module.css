@@ -1,4 +1,5 @@
 .container {
+  background-color: black;
   text-align: left;
   color: ivory;
   padding: 50px 100px 20px;
@@ -28,13 +29,13 @@
   gap: 15px;
   text-align: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 60px 0;
 }
 
 .teamContainer {
   min-width: 235px;
   padding: 10px 5px;
-  border: 2px solid black;
+  border: 1px solid #4801ff;
   /* backdrop-filter: blur(15px); */
 }
 
@@ -43,8 +44,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 50px;
 }
 
 .fantaName {
@@ -73,13 +74,13 @@
 
 .button {
   font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto */
-  font-size: 15px;
+  font-size: 16px;
   width: 150px;
-  padding: 10px;
-  background-color: black;
+  padding: 8px;
+  background-color: #2D2E32;
   color: ivory;
   border-radius: 50px;
-  border: 1px solid black;
+  border: 1px solid #2D2E32;
   cursor: pointer;
 }
 

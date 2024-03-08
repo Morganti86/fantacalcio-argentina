@@ -9,11 +9,6 @@ export default async function Planteles({ params }) {
   const fantaCrest = fantaName.toLowerCase();
   const players = await getFantaPlayers({ fantaName });
 
-  // const ARQ = players.filter((player) => player.position === "ARQ");
-  // const DEF = players.filter((player) => player.position === "DEF");
-  // const VOL = players.filter((player) => player.position === "VOL");
-  // const DEL = players.filter((player) => player.position === "DEL");
-
   return (
     <section className={style.container}>
       <div className={style.fantaContainer}>
@@ -26,12 +21,7 @@ export default async function Planteles({ params }) {
           alt="imagen"
         />
       </div>
-
       <AllPlayers players={players} />
-      {/* <PositionPlayers title="ARQUEROS" players={ARQ} />
-      <PositionPlayers title="DEFENSORES" players={DEF} />
-      <PositionPlayers title="VOLANTES" players={VOL} />
-      <PositionPlayers title="DELANTEROS" players={DEL} /> */}
     </section>
   );
 }

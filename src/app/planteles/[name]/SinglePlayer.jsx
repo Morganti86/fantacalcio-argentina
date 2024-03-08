@@ -5,7 +5,6 @@ export function SinglePlayer(props) {
   const { player } = props;
   const playerImage = player.image ? player.image : "/notfound.webp";
   let background;
-  // let color = "ivory";
   let color = "ivory";
 
   if (player.baseprice <= 200) {
@@ -19,7 +18,7 @@ export function SinglePlayer(props) {
   return (
     <article
       className={style.playerContainer}
-      style={{ backgroundImage: background }}>
+      style={{ backgroundImage: background, color: color, fontWeight: "700" }}>
       <img
         className={style.imagePlayer}
         src={playerImage}
@@ -27,9 +26,14 @@ export function SinglePlayer(props) {
         height={100}
         alt={`${player.player} image`}
       />
-      <h3 className={style.namePlayer} style={{ color: color }}>
-        {player.player}
-      </h3>
+      <span className={style.positionPlayer}>{player.position}</span>
+      {player.poli ? <span className={style.poliPlayer}>℗</span> : ""}
+      {player.boughtprice ? (
+        <span className={style.boughtPricePlayer}>${player.boughtprice}</span>
+      ) : (
+        ""
+      )}
+      <h3 className={style.namePlayer}>{player.player}</h3>
       <img
         className={style.imageTeam}
         src={`/LeagueTeams/${player.team}.webp`}

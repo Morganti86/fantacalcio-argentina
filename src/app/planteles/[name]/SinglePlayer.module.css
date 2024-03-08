@@ -8,11 +8,35 @@
   flex-direction: column; /* Alinear los elementos en columna */
   justify-content: center; /* Centrar verticalmente */
   align-items: center; /* Centrar horizontalmente */
+  position: relative;
 }
 
 .imagePlayer {
   width: 150px;
   height: 150px;
+}
+.positionPlayer {
+  position: absolute;
+  left: 20px;
+  top: 55px;
+  font-size: 15px;
+  backdrop-filter: blur(20px);
+}
+
+.poliPlayer {
+  position: absolute;
+  left: 25px;
+  top: 75px;
+  font-size: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.boughtPricePlayer {
+  position: absolute;
+  right: 12px;
+  bottom: 75px;
+  font-size: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .namePlayer {
