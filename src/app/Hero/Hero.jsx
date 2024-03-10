@@ -10,18 +10,22 @@ const mainFont = Bangers({
 
 export default function Hero() {
   return (
-      <section className={`${style.hero} ${mainFont.className}`}>
-        <div className={style.container}>
-          {HEROLIST.map((list) => (
-            <Link className={style.link} key={list.name} href={list.route}>
-              <span>{list.name}</span>
-            </Link>
-          ))}
-        </div>
-        <div className={style.logoContainer}>
-          <div className={style.logo}>FANTACALCIO</div>
-          <div className={style.logo}>ARGENTINA</div>
-        </div>
-      </section>
+    <section className={`${style.hero} ${mainFont.className}`}>
+      <div className={style.container}>
+        {HEROLIST.map((list) => (
+          <Link className={style.link} key={list.name} href={list.route}>
+            <span>{list.name}</span>
+          </Link>
+        ))}
+      </div>
+      <div className={style.logoContainer}>
+        {/* <iframe
+          src="https://giphy.com/embed/xj5ExZpSVxTHO"
+          width="480"
+          height="360"></iframe> */}
+        <div className={style.logo}>FANTACALCIO</div>
+        <div className={style.logo}>ARGENTINA</div>
+      </div>
+    </section>
   );
 }

@@ -9,7 +9,7 @@ export const HEROLIST = [
   },
   {
     name: "Hinchada",
-    route: "c",
+    route: "/hinchada",
   },
   {
     name: "Nosotros",

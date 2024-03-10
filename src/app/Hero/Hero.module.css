@@ -1,6 +1,7 @@
 .hero {
+  background-color: #4801ff;
   position: relative;
-  margin: 100px 100px 20px;
+  padding: 100px 100px 20px;
 }
 
 .container {

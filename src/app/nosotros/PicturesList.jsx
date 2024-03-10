@@ -2,13 +2,13 @@ export const PICTURES = [
   {
     image: "/Images/g.jpeg",
     image2: "/Images/h.jpeg",
-    size: "big",
+    size: "small",
     transitionTime: 8000,
   },
   {
     image: "/Images/i.jpeg",
     image2: "/Images/j.jpeg",
-    size: "small",
+    size: "big",
     transitionTime: 7000,
   },
   {
@@ -20,13 +20,13 @@ export const PICTURES = [
   {
     image: "/Images/a.jpeg",
     image2: "/Images/b.jpeg",
-    size: "small",
+    size: "big",
     transitionTime: 5000,
   },
   {
     image: "/Images/c.jpeg",
     image2: "/Images/d.jpeg",
-    size: "big",
+    size: "small",
     transitionTime: 9000,
   },
   {
@@ -39,7 +39,7 @@ export const PICTURES = [
   {
     image: "/Images/a.jpeg",
     image2: "/Images/b.jpeg",
-    size: "big",
+    size: "small",
     transitionTime: 7000,
   },
   {
@@ -51,7 +51,7 @@ export const PICTURES = [
   {
     image: "/Images/a.jpeg",
     image2: "/Images/b.jpeg",
-    size: "small",
+    size: "big",
     transitionTime: 8000,
   },
 ];
