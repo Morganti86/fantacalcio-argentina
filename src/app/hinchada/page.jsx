@@ -107,21 +107,38 @@ export default function Hinchada() {
             <button className={style.button} onClick={alternarReproduccion}>
               <img
                 src={isPlaying ? "/Icons/pause.svg" : "/Icons/play.svg"}
-                width={40}
-                height={40}
+                width={30}
+                height={30}
                 alt={isPlaying ? "Pause" : "Play"}
               />
             </button>
             <div className={style.progressBar} onClick={handleSeek}>
               <div
                 className={style.progress}
-                style={{ width: `${progress}%` }}></div>
+                style={{ width: `${progress}%`, position: "relative" }}>
+                {isPlaying && (
+                  <div
+                    className={style.progressImage}
+                    style={{
+                      position: "absolute",
+                      top: -40,
+                      left: "calc(100% - 40px)", // Ajustar el tamaño de la imagen según sea necesario
+                    }}>
+                    <img
+                      src="/Images/maradona-animado2.webp"
+                      alt="maradona-animado image"
+                      width="40px"
+                      height="40px"
+                    />
+                  </div>
+                )}
+              </div>
               <div className={style.timeLabels}>
                 <span>{formatTime(currentTime)}</span>
                 <span>{formatTime(duration)}</span>
               </div>
             </div>
-            <div className={style.ontrack}>
+            <div className={style.onTrack}>
               Reproduciendo: {selectedAudio.titulo} - {selectedAudio.artista}
             </div>
           </div>
