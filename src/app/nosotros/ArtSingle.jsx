@@ -29,12 +29,12 @@ export default function ArtSingle({ images }) {
       {images.map((image, index) => (
         <img
           key={index}
-          // src={currentImageIndices[index] === 0 ? image.image : image.image2}
-          src={
-            currentImageIndices[index] === 0
-              ? "/Images/a.jpeg"
-              : "/Images/b.jpeg"
-          }
+          src={currentImageIndices[index] === 0 ? image.image : image.image2}
+          // src={
+          //   currentImageIndices[index] === 0
+          //     ? "/Images/a.jpeg"
+          //     : "/Images/b.jpeg"
+          // }
           alt={`Image ${index + 1}`}
           className={style[image.size]}
         />

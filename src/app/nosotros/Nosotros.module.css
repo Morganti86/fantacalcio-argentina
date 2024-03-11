@@ -86,5 +86,7 @@
   .flexColumn img {
     height: 150px;
     margin: 0;
+    opacity: 1;
+    border: none;
   }
 }

@@ -1,60 +1,39 @@
 export const HINCHADA = [
   {
-    titulo: "Coppola de matinee",
+    titulo: "Tu papa",
+    artista: "Matias Zema",
+    duracion: "0:28",
+    scr: "/Audios/tu papa.mp3",
+    cover: "/Images/tu papa.jpg",
+  },
+
+  {
+    titulo: "Guapo",
+    artista: "Santiago Varela",
+    duracion: "0:16",
+    scr: "/Audios/guapo.mp3",
+    cover: "/Images/guapo.jpg",
+  },
+
+  {
+    titulo: "Fresco",
     artista: "Maximiliano Ferraris",
-    duracion: "0:53",
-    scr: "/Audios/03.mp3",
-    cover:
-      "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
+    duracion: "0:35",
+    scr: "/Audios/fresco.mp3",
+    cover: "/Images/fresco.jpg",
   },
   {
     titulo: "La mentira",
     artista: "Sebastian Mondillo",
-    duracion: "0:38",
-    scr: "/Audios/03.mp3",
-    cover: "https://f4.bcbits.com/img/a0363730459_16.jpg",
+    duracion: "0:33",
+    scr: "/Audios/la mentira.mp3",
+    cover: "/Images/la mentira.jpg",
   },
   {
-    titulo: "Guapo",
-    artista: "Santiago Varela",
-    duracion: "0:51",
-    scr: "/Audios/guapo.mp3",
-    cover: "https://f4.bcbits.com/img/a0363730459_16.jpg",
-  },
-  {
-    titulo: "Fresco",
-    artista: "Maximiliano Ferraris",
-    duracion: "0:51",
-    scr: "/Audios/fresco.mp3",
-    cover: "https://f4.bcbits.com/img/a0363730459_16.jpg",
-  },
-  {
-    titulo: "Coppola de matinee",
-    artista: "Maximiliano Ferraris",
+    titulo: "Un sentimiento",
+    artista: "Matias Zema",
     duracion: "0:53",
-    scr: "/Audios/03.mp3",
-    cover:
-      "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
-  },
-  {
-    titulo: "La mentira",
-    artista: "Sebastian Mondillo",
-    duracion: "0:38",
-    scr: "/Audios/03.mp3",
-    cover: "https://f4.bcbits.com/img/a0363730459_16.jpg",
-  },
-  {
-    titulo: "Guapo",
-    artista: "Santiago Varela",
-    duracion: "0:51",
-    scr: "/Audios/guapo.mp3",
-    cover: "https://f4.bcbits.com/img/a0363730459_16.jpg",
-  },
-  {
-    titulo: "Fresco",
-    artista: "Maximiliano Ferraris",
-    duracion: "0:51",
-    scr: "/Audios/fresco.mp3",
-    cover: "https://f4.bcbits.com/img/a0363730459_16.jpg",
+    scr: "/Audios/un sentimiento.mp3",
+    cover: "/Images/un sentimiento.jpg",
   },
 ];

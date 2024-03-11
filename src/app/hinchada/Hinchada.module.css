@@ -9,7 +9,7 @@
 }
 
 .table {
-  margin-top: 40px;
+  margin-top: 30px;
   table-layout: auto;
   border-collapse: collapse;
   width: 100%;
@@ -70,7 +70,7 @@
   .container {
     background-color: black;
     color: ivory;
-    padding: 50px 10px 20px;
+    padding: 50px 10px 0;
   }
 
   .titulo {
@@ -87,7 +87,7 @@
 
 .listaCanciones {
   /* margin: 0 100px; */
-  flex: 0 0 55%;
+  flex: 0 0 50%;
   overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
 }
 
@@ -96,16 +96,17 @@
 }
 
 .reproduccion {
-  flex: 0 0 20%;
+  flex: 0 0 28%;
   /* display: flex;
   justify-content: center; */
 }
 
 .button {
-  margin-bottom: 25px;
+  margin-top: 20px;
   background-color: transparent; /* Establece el fondo del botón como transparente */
   border: none; /* Elimina el borde del botón si lo hay */
   padding: 0; /* Elimina el relleno del botón si lo hay */
+  z-index: 2;
 }
 
 .player {
@@ -132,27 +133,22 @@
   height: 10px;
   background-color: #333; /* Color de fondo de la barra de progreso */
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 25px;
   /* overflow: hidden; */
 }
 
 .progress {
   height: 100%;
   background-color: ivory;
-  position: relative; /* Posición relativa para colocar la imagen */
+  position: relative;
 }
 
 .onTrack {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .progressImage {
   position: absolute;
-  /* top: -40px; 
-  height: 30px;
-  width: 30px; */
-  animation: slide 10s linear infinite; /* Duración de la animación ajustable */
-  z-index: 2;
 }
 
 @keyframes slide {

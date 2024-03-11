@@ -11,7 +11,6 @@ export default function Nosotros() {
   return (
     <section className={style.container}>
       <h1 className="title">Nosotros</h1>
-      {/* <div className='artwork-grid flex-row'> */}
       <div className={style.imagesContainer}>
         {imageChunks.map((chunk, index) => (
           <ArtSingle key={index} images={chunk} />

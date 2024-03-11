@@ -11,25 +11,25 @@ export default function Hinchada() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  useEffect(() => {
-    if (currentAudio) {
-      // Actualizar la barra de progreso cuando se reproduce el audio
-      currentAudio.ontimeupdate = () => {
-        setCurrentTime(currentAudio.currentTime);
-        setProgress((currentAudio.currentTime / currentAudio.duration) * 100);
-      };
-      // Detener la reproducción cuando la canción termina
-      currentAudio.onended = () => {
-        setIsPlaying(false);
-        setProgress(0);
-        setCurrentTime(0);
-      };
-      // Actualizar la duración máxima de la canción
-      currentAudio.onloadedmetadata = () => {
-        setDuration(currentAudio.duration);
-      };
-    }
-  }, [currentAudio]);
+useEffect(() => {
+  if (currentAudio) {
+    // Actualizar la barra de progreso cuando se reproduce el audio
+    currentAudio.ontimeupdate = () => {
+      setCurrentTime(currentAudio.currentTime);
+      setProgress((currentAudio.currentTime / currentAudio.duration) * 100);
+    };
+    // Detener la reproducción cuando la canción termina
+    currentAudio.onended = () => {
+      setIsPlaying(false); // Actualiza el estado isPlaying a false cuando la canción termina
+      setProgress(0);
+      setCurrentTime(0);
+    };
+    // Actualizar la duración máxima de la canción
+    currentAudio.onloadedmetadata = () => {
+      setDuration(currentAudio.duration);
+    };
+  }
+}, [currentAudio]);
 
   function reproducirAudio(audio) {
     if (currentAudio) {
@@ -107,8 +107,8 @@ export default function Hinchada() {
             <button className={style.button} onClick={alternarReproduccion}>
               <img
                 src={isPlaying ? "/Icons/pause.svg" : "/Icons/play.svg"}
-                width={30}
-                height={30}
+                width={40}
+                height={40}
                 alt={isPlaying ? "Pause" : "Play"}
               />
             </button>
@@ -121,14 +121,14 @@ export default function Hinchada() {
                     className={style.progressImage}
                     style={{
                       position: "absolute",
-                      top: -40,
-                      left: "calc(100% - 40px)", // Ajustar el tamaño de la imagen según sea necesario
+                      top: -85,
+                      left: "calc(100% - 43px)", // Ajustar el tamaño de la imagen según sea necesario
                     }}>
                     <img
-                      src="/Images/maradona-animado2.webp"
+                      src="/Images/maradona-animado.webp"
                       alt="maradona-animado image"
-                      width="40px"
-                      height="40px"
+                      width="85px"
+                      height="85px"
                     />
                   </div>
                 )}
@@ -139,7 +139,8 @@ export default function Hinchada() {
               </div>
             </div>
             <div className={style.onTrack}>
-              Reproduciendo: {selectedAudio.titulo} - {selectedAudio.artista}
+            {isPlaying ? "Reproduciendo: " : "Seleccionada: "}
+              {selectedAudio.titulo} - {selectedAudio.artista}
             </div>
           </div>
         )}

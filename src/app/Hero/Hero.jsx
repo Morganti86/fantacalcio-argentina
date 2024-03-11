@@ -19,10 +19,7 @@ export default function Hero() {
         ))}
       </div>
       <div className={style.logoContainer}>
-        {/* <iframe
-          src="https://giphy.com/embed/xj5ExZpSVxTHO"
-          width="480"
-          height="360"></iframe> */}
+        <img src="/images/world-cup.webp" width="200" height="240"></img>
         <div className={style.logo}>FANTACALCIO</div>
         <div className={style.logo}>ARGENTINA</div>
       </div>
