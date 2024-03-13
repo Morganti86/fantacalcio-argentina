@@ -1,3 +1,4 @@
+import { Lights } from "./components/Lights";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <title>{metadata.title}</title>
       </head>
-      <body className={mainFont.className}>{children}</body>
+      <body className={mainFont.className}>
+      <Lights />
+      {children}</body>
     </html>
   );
 }

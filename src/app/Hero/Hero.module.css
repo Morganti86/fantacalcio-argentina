@@ -54,6 +54,11 @@
   -webkit-text-stroke-width: 1px;
 }
 
+.cup {
+  width: 200px;
+  height: 240px;
+}
+
 @media (max-width: 1024px) {
   .hero {
     padding: 50px 50px 20px;
@@ -81,8 +86,8 @@
     font-size: 30px;
   }
   .logoContainer {
-    left: 50px;
-    bottom: 50px;
+    left: 20px;
+    bottom: 20px;
   }
 }
 
@@ -96,8 +101,9 @@
   .logo {
     font-size: 20px;
   }
-  .logoContainer {
-    left: 20px;
-    bottom: 20px;
+
+  .cup {
+    width: 100px;
+    height: auto;
   }
 }
