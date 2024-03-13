@@ -36,7 +36,7 @@
   position: fixed;
   inset: 0;
   background-size: 200%, 100%;
-  animation: lights 80s linear infinite;
+  animation: lights 100s linear infinite;
   mix-blend-mode: difference;
   background-image: var(--stripesDark), var(--rainbow);
   transform: translateZ(0);

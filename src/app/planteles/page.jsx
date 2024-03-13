@@ -1,6 +1,7 @@
 import style from "./ListadoFantaEquipos.module.css";
 import { getFantaTeams } from "../lib/querys";
 import { ListaFantaTeams } from "./ListaFantaTeams";
+import { Lights } from "../components/Lights";
 
 export default async function Planteles() {
   const fantaTeams = await getFantaTeams();
