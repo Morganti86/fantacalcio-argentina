@@ -74,13 +74,18 @@
 }
 
 @font-face {
-    font-family: "Bangers Regular";
-    src: url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.eot");
-    src: url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.svg#Bangers Regular")format("svg");
+  font-family: "Bangers Regular";
+  src: url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.eot");
+  src: url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/3a221e9de2d99b3a25998d6f6ffa2a41.svg#Bangers Regular")
+      format("svg");
 }
 
 * {
@@ -109,6 +114,8 @@ a {
   text-align: center;
   font-size: 120px;
   font-weight: 400;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
 }
 
 .subTitle {

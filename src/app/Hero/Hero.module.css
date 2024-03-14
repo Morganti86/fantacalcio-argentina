@@ -13,16 +13,22 @@
 }
 
 .link {
+  /* color: ivory; */
   display: inline-block;
   padding: 10px;
   text-decoration: none;
   /* transform-style: preserve-3d;
   transform: rotateZ(-3deg);  */
   animation: dropDown 2s ease-in-out;
+  -webkit-text-stroke: ivory;
+  -webkit-text-stroke-width: 1px;
 }
 
-.link:hover  {
+.link:hover {
   color: ivory;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
+
   /* color: transparent;
   -webkit-text-stroke: #131313;
   -webkit-text-stroke-width: 3px; */
@@ -47,6 +53,8 @@
   left: 100px;
   bottom: 50px;
   text-align: center;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
 }
 
 .logo:hover {

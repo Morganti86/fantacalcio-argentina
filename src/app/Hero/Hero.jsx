@@ -14,10 +14,10 @@ export default function Hero() {
     <section className={`${style.hero} ${mainFont.className}`}>
       {/* <Lights /> */}
       <div className={style.container}>
+      {/* <span className={style.span}>HOLA</span> */}
         {HEROLIST.map((list) => (
           <span key={list.name}>
-            <Link className={style.link} href={list.route}>
-              {list.name}
+            <Link className={style.link} href={list.route}>{list.name}
             </Link>
           </span>
         ))}
