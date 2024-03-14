@@ -17,7 +17,7 @@
     transparent 12%,
     #000 16%
   );
-  --rainbow: repeating-linear-gradient(100deg, #d5ff00 10%, #d5ff00 30%);
+  --rainbow: repeating-linear-gradient(100deg, #d5ff00 10%, #d5ff00 20%);
   background-position: 50%, 50%;
   background-size: 300%, 100%;
   background-image: var(--stripesDark), var(--rainbow);
@@ -28,7 +28,7 @@
   position: fixed;
   inset: 0;
   transform: translateZ(0);
-  mask-image: radial-gradient(at 100% 0, #d5ff00 40%, #d5ff00 70%);
+  mask-image: radial-gradient(at 100% 0, #d5ff00 40%, #d5ff00 50%);
 }
 
 .lights::after {

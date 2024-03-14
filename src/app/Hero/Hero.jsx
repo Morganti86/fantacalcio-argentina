@@ -15,13 +15,19 @@ export default function Hero() {
       {/* <Lights /> */}
       <div className={style.container}>
         {HEROLIST.map((list) => (
-          <Link className={style.link} key={list.name} href={list.route}>
-            <span>{list.name}</span>
-          </Link>
+          <span key={list.name}>
+            <Link className={style.link} href={list.route}>
+              {list.name}
+            </Link>
+          </span>
         ))}
       </div>
       <div className={style.logoContainer}>
-        <img className={style.cup} src="/Images/world-cup.webp" width="200" height="240"></img>
+        <img
+          className={style.cup}
+          src="/Images/world-cup.webp"
+          width="200"
+          height="240"></img>
         <div className={style.logo}>FANTACALCIO</div>
         <div className={style.logo}>ARGENTINA</div>
       </div>
