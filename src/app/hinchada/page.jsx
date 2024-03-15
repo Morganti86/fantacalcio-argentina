@@ -11,25 +11,35 @@ export default function Hinchada() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-useEffect(() => {
-  if (currentAudio) {
-    // Actualizar la barra de progreso cuando se reproduce el audio
-    currentAudio.ontimeupdate = () => {
-      setCurrentTime(currentAudio.currentTime);
-      setProgress((currentAudio.currentTime / currentAudio.duration) * 100);
+  useEffect(() => {
+    // Limpieza del estado al desmontar el componente
+    return () => {
+      if (currentAudio) {
+        currentAudio.pause();
+        setCurrentAudio(null);
+      }
     };
-    // Detener la reproducción cuando la canción termina
-    currentAudio.onended = () => {
-      setIsPlaying(false); // Actualiza el estado isPlaying a false cuando la canción termina
-      setProgress(0);
-      setCurrentTime(0);
-    };
-    // Actualizar la duración máxima de la canción
-    currentAudio.onloadedmetadata = () => {
-      setDuration(currentAudio.duration);
-    };
-  }
-}, [currentAudio]);
+  }, []);
+
+  useEffect(() => {
+    if (currentAudio) {
+      // Actualizar la barra de progreso cuando se reproduce el audio
+      currentAudio.ontimeupdate = () => {
+        setCurrentTime(currentAudio.currentTime);
+        setProgress((currentAudio.currentTime / currentAudio.duration) * 100);
+      };
+      // Detener la reproducción cuando la canción termina
+      currentAudio.onended = () => {
+        setIsPlaying(false);
+        setProgress(0);
+        setCurrentTime(0);
+      };
+      // Actualizar la duración máxima de la canción
+      currentAudio.onloadedmetadata = () => {
+        setDuration(currentAudio.duration);
+      };
+    }
+  }, [currentAudio]);
 
   function reproducirAudio(audio) {
     if (currentAudio) {
@@ -139,7 +149,7 @@ useEffect(() => {
               </div>
             </div>
             <div className={style.onTrack}>
-            {isPlaying ? "Reproduciendo: " : "Seleccionada: "}
+              {isPlaying ? "Reproduciendo: " : "Seleccionada: "}
               {selectedAudio.titulo} - {selectedAudio.artista}
             </div>
           </div>

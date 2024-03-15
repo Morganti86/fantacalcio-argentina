@@ -2,7 +2,6 @@ import Link from "next/link";
 import { HEROLIST } from "./HeroList";
 import style from "./Hero.module.css";
 import { Bangers } from "next/font/google";
-import { Lights } from "../components/Lights";
 
 const mainFont = Bangers({
   subsets: ["latin"],
