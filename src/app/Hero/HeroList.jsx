@@ -5,7 +5,7 @@ export const HEROLIST = [
   },
   {
     name: "Subasta",
-    route: "b",
+    route: "/subasta",
   },
   {
     name: "Hinchada",
@@ -17,10 +17,13 @@ export const HEROLIST = [
   },
   {
     name: "Reglamento",
-    route: "d",
+    route: "/Reglamento Fantacalcio - 2024.pdf", // Ruta real al archivo PDF
+    download: true,
   },
   {
     name: "Estadísticas",
-    route: "e",
+    route:
+      "https://docs.google.com/spreadsheets/d/1m1ux4Orlrn_o9UVg-MpG90V6pbNYJasU/edit#gid=2112564658", // Ruta real al archivo PDF
+    external: true, // Indica que es un enlace externo
   },
 ];

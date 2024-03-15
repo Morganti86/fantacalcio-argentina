@@ -58,9 +58,16 @@ export const HINCHADA = [
     cover: "/Images/capo del interior.jpg",
   },
   {
+    titulo: "Puro humo",
+    artista: "Maximiliano Ferraris",
+    duracion: "1:16",
+    scr: "/Audios/puro humo.mp3",
+    cover: "/Images/puro humo.jpg",
+  },
+  {
     titulo: "Le gusta",
     artista: "Maximiliano Ferraris",
-    duracion: "0:53",
+    duracion: "0:44",
     scr: "/Audios/le gusta.mp3",
     cover: "/Images/le gusta.jpg",
   },

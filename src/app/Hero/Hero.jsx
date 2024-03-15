@@ -15,8 +15,23 @@ export default function Hero() {
       <div className={style.container}>
         {HEROLIST.map((list) => (
           <span key={list.name}>
-            <Link className={style.link} href={list.route}>{list.name}
-            </Link>
+            {list.download ? (
+              <a className={style.link} href={list.route} download>
+                {list.name}
+              </a>
+            ) : list.external ? (
+              <a
+                className={style.link}
+                href={list.route}
+                target="_blank"
+                rel="noopener noreferrer">
+                {list.name}
+              </a>
+            ) : (
+              <Link className={style.link} href={list.route}>
+                {list.name}
+              </Link>
+            )}
           </span>
         ))}
       </div>
