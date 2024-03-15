@@ -1,3 +1,6 @@
+//https://tableconvert.com/excel-to-json
+//https://products.aspose.app/cells/conversion/excel-to-json
+
 const { db } = require("@vercel/postgres");
 const { PLAYERS } = require("../../app/lib/placeholder-data.jsx");
 const bcrypt = require("bcrypt");
