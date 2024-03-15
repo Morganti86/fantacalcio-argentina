@@ -28,10 +28,6 @@
   color: ivory;
   -webkit-text-stroke: black;
   -webkit-text-stroke-width: 1px;
-
-  /* color: transparent;
-  -webkit-text-stroke: #131313;
-  -webkit-text-stroke-width: 3px; */
 }
 
 @keyframes dropDown {
