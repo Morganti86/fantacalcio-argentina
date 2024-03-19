@@ -1,38 +1,6 @@
-// import { db } from "@vercel/postgres";
-
-// export async function getFantaTeams() {
-//   try {
-//     const client = new db.Client({
-//       connectionString: process.env.POSTGRES_URL,
-//     });
-
-//     await client.connect();
-
-//     const query = `
-//       SELECT * FROM fanta_teams;
-//     `;
-
-//     const result = await client.query(query);
-//     const fantaTeams = result.rows;
-
-//     await client.end();
-
-//     return fantaTeams;
-//   } catch (error) {
-//     console.error("Error fetching fanta teams:", error);
-//     throw error;
-//   }
-// }
-
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
-
-export const formatCurrency = (amount) => {
-  return (amount / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-};
+import * as XLSX from "xlsx";
 
 export async function getFantaTeams() {
   noStore();
@@ -57,6 +25,19 @@ export async function getFantaPlayers({ fantaName }) {
     throw new Error("Failed to fetch fantaPlayers data.");
   }
 }
+
+// export async function downloadPlayersAsXLSX() {
+//   noStore();
+//   try {
+//     const players = await sql`SELECT * FROM players`;
+//     const ws = XLSX.utils.json_to_sheet(players);
+//     const wb = XLSX.utils.book_new();
+//     XLSX.utils.book_append_sheet(wb, ws, "Fanta Players");
+//     XLSX.writeFile(wb, "fanta_players.xlsx");
+//   } catch (error) {
+//     console.error("Error al descargar jugadores en formato XLSX:", error);
+//   }
+// }
 
 export async function fetchRevenue() {
   noStore();

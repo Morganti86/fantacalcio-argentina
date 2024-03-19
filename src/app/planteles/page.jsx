@@ -1,11 +1,11 @@
 import style from "./ListadoFantaEquipos.module.css";
 import { getFantaTeams } from "../lib/querys";
 import { ListaFantaTeams } from "./ListaFantaTeams";
-import { Lights } from "../components/Lights";
+import DownloadPlayers from "./DownloadPlayers";
 
 export default async function Planteles() {
   const fantaTeams = await getFantaTeams();
-
+  
   return (
     <section className={style.container}>
       <h1 className="title">PLANTELES</h1>
@@ -14,6 +14,7 @@ export default async function Planteles() {
           return <ListaFantaTeams key={index} fanta={fanta} />;
         })}
       </div>
+      <DownloadPlayers />
     </section>
   );
 }
