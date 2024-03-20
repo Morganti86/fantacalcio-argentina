@@ -1,64 +1,44 @@
-"use client";
-// import { db } from "@vercel/postgres";
-const { db } = require("@vercel/postgres");
+'use client';
+import { saveAs } from "file-saver";
+import * as XLSX from "xlsx";
 
+export function DownloadPlayers({ fantaPlayers }) {
+  const handleDownload = () => {
+    // Crear un libro de trabajo y una hoja de cálculo
+    const workbook = { Sheets: {}, SheetNames: ["Jugadores"] };
+    const sheetData = fantaPlayers.map((player) => ({
+      Equipo: player.team,
+      Jugador: player.player,
+      Precio: player.baseprice,
+      Pos: player.position,
+      Poli: player.poli,
+      FantaEquipo: player.fantateam,
+      PrecioCompra: player.boughtprice,
+    }));
+    const sheet = XLSX.utils.json_to_sheet(sheetData);
 
-export default function DownloadPlayers() {
-  async function pepe() {
-    console.log("click button");
-    try {
-      const client = await db.connect({
-        connectionString: process.env.POSTGRES_URL,
-        ssl: {
-          rejectUnauthorized: false,
-        },
-      });
-      console.log("Conexión exitosa");
+    // Agregar la hoja de cálculo al libro de trabajo
+    workbook.Sheets["Jugadores"] = sheet;
 
-      const data = await client.query("SELECT * FROM fanta_teams");
-      console.log(data.rows);
+    // Convertir el libro de trabajo a un archivo binario
+    const excelBuffer = XLSX.write(workbook, {
+      bookType: "xlsx",
+      type: "array",
+    });
 
-      await client.release(); // Liberar el cliente después de usarlo
-    } catch (error) {
-      console.error("Error al ejecutar la consulta:", error);
-    }
-  }
+    // Crear un Blob desde el archivo binario
+    const blob = new Blob([excelBuffer], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+
+    // Descargar el archivo
+    const fileName = "jugadores.xlsx";
+    saveAs(blob, fileName);
+  };
 
   return (
     <div>
-      <button onClick={pepe}>Descargar Jugadores</button>
+      <button onClick={handleDownload}>Descargar Jugadores</button>
     </div>
   );
 }
-
-// import { Client } from "@vercel/postgres";
-// import * as XLSX from "xlsx";
-
-// export default function DownloadPlayers() {
-//   const downloadPlayersAsXLSX = async () => {
-//     try {
-//       const client = new Client({
-//         connectionString: process.env.POSTGRES_URL,
-//         ssl: {
-//           rejectUnauthorized: false,
-//         },
-//       });
-//       await client.connect();
-//       const { rows: players } = await client.query("SELECT * FROM players");
-//       await client.end();
-
-//       const ws = XLSX.utils.json_to_sheet(players);
-//       const wb = XLSX.utils.book_new();
-//       XLSX.utils.book_append_sheet(wb, ws, "Fanta Players");
-//       XLSX.writeFile(wb, "fanta_players.xlsx");
-//     } catch (error) {
-//       console.error("Error al descargar jugadores en formato XLSX:", error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={downloadPlayersAsXLSX}>Descargar Jugadores</button>
-//     </div>
-//   );
-// }

@@ -1,6 +1,5 @@
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
-import * as XLSX from "xlsx";
 
 export async function getFantaTeams() {
   noStore();
@@ -26,22 +25,19 @@ export async function getFantaPlayers({ fantaName }) {
   }
 }
 
-// export async function downloadPlayersAsXLSX() {
-//   noStore();
-//   try {
-//     const players = await sql`SELECT * FROM players`;
-//     const ws = XLSX.utils.json_to_sheet(players);
-//     const wb = XLSX.utils.book_new();
-//     XLSX.utils.book_append_sheet(wb, ws, "Fanta Players");
-//     XLSX.writeFile(wb, "fanta_players.xlsx");
-//   } catch (error) {
-//     console.error("Error al descargar jugadores en formato XLSX:", error);
-//   }
-// }
+export async function getAllPlayers() {
+  noStore();
+  try {
+    const data = await sql`SELECT * FROM players;`;
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch fantaPlayers data.");
+  }
+}
 
 export async function fetchRevenue() {
   noStore();
-
   try {
     console.log("Fetching revenue data...");
     await new Promise((resolve) => setTimeout(resolve, 3000));
