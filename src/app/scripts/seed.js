@@ -12,9 +12,9 @@ async function seedFantaEquipos(client) {
 
     // Create the "fanta_teams" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS fantaEquipos (
+      CREATE TABLE IF NOT EXISTS fanta_equipos (
         id SERIAL PRIMARY KEY,
-        fantaEquipo VARCHAR(255) NOT NULL UNIQUE,
+        fanta_equipo VARCHAR(255) NOT NULL UNIQUE,
         presidente VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         presupuesto INT NOT NULL,
@@ -22,29 +22,29 @@ async function seedFantaEquipos(client) {
       );
     `;
 
-    console.log(`Created "fantaEquipos" table`);
+    console.log(`Created "fanta_equipos" table`);
 
     // Insert or update data into the "fanta_teams" table
     const fantaEquipos = await Promise.all(
       FANTAEQUIPOS.map(async (equipo) => {
         // Check if the team already exists
         const existingTeam = await client.sql`
-          SELECT * FROM fantaEquipos WHERE fantaEquipo = ${equipo.fantaEquipo};
+          SELECT * FROM fanta_equipos WHERE fanta_equipo = ${equipo.fantaEquipo};
         `;
 
         if (existingTeam.length > 0) {
           // Update budget and remaining if the team exists
           await client.sql`
-            UPDATE fantaEquipos
+            UPDATE fanta_equipos
             SET presupuesto = ${equipo.presupuesto}, remanente = ${equipo.remanente}
-            WHERE fantaEquipo = ${equipo.fantaEquipo};
+            WHERE fanta_equipo = ${equipo.fantaEquipo};
           `;
           console.log(`Updated team "${equipo.fantaEquipo}"`);
           return existingTeam[0];
         } else {
           // Insert the team if it doesn't exist
           const insertedTeam = await client.sql`
-            INSERT INTO fantaEquipos (fantaEquipo, presidente, email, presupuesto, remanente)
+            INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente)
             VALUES (${equipo.fantaEquipo}, ${equipo.presidente}, ${equipo.email}, ${equipo.presupuesto}, ${equipo.remanente})
             RETURNING *;
           `;

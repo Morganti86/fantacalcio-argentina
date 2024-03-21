@@ -15,11 +15,11 @@ async function seedJugadores(client) {
         id SERIAL PRIMARY KEY,
         equipo VARCHAR(255) REFERENCES equipos(equipo),
         jugador VARCHAR(255) NOT NULL,
-        precioBase INT NOT NULL,
+        precio_base INT NOT NULL,
         posicion VARCHAR(255) REFERENCES posiciones(posicion),
         poli BOOLEAN NOT NULL,
-        fantaEquipo VARCHAR(255),
-        precioCompra INT,
+        fanta_equipo VARCHAR(255),
+        precio_compra INT,
         imagen VARCHAR(255)
         );
     `;
@@ -34,7 +34,7 @@ async function seedJugadores(client) {
         const precioCompra = player.precioCompra ? player.precioCompra : null;
         const imagen = player.imagen ? player.imagen : null;
         const insertedPlayer = await client.sql`
-        INSERT INTO jugadores (equipo, jugador, precioBase, posicion, poli, fantaEquipo, precioCompra, imagen)
+        INSERT INTO jugadores (equipo, jugador, precio_base, posicion, poli, fanta_equipo, precio_compra, imagen)
         VALUES (
         ${player.equipo}, 
         ${player.jugador}, 

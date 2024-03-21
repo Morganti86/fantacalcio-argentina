@@ -1,38 +1,38 @@
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 
-export async function getFantaTeams() {
+export async function getFantaEquipos() {
   noStore();
   try {
-    const data = await sql`SELECT * FROM fanta_teams;`;
+    const data = await sql`SELECT * FROM fanta_equipos;`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch fantaTeams data.");
+    throw new Error("Failed to fetch fanta_equipos data.");
   }
 }
 
-export async function getFantaPlayers({ fantaName }) {
+export async function getFantaJugadores({ fantaEquipo }) {
   noStore();
   try {
-    const data = await sql`SELECT * FROM players
-    WHERE fantaTeam = ${fantaName}
-    ORDER BY position`;
+    const data = await sql`SELECT * FROM jugadores
+    WHERE fanta_equipo = ${fantaEquipo}
+    ORDER BY posicion`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch fantaPlayers data.");
+    throw new Error("Failed to fetch fantaJugadores data.");
   }
 }
 
-export async function getAllPlayers() {
+export async function getAllJugadores() {
   noStore();
   try {
-    const data = await sql`SELECT * FROM players;`;
+    const data = await sql`SELECT * FROM jugadores;`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch fantaPlayers data.");
+    throw new Error("Failed to fetch jugadores data.");
   }
 }
 
