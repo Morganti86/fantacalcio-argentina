@@ -1,7 +1,4 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   color: ivory;
+  padding: 50px 10px 20px;
 }

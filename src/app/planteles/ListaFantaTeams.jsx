@@ -7,7 +7,7 @@ export function ListaFantaTeams({ fanta }) {
     <section>
       <Link
         key={fantaName}
-        href="/planteles/[equipo]"
+        href="/planteles/[FantaEquipo]"
         as={`planteles/${fantaName}`}>
         <article className={style.teamContainer}>
           <h1 className={style.fantaName}>{fanta.fanta_equipo}</h1>

@@ -3,13 +3,12 @@ import style from "./ListadoFantaEquipos.module.css"
 import { saveAs } from "file-saver";
 import * as XLSX from "xlsx";
 
-export function DownloadPlayers({ fantaJugadores }) {
+export function DownloadPlayers({ fantaJugadores, fantaEquipo }) {
   const date = new Date();
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const day = String(date.getDay()).padStart(2, "0");
   const fullDate = `${year}-${month}-${day}`;
-  console.log(fullDate);
   const handleDownload = () => {
     // Crear un libro de trabajo y una hoja de cálculo
     const workbook = { Sheets: {}, SheetNames: ["Jugadores"] };
@@ -18,7 +17,7 @@ export function DownloadPlayers({ fantaJugadores }) {
       jugador: jugador.jugador,
       precioBase: jugador.precio_base,
       posicion: jugador.posicion,
-      poli: jugador.poli,
+      poli: jugador.poli ? "SI" : "",
       fantaEquipo: jugador.fanta_equipo,
       precioCompra: jugador.precio_compra,
     }));
@@ -38,7 +37,10 @@ export function DownloadPlayers({ fantaJugadores }) {
     });
 
     // Descargar el archivo
-    const fileName = `Planteles-${fullDate}.xlsx`;
+    
+    const fileName = fantaEquipo
+      ? `${fantaEquipo}-${fullDate}.xlsx`
+      : `Planteles-${fullDate}.xlsx`;
     saveAs(blob, fileName);
   };
 

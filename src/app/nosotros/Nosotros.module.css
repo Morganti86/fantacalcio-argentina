@@ -3,7 +3,7 @@
   /* color: #2d2e32; */
   background-color: black;
   color: ivory;
-  padding: 50px 10px 20px;
+  padding: 50px 0 20px;
 }
 
 .imagesContainer {
@@ -35,7 +35,7 @@
   height: 1000px;
   transition: 0.5s;
   overflow: hidden;
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 .flexColumn img {
@@ -44,7 +44,7 @@
   flex-grow: 1;
   object-fit: cover;
   opacity: 0.8;
-  margin: 5px;
+  /* margin: 5px; */
   border: 1px solid ivory;
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease,
     src 1s ease; /* Agregamos transición para el cambio de src */

@@ -1,10 +1,11 @@
 import style from "../ListadoFantaEquipos.module.css";
 import { getFantaJugadores } from "../../lib/querys";
 import { AllPlayers } from "./AllPlayers";
+import { DownloadPlayers } from "../DownloadPlayers";
 
 export default async function Planteles({ params }) {
-  const { equipo } = params;
-  const fantaEquipo = equipo.replace(/\+|%20/g, " ").toUpperCase();
+  const { FantaEquipo } = params;
+  const fantaEquipo = FantaEquipo.replace(/\+|%20/g, " ").toUpperCase();
   const fantaEscudo = fantaEquipo.toLowerCase();
   const jugadores = await getFantaJugadores({ fantaEquipo });
 
@@ -21,6 +22,7 @@ export default async function Planteles({ params }) {
         />
       </div>
       <AllPlayers jugadores={jugadores} />
+      <DownloadPlayers fantaJugadores={jugadores} fantaEquipo={fantaEquipo} />
     </section>
   );
 }
