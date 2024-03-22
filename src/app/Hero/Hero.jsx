@@ -36,10 +36,10 @@ export default function Hero() {
       </div>
       <div className={style.logoContainer}>
         <img
-          className={style.cup}
-          src="/Images/world-cup.webp"
-          width="200"
-          height="240"></img>
+          className={style.afa}
+          src="/Images/afa-logo.webp"
+          width="268"
+          height="377"></img>
         <div className={style.logo}>FANTACALCIO</div>
         <div className={style.logo}>ARGENTINA</div>
       </div>

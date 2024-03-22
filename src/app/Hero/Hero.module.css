@@ -7,6 +7,7 @@
 
 .container {
   display: flex;
+  display: flex;
   flex-direction: column;
   font-size: 160px;
   text-align: right; /* Alinea los enlaces a la derecha */
@@ -41,6 +42,8 @@
 
 .logo {
   font-size: 60px;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
 }
 
 .logoContainer {
@@ -53,15 +56,21 @@
   -webkit-text-stroke-width: 1px;
 }
 
-.logo:hover {
-  color: transparent;
+/* .logo:hover {
+  color: black;
   -webkit-text-stroke: ivory;
   -webkit-text-stroke-width: 1px;
-}
+} */
 
 .cup {
   width: 200px;
   height: 240px;
+}
+
+.afa {
+  width: 200px;
+  height: auto;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1024px) {
@@ -77,6 +86,11 @@
   .logoContainer {
     left: 50px;
     bottom: 50px;
+  }
+
+  .afa {
+    width: 150px;
+    height: auto;
   }
 }
 
@@ -94,6 +108,10 @@
     left: 20px;
     bottom: 20px;
   }
+  .afa {
+    width: 120px;
+    height: auto;
+  }
 }
 
 @media (max-width: 500px) {
@@ -109,6 +127,11 @@
 
   .cup {
     width: 100px;
+    height: auto;
+  }
+
+  .afa {
+    width: 70px;
     height: auto;
   }
 }

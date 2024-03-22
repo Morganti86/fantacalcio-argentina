@@ -28,9 +28,6 @@ export default function Subasta() {
     }
   }
   async function getJugadores() {
-    console.log(" getJugadores equipo" + equipo);
-    console.log(" getJugadores posicion" + posicion);
-
     try {
       const response = await fetch(
         `/api/getJugadores?equipo=${equipo}&posicion=${posicion}`
