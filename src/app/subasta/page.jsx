@@ -1,52 +1,68 @@
 "use client";
-import { useState } from "react";
-import { SinglePlayer } from "../planteles/[FantaEquipo]/SinglePlayer";
+import { useEffect, useState } from "react";
 import style from "./Subasta.module.css";
 
 export default function Subasta() {
-  const [player, setPlayer] = useState("");
-  const [equipo, setEquipo] = useState("Talleres");
-  const [posicion, setPosicion] = useState("DEL");
-  console.log("state equipo" + equipo);
-  console.log("state posicion" + posicion);
+  const [posiciones, setPosiciones] = useState([]);
+  const [equipos, setEquipos] = useState([]);
+  const [fantaEquipos, setFantaEquipos] = useState([]);
 
-  async function getEquipos() {
-    try {
-      const response = await fetch("/api/getEquipos");
-      const data = await response.json(); // Convertir la respuesta a JSON
-      console.log(data[5]);
-      setEquipo(data[5]); // Establecer el estado con los datos del jugador
-    } catch (error) {
-      console.error("Error fetching equipos:", error);
-    }
-  }
-  async function getPosiciones() {
-    try {
-      const response = await fetch("/api/getPosiciones");
-    } catch (error) {
-      console.error("Error fetching posiciones:", error);
-    }
-  }
-  async function getJugadores() {
-    try {
-      const response = await fetch(
-        `/api/getJugadores?equipo=${equipo}&posicion=${posicion}`
-      );
-      const data = await response.json(); // Convertir la respuesta a JSON
-      console.log(data);
-      setPlayer(data); // Establecer el estado con los datos del jugador
-    } catch (error) {
-      console.error("Error fetching jugadores:", error);
-    }
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch posiciones
+        const posicionesResponse = await fetch("/api/getPosiciones");
+        if (!posicionesResponse.ok) {
+          throw new Error("Failed to fetch posiciones data");
+        }
+        const posicionesData = await posicionesResponse.json();
+        setPosiciones(posicionesData);
+
+        // Fetch equipos
+        const equiposResponse = await fetch("/api/getEquipos");
+        if (!equiposResponse.ok) {
+          throw new Error("Failed to fetch equipos data");
+        }
+        const equiposData = await equiposResponse.json();
+        setEquipos(equiposData);
+
+        // Fetch FantaEquipos
+        const fantaEquiposResponse = await fetch("/api/getFantaEquipos");
+        if (!equiposResponse.ok) {
+          throw new Error("Failed to fetch equipos data");
+        }
+        const fantaEquiposData = await fantaEquiposResponse.json();
+        setFantaEquipos(fantaEquiposData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section className={style.container}>
       <h1 className="title">SUBASTA</h1>
-      {/* <button onClick={getPosiciones}>Obtener posiciones</button>
-      <button onClick={getEquipos}>Obtener equipos</button>
-      <button onClick={getJugadores}>Obtener jugadores</button>
-      <div>{player ? <SinglePlayer jugador={player[0]} /> : ""}</div> */}
+      <div className={style.flex}>
+        {equipos.map((equipo) => (
+          <div key={equipo.id}>
+            <img
+              className={style.imageTeam}
+              src={`/LeagueTeams/${equipo.equipo}.webp`}
+              width={40}
+              height={40}
+              alt={`${equipo.equipo} image`}
+            />
+          </div>
+        ))}
+      </div>
+      {posiciones.map((posicion) => (
+        <div key={posicion.index}>{posicion.posicion}</div>
+      ))}
+      {fantaEquipos.map((equipo) => (
+        <div key={equipo.fanta_equipo}>{equipo.fanta_equipo}</div>
+      ))}
     </section>
   );
 }

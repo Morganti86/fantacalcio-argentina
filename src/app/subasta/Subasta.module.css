@@ -1,4 +1,18 @@
 .container {
   color: ivory;
-  padding: 50px 10px 20px;
+  padding: 50px 50px;
+  align-items: center;
+}
+
+.button {
+  color: ivory;
+  padding: 100px 150px;
+  background-image: url("/Backgrounds/matrix.gif");
+  background-size: cover; /* Para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Para evitar la repetición del fondo */
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }

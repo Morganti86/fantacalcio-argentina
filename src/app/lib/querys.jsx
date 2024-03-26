@@ -1,6 +1,17 @@
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 
+export async function getEquipos() {
+  noStore();
+  try {
+    const data = await sql`SELECT * FROM equipos;`;
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch equipos data.");
+  }
+}
+
 export async function getFantaEquipos() {
   noStore();
   try {
@@ -9,6 +20,17 @@ export async function getFantaEquipos() {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch fanta_equipos data.");
+  }
+}
+
+export async function getPosiciones() {
+  noStore();
+  try {
+    const data = await sql`SELECT * FROM posiciones;`;
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch posiciones data.");
   }
 }
 

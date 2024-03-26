@@ -7,7 +7,6 @@ export default async function handler(req, res) {
       const result = await client.query("SELECT * FROM posiciones");
       await client.release();
       const posiciones = result.rows;
-      console.log(posiciones);
       res.status(200).json(posiciones);
     } catch (error) {
       res.status(500).json({ error: "Internal Server Error" });
