@@ -103,33 +103,37 @@ export default function Subasta() {
         {jugadores.length > 0 && (
           <section className={style.grid}>
             <div className={style.boxJugador}>
-              <SinglePlayer jugador={jugadores[jugadorActual]} />
+              <div className={style.flex}>
+                <SinglePlayer jugador={jugadores[jugadorActual]} />
+              </div>
               <div className={style.label}>COMPRADOR: {compradorActual}</div>
               <div className={style.label}>PRECIO: ${precioActual}</div>
-              {/* <div className={style.flex}> */}
-              <button
-                className={style.buyButton}
-                onClick={() => priceAction(-100)}>
-                -100
-              </button>
-              <button
-                className={style.buyButton}
-                onClick={() => priceAction(100)}>
-                +100
-              </button>
-              <button
-                className={style.buyButton}
-                onClick={() => priceAction(200)}>
-                +200
-              </button>
-              <button
-                className={style.buyButton}
-                onClick={() => priceAction(500)}>
-                +500
-              </button>
-              {/* </div> */}
-              <div className={style.nextButton}>
-                <button onClick={nextAction}>SIGUIENTE</button>
+              <div className={style.flex}>
+                <button
+                  className={`${style.buyButton} ${style.bc1}`}
+                  onClick={() => priceAction(-100)}>
+                  -100
+                </button>
+                <button
+                  className={`${style.buyButton} ${style.bc2}`}
+                  onClick={() => priceAction(100)}>
+                  +100
+                </button>
+                <button
+                  className={`${style.buyButton} ${style.bc3}`}
+                  onClick={() => priceAction(200)}>
+                  +200
+                </button>
+                <button
+                  className={`${style.buyButton} ${style.bc4}`}
+                  onClick={() => priceAction(500)}>
+                  +500
+                </button>
+              </div>
+              <div className={style.flex}>
+                <button className={style.nextButton} onClick={nextAction}>
+                  SIGUIENTE
+                </button>
               </div>
             </div>
             <ul>
@@ -140,6 +144,13 @@ export default function Subasta() {
                     onClick={() => buyerAction(equipo.fanta_equipo)}>
                     {equipo.fanta_equipo}
                   </span>
+                  <img
+                    className={style.crest}
+                    src={`/FantaTeams/${equipo.fanta_equipo}.svg`}
+                    width={22}
+                    height={22}
+                    alt={`${equipo.fanta_equipo} crest`}
+                  />
                 </li>
               ))}
             </ul>
