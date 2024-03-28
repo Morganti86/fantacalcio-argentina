@@ -35,7 +35,7 @@
 .teamContainer {
   min-width: 235px;
   padding: 10px 5px;
-  border: 2px solid #2d2e32;
+  border: 1px solid #2d2e32;
   /* backdrop-filter: blur(15px); */
   font-weight: bold;
 }

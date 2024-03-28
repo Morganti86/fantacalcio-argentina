@@ -4,7 +4,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export async function getEquipos() {
   noStore();
   try {
-    const data = await sql`SELECT * FROM equipos;`;
+    const data = await sql`SELECT * FROM equipos order by equipo;`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);

@@ -85,7 +85,9 @@ export default function Subasta() {
       <h1 className="title">SUBASTA</h1>
       <div className={style.flex}>
         {equipos.map((equipo) => (
-          <div key={equipo.id}>
+          <div
+            key={equipo.id}
+            style={{ opacity: equipo.estado == false ? 1 : 0.3 }}>
             <img
               className={style.imageTeam}
               src={`/LeagueTeams/${equipo.equipo}.webp`}

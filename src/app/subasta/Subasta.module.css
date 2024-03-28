@@ -43,6 +43,11 @@
   margin-right: 5px;
   font-weight: 400;
   color: ivory;
+  cursor: pointer;
+}
+
+.buyButton:hover {
+  border-color: ivory;
 }
 
 .nextButton {
@@ -52,19 +57,26 @@
   border-radius: 50px;
   background-color: black;
   color: ivory;
+  cursor: pointer;
+}
+
+.nextButton:hover {
+  border-color: ivory;
 }
 
 .fantaEquipo {
-  margin: 0 15px;
+  margin: 0 25px 5px;
   list-style-type: none;
-  margin-bottom: 5px;
   gap: 5px;
-  cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-.fantaEquipo:hover {
+.fantaEquipo span {
+  cursor: pointer;
+}
+
+.fantaEquipo span:hover {
   color: black;
 }
 
@@ -106,5 +118,8 @@
 @media (max-width: 500px) {
   .container {
     padding: 50px 15px;
+  }
+  .fantaEquipo {
+    margin: 0 5px 5px;
   }
 }
