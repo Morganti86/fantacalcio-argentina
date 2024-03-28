@@ -1,18 +1,67 @@
 .container {
   color: ivory;
-  padding: 50px 50px;
-  align-items: center;
+  padding: 50px 250px;
 }
 
-.button {
-  color: ivory;
-  padding: 100px 150px;
-  background-image: url("/Backgrounds/matrix.gif");
-  background-size: cover; /* Para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Para evitar la repetición del fondo */
+.boxSubasta {
+  min-width: 500px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-weight: 700;
+}
+
+.label {
+  margin: 5px 0;
 }
 
 .flex {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.grid {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 65%;
+  /* text-align: center;
+  align-items: center; */
+}
+
+.imageTeam {
+  width: 50px;
+  height: auto;
+}
+
+.buyButton {
+  width: 50px;
+  height: 30px;
+  border-radius: 9999px;
+  /* margin-right: 5px; */
+  margin: 5px 5px 5px 0px;
+}
+
+.fantaEquipo {
+  padding: 0 10px;
+  list-style-type: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.fantaEquipo:hover {
+  color: ivory;
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 50px 15px;
+  }
+
+  .grid {
+    padding: 50px 0;
+    width: 100%;
+  }
 }

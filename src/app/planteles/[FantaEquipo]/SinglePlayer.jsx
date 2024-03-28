@@ -2,9 +2,7 @@ import style from "./SinglePlayer.module.css";
 
 export function SinglePlayer(props) { 
   const { jugador } = props;
-  console.log("jugador" + jugador);
-    console.log("props" + props);
-
+  
   const playerImage = jugador.imagen ? jugador.imagen : "/notfound.webp";
   let background;
   let color = "ivory";

@@ -1,15 +1,17 @@
 import { db } from "@vercel/postgres";
 
 export default async function handler(req, res) {
-  const { equipo, posicion } = req.query;
+  // const { equipo, posicion } = req.query;
   const noTeam = "";
 
   if (req.method === "GET") {
     try {
       const client = await db.connect();
       const result = await client.query(
-        "SELECT * FROM jugadores WHERE equipo = $1 AND posicion = $2 AND fanta_equipo = $3",
-        [equipo, posicion, noTeam]
+        "SELECT * FROM jugadores WHERE fanta_equipo = $1",
+        [noTeam]
+        // "SELECT * FROM jugadores WHERE equipo = $1 AND posicion = $2 AND fanta_equipo = $3",
+        // [equipo, posicion, noTeam]
       );
       await client.release();
       const players = result.rows;
