@@ -98,9 +98,7 @@ export default function Subasta() {
           </div>
         ))}
       </div>
-      {/* {posiciones.map((posicion) => (
-        <div key={posicion.index}>{posicion.posicion}</div>
-      ))} */}
+
       <div className={style.boxSubasta}>
         {jugadores.length > 0 && (
           <section className={style.grid}>
@@ -148,7 +146,10 @@ export default function Subasta() {
                   </span>
                   <img
                     className={style.crest}
-                    src={`/FantaTeams/${equipo.fanta_equipo}.svg`}
+                    src={`/FantaTeams/${
+                      equipo.fanta_equipo.charAt(0).toUpperCase() +
+                      equipo.fanta_equipo.slice(1).toLowerCase()
+                    }.svg`}
                     width={22}
                     height={22}
                     alt={`${equipo.fanta_equipo} crest`}
@@ -158,6 +159,21 @@ export default function Subasta() {
             </ul>
           </section>
         )}
+      </div>
+      <div className={style.flex}>
+        {posiciones.map((posicion) => (
+          <div
+            key={posicion.index}
+            style={{ opacity: posicion.estado == false ? 1 : 0.3 }}>
+            <img
+              className={style.positionImage}
+              src={`/Positions/${posicion.posicion}.png`}
+              width={50}
+              height={50}
+              alt={`${posicion.posicion} image`}
+            />
+          </div>
+        ))}
       </div>
     </section>
   );

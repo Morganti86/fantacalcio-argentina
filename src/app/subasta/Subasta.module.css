@@ -35,6 +35,12 @@
   height: auto;
 }
 
+.positionImage {
+  margin: 13px 0;
+  width: 180px;
+  height: 180px;
+}
+
 .buyButton {
   width: 22%;
   height: 30px;
