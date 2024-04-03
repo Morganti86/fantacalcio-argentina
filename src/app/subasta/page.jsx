@@ -139,6 +139,9 @@ export default function Subasta() {
             <ul>
               {fantaEquipos.map((equipo) => (
                 <li className={style.fantaEquipo}>
+                  {console.log(
+                    equipo.fanta_equipo.toLowerCase()
+                  )}
                   <span
                     key={equipo.fanta_equipo}
                     onClick={() => buyerAction(equipo.fanta_equipo)}>
@@ -146,10 +149,7 @@ export default function Subasta() {
                   </span>
                   <img
                     className={style.crest}
-                    src={`/FantaTeams/${
-                      equipo.fanta_equipo.charAt(0).toUpperCase() +
-                      equipo.fanta_equipo.slice(1).toLowerCase()
-                    }.svg`}
+                    src={`/FantaTeams/${equipo.fanta_equipo.toLowerCase()}.svg`}
                     width={22}
                     height={22}
                     alt={`${equipo.fanta_equipo} crest`}
