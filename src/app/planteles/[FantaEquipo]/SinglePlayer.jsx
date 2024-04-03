@@ -30,10 +30,12 @@ export function SinglePlayer(props) {
       {jugador.poli ? <span className={style.poliPlayer}>℗</span> : ""}
       {jugador.precio_compra ? (
         <span className={style.boughtPricePlayer}>
-          ${jugador.precio_compra}
+          ${new Intl.NumberFormat("es-AR").format(jugador.precio_compra)}
         </span>
       ) : (
-        <span className={style.boughtPricePlayer}>${jugador.precio_base}</span>
+        <span className={style.boughtPricePlayer}>
+          ${new Intl.NumberFormat("es-AR").format(jugador.precio_base)}
+        </span>
       )}
       <h3 className={style.namePlayer}>{jugador.jugador}</h3>
       <img

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useEffect, useState } from "react";
 import style from "./Subasta.module.css";
 import { SinglePlayer } from "../planteles/[FantaEquipo]/SinglePlayer";
@@ -57,9 +57,9 @@ export default function Subasta() {
   const nextAction = () => {
     // Si hay más jugadores por mostrar, incrementa el índice
     if (jugadorActual < jugadores.length - 1) {
+      setCompradorActual(""); // Establecer compradorActual en null antes de incrementar jugadorActual
       setJugadorActual(jugadorActual + 1);
       setPrecioActual(jugadores[jugadorActual + 1].precio_base);
-      setCompradorActual(null);
     }
   };
 
@@ -106,8 +106,26 @@ export default function Subasta() {
               <div className={style.flex}>
                 <SinglePlayer jugador={jugadores[jugadorActual]} />
               </div>
-              <div className={style.label}>COMPRADOR: {compradorActual}</div>
-              <div className={style.label}>PRECIO: ${precioActual}</div>
+              {/* <div className={style.label}>COMPRADOR: {compradorActual}</div> */}
+              <div className={style.label}>
+                <label>COMPRADOR: </label>
+                <select
+                  value={compradorActual}
+                  onChange={(e) => buyerAction(e.target.value)}>
+                  <option value=""></option>
+                  {fantaEquipos.map((equipo) => (
+                    <option
+                      key={equipo.fanta_equipo}
+                      value={equipo.fanta_equipo}>
+                      {equipo.fanta_equipo}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className={style.label}>
+                {/* Separador de miles */}
+                PRECIO: ${new Intl.NumberFormat("es-AR").format(precioActual)}
+              </div>
               <div className={style.flex}>
                 <button
                   className={`${style.buyButton} ${style.bc1}`}
@@ -136,7 +154,7 @@ export default function Subasta() {
                 </button>
               </div>
             </div>
-            <ul>
+            {/* <ul>
               {fantaEquipos.map((equipo) => (
                 <li className={style.fantaEquipo}>
                   <span
@@ -153,7 +171,7 @@ export default function Subasta() {
                   />
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </section>
         )}
       </div>
@@ -164,7 +182,7 @@ export default function Subasta() {
             style={{ opacity: posicion.estado == false ? 1 : 0.3 }}>
             <img
               className={style.positionImage}
-              src={`/Positions/${posicion.posicion}.png`}
+              src={`/Positions/${posicion.posicion}.webp`}
               width={50}
               height={50}
               alt={`${posicion.posicion} image`}

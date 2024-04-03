@@ -26,8 +26,9 @@
 .grid {
   padding: 35px 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 70%;
+  grid-template-columns: repeat(1, 1fr);
+  width: 300px;
+  transform: scale(1.2);
 }
 
 .imageTeam {
