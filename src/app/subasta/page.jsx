@@ -139,9 +139,6 @@ export default function Subasta() {
             <ul>
               {fantaEquipos.map((equipo) => (
                 <li className={style.fantaEquipo}>
-                  {console.log(
-                    equipo.fanta_equipo.toLowerCase()
-                  )}
                   <span
                     key={equipo.fanta_equipo}
                     onClick={() => buyerAction(equipo.fanta_equipo)}>
