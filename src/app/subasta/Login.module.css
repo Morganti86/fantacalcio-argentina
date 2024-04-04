@@ -1,4 +1,3 @@
-
 .login {
   width: 300px;
   display: flex;
@@ -48,13 +47,19 @@
 .inputArea:focus {
   outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
   border-color: #2d2e32; /* Cambia el color del borde al enfocar el input */
-  caret-color: ivory;
+  caret-color: #2d2e32;
+  color: black;
 }
 
 .input::placeholder,
 .inputArea::placeholder {
   color: ivory;
   text-transform: uppercase;
+}
+
+.input:focus::placeholder,
+.inputArea:focus::placeholder {
+  color: black; /* Cambia el color del placeholder cuando el input está enfocado */
 }
 
 .button:hover {
