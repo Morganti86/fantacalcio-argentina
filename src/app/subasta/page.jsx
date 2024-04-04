@@ -101,17 +101,16 @@ export default function Subasta() {
 
       <div className={style.boxSubasta}>
         {jugadores.length > 0 && (
-          <section className={style.grid}>
             <div className={style.boxJugador}>
-              <div className={style.flex}>
+              <div className={`${style.flex} ${style.singlePlayer}`} >
                 <SinglePlayer jugador={jugadores[jugadorActual]} />
               </div>
-              {/* <div className={style.label}>COMPRADOR: {compradorActual}</div> */}
               <div className={style.label}>
                 <label>COMPRADOR: </label>
                 <select
                   value={compradorActual}
-                  onChange={(e) => buyerAction(e.target.value)}>
+                  onChange={(e) => buyerAction(e.target.value)}
+                  className={style.fantaEquipo}>
                   <option value=""></option>
                   {fantaEquipos.map((equipo) => (
                     <option
@@ -154,7 +153,22 @@ export default function Subasta() {
                 </button>
               </div>
             </div>
-            {/* <ul>
+        )}
+      </div>
+    </section>
+  );
+}
+
+{
+  /* <div>
+        {jugadores.map((jugador) => {
+          return <SinglePlayer key={jugador.id} jugador={jugador} />;
+        })}
+      </div> */
+}
+
+{
+  /* <ul>
               {fantaEquipos.map((equipo) => (
                 <li className={style.fantaEquipo}>
                   <span
@@ -171,11 +185,11 @@ export default function Subasta() {
                   />
                 </li>
               ))}
-            </ul> */}
-          </section>
-        )}
-      </div>
-      <div className={style.flex}>
+            </ul> */
+}
+
+      {
+        /* <div className={style.flex}>
         {posiciones.map((posicion) => (
           <div
             key={posicion.index}
@@ -187,17 +201,8 @@ export default function Subasta() {
               height={50}
               alt={`${posicion.posicion} image`}
             />
+            <span>{posicion.posicion}</span>
           </div>
         ))}
-      </div>
-    </section>
-  );
-}
-
-{
-  /* <div>
-        {jugadores.map((jugador) => {
-          return <SinglePlayer key={jugador.id} jugador={jugador} />;
-        })}
       </div> */
-}
+      }
