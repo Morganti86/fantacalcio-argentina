@@ -3,8 +3,16 @@
   padding: 50px 300px;
 }
 
+.boxContraseña {
+  min-width: 500px;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  color: ivory;
+  font-weight: 700;
+}
+
 .boxSubasta {
-  /* min-width: 500px; */
   display: flex;
   justify-content: center;
   color: ivory;
@@ -72,12 +80,6 @@
   width: 150px;
   color: ivory;
   background-color: black;
-  /* font-weight: 500; */
-  /* margin: 0 25px 5px;
-  list-style-type: none;
-  gap: 5px;
-  display: flex;
-  align-items: center; */
 }
 
 .crest {
@@ -125,5 +127,8 @@
   .singlePlayer {
     transform: scale(1);
     margin: 0;
+  }
+  .boxContraseña {
+    min-width: 0;
   }
 }

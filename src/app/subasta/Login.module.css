@@ -1,20 +1,16 @@
-.formulario {
-  width: 300px;
-}
 
-.form {
+.login {
+  width: 300px;
   display: flex;
   flex-wrap: wrap;
   padding: 3% 5%;
   margin: 0;
-  font-size: 13px;
+  font-size: 20px;
   box-sizing: border-box;
-  position: relative;
+  /* position: relative; */
   align-items: center;
   justify-content: center;
-  /* background-color: #2d2e32; */
 }
-
 
 .label {
   position: relative;
@@ -23,7 +19,6 @@
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 20px;
-  /* text-transform: uppercase; */
 }
 
 .input {
@@ -37,23 +32,19 @@
 }
 
 .button {
-    font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto */
-    font-size: 16px;
-    width: 150px;
-    padding: 8px;
-    background-color: #2d2e32;
-    color: ivory;
-    border-radius: 50px;
-    border: 1px solid #2d2e32;
-    cursor: pointer;
+  font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto */
+  font-size: 16px;
+  width: 150px;
+  padding: 8px;
+  background-color: #2d2e32;
+  color: ivory;
+  border-radius: 50px;
+  border: 1px solid #2d2e32;
+  cursor: pointer;
+  margin: 10px 0;
 }
 
-.input:focus {
-  outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
-  border-color: #2d2e32; /* Cambia el color del borde al enfocar el input */
-  caret-color: ivory;
-}
-
+.input:focus,
 .inputArea:focus {
   outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
   border-color: #2d2e32; /* Cambia el color del borde al enfocar el input */
@@ -68,7 +59,6 @@
 
 .button:hover {
   border-color: ivory;
-  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
