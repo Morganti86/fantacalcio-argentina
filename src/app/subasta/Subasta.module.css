@@ -1,6 +1,7 @@
 .container {
   color: ivory;
   padding: 50px 250px;
+  min-height: 100vh;
 }
 
 .boxLogin {
@@ -225,6 +226,11 @@
     transform: scale(1);
     margin: 0;
   }
+
+  .boxLogin {
+    min-width: 0;
+  }
+
   .boxContraseña {
     min-width: 0;
   }
