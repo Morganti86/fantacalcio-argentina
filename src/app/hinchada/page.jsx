@@ -131,14 +131,14 @@ export default function Hinchada() {
                     className={style.progressImage}
                     style={{
                       position: "absolute",
-                      top: -85,
-                      left: "calc(100% - 43px)", // Ajustar el tamaño de la imagen según sea necesario
+                      top: -100,
+                      left: "calc(100% - 50px)", // Ajustar el tamaño de la imagen según sea necesario
                     }}>
                     <img
                       src="/Images/maradona-animado.webp"
                       alt="maradona-animado image"
-                      width="85px"
-                      height="85px"
+                      width="100px"
+                      height="100px"
                     />
                   </div>
                 )}
