@@ -58,31 +58,15 @@
   font-weight: 400;
 }
 
-@media (max-width: 768px) {
-  .container {
-    background-color: black;
-    color: ivory;
-    padding: 50px 10px 20px;
-  }
+.titulo {
+  font-size: 14px;
+}
+.artista {
+  font-size: 12px;
 }
 
-@media (max-width: 500px) {
-  .container {
-    background-color: black;
-    color: ivory;
-    padding: 50px 10px 0;
-  }
-
-  .titulo {
-    font-size: 14px;
-  }
-  .artista {
-    font-size: 12px;
-  }
-
-  .listaCanciones {
-    margin: 0 0;
-  }
+.listaCanciones {
+  margin: 0 0;
 }
 
 .listaCanciones {
@@ -96,6 +80,7 @@
 }
 
 .reproduccion {
+  height: auto;
   flex: 0 0 28%;
   /* display: flex;
   justify-content: center; */
@@ -160,8 +145,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  .container {
+    background-color: black;
+    color: ivory;
+    padding: 50px 10px 0;
+  }
+}
+
 @media (max-width: 500px) {
-  .reproduccion {
-    flex: 0 0 20%;
+  .container {
+    background-color: black;
+    color: ivory;
+    height: calc(100vh - 50px)
   }
 }
