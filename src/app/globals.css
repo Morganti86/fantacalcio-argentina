@@ -122,6 +122,10 @@ a {
   margin: 80px 30px 50px;
 }
 
+.relative {
+  position: relative;
+}
+
 @media (max-width: 768px) {
   .subTitle {
     text-align: center;

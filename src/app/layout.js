@@ -2,16 +2,15 @@ import { Lights } from "./components/Lights";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 
-
 const mainFont = Roboto({
   subsets: ["latin"],
   weight: ["400"],
 });
 
-
 export const metadata = {
   title: "Fantacalcio - Argentina",
-  description: "El famoso y emocionante juego de fútbol adaptado a la liga Argentina para compartir con amigos",
+  description:
+    "El famoso y emocionante juego de fútbol adaptado a la liga Argentina para compartir con amigos",
 };
 
 export const viewport = {
@@ -29,8 +28,11 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
       </head>
       <body className={mainFont.className}>
-      <Lights />
-      {children}</body>
+        <div className="relative">
+          <Lights />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
