@@ -1,7 +1,7 @@
 "use client";
-import style from "./Login.module.css";
+import style from "./Subasta.module.css";
 
-export const Login = ({
+export const SubastaLogin = ({
   onSubmit,
   onChangeUsuario,
   onChangeContraseña,
@@ -10,7 +10,7 @@ export const Login = ({
 }) => {
   return (
     <form className={style.login} onSubmit={onSubmit}>
-      <label className={style.label}>
+      <label className={style.labelForm}>
         <input
           className={style.input}
           type="text"
@@ -20,7 +20,7 @@ export const Login = ({
           onChange={onChangeUsuario}
         />
       </label>
-      <label className={style.label}>
+      <label className={style.labelForm}>
         <input
           className={style.input}
           type="password"

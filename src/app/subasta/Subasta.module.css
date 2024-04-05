@@ -1,15 +1,90 @@
 .container {
   color: ivory;
-  padding: 50px 300px;
+  padding: 50px 250px;
 }
 
-.boxContraseña {
+.boxLogin {
   min-width: 500px;
   margin: 50px 0;
   display: flex;
   justify-content: center;
   color: ivory;
   font-weight: 700;
+}
+
+.login {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3% 5%;
+  margin: 0;
+  font-size: 20px;
+  box-sizing: border-box;
+  /* position: relative; */
+  align-items: center;
+  justify-content: center;
+}
+
+.labelForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  border-width: 0px;
+  border-bottom: 2px solid #f9f9f9;
+  line-height: 30px;
+  padding-left: 5px;
+  color: ivory;
+  background-color: transparent;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0; /* Adjust margin as needed */
+}
+
+.button {
+  font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto */
+  font-size: 16px;
+  width: 150px;
+  padding: 8px;
+  background-color: #2d2e32;
+  background-color: black;
+  color: ivory;
+  border-radius: 50px;
+  border: 1px solid #2d2e32;
+  cursor: pointer;
+  /* margin: 10px 0; */
+}
+
+.input:focus,
+.inputArea:focus {
+  outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
+  border-color: #2d2e32; /* Cambia el color del borde al enfocar el input */
+  caret-color: #2d2e32;
+  color: black;
+}
+
+.input::placeholder,
+.inputArea::placeholder {
+  color: ivory;
+  text-transform: uppercase;
+}
+
+.input:focus::placeholder,
+.inputArea:focus::placeholder {
+  color: black; /* Cambia el color del placeholder cuando el input está enfocado */
+}
+
+.button:hover {
+  border-color: ivory;
 }
 
 .boxSubasta {
@@ -37,19 +112,13 @@
 }
 
 .imageTeam {
-  width: 50px;
+  width: 55px;
   height: auto;
-}
-
-.positionImage {
-  /* margin: 13px 0; */
-  width: 250px;
-  height: 250px;
 }
 
 .buyButton {
   width: 22%;
-  height: 30px;
+  padding: 8px;
   border-width: 1px;
   border-radius: 50px;
   margin-right: 5px;
@@ -64,7 +133,7 @@
 
 .nextButton {
   width: 95%;
-  height: 30px;
+  padding: 8px;
   border-width: 1px;
   border-radius: 50px;
   background-color: black;
@@ -107,6 +176,29 @@
   background-color: #0c51a3;
 }
 
+.boxPosiciones {
+  margin: 80px 0;
+  position: relative;
+}
+
+.position {
+  position: relative;
+}
+
+.positionText {
+  font-family: "Bangers Regular";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 50px;
+}
+
+.positionImage {
+  /* margin: 13px 0; */
+  width: 200px;
+  height: 250px;
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 50px 100px;
@@ -114,6 +206,11 @@
   .grid {
     padding: 50px 0;
     width: 100%;
+  }
+
+  .imageTeam {
+    width: 40px;
+    height: auto;
   }
 }
 
