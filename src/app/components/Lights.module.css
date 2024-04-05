@@ -23,6 +23,7 @@
   background-position: 50%, 50%;
   background-size: 300%, 100%;
   background-image: var(--stripesDark), var(--rainbow);
+  background-attachment: fixed;
   filter: blur(5px);
   pointer-events: none;
   z-index: -20;
