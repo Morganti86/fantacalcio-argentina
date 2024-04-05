@@ -155,13 +155,13 @@
     flex: 0 0 45%;
   }
   .reproduccion {
-    flex: 0 0 40%;
+    flex: 0 0 35%;
   }
 }
 
 @media (max-width: 500px) {
   .container {
     padding: 50px 10px 0;
-    height: calc(100vh - 20px);
+    height: calc(100vh - 50px);
   }
 }
