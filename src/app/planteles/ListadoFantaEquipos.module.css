@@ -32,16 +32,26 @@
   margin: 60px 0;
 }
 
+.flexTeamContainer {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 60px 0;
+}
+
 .teamContainer {
-  min-width: 235px;
-  padding: 10px 5px;
+  position: relative;
+  width: 255px;
+  height: 150px;
+  padding: 10px;
   border: 1px solid #2d2e32;
-  /* backdrop-filter: blur(15px); */
   font-weight: bold;
 }
 
 .teamContainer:hover {
   border-color: ivory;
+  background-color: #2d2e32;
 }
 
 .fantaContainer {
@@ -51,12 +61,12 @@
   justify-content: center;
   gap: 15px;
   margin-bottom: 50px;
-  
 }
 
 .fantaName {
-  font-size: 18px;
-  height: 35px;
+  font-size: 22px;
+  /* height: 30px; */
+  margin: 5px 0;
 }
 
 .bigCrest {
@@ -70,12 +80,36 @@
 }
 
 .president {
-  font-size: 16px;
-  margin: 10px 0;
+  font-size: 15px;
 }
 
 .budgetContainer {
-  font-size: 15px;
+  text-align: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 13px;
+}
+
+.campeonatosContainer {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+
+.copasContainer {
+  position: absolute;
+  right: 20px;
+  top: 75px;
+}
+
+.cup {
+  display: inline-block; 
+  height: 5px;
+  width: 10px;
+  /* font-size: large; */
+  /* color: transparent; */
+  /* text-shadow: 0 0 0 yellow; */
 }
 
 .button {

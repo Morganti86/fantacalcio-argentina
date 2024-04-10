@@ -10,7 +10,6 @@ export function ListaFantaTeams({ fanta }) {
         href="/planteles/[FantaEquipo]"
         as={`planteles/${fantaName}`}>
         <article className={style.teamContainer}>
-          <h1 className={style.fantaName}>{fanta.fanta_equipo}</h1>
           <img
             className={style.crest}
             src={`/FantaTeams/${fantaName}.svg`}
@@ -19,9 +18,24 @@ export function ListaFantaTeams({ fanta }) {
             alt={`${fanta.fanta_equipo} crest`}
           />
           <h2 className={style.president}>{fanta.presidente}</h2>
+          <h1 className={style.fantaName}>{fanta.fanta_equipo}</h1>
           <div className={style.budgetContainer}>
             <div>Presupuesto: ${fanta.presupuesto}</div>
             <div>Remanente: ${fanta.remanente}</div>
+          </div>
+          <div className={style.campeonatosContainer}>
+            {[...Array(fanta.campeonatos)].map((_, index) => (
+              <span key={index} className={style.cup}>
+                ⭐
+              </span>
+            ))}
+          </div>
+          <div className={style.copasContainer}>
+            {[...Array(fanta.copas)].map((_, index) => (
+              <span key={index} className={style.cup} style={{opacity: 0.9}}>
+                🏆
+              </span>
+            ))}
           </div>
         </article>
       </Link>

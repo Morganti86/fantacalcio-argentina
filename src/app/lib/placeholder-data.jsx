@@ -5,6 +5,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 26100,
     remanente: 400,
+    campeonatos: 4,
+    copas: 3,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "BALDOSERA",
@@ -12,6 +15,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25100,
     remanente: 800,
+    campeonatos: 2,
+    copas: 0,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "DECO",
@@ -19,6 +25,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 26300,
     remanente: 900,
+    campeonatos: 4,
+    copas: 0,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "DEP. ARECO",
@@ -26,6 +35,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25600,
     remanente: 0,
+    campeonatos: 1,
+    copas: 1,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "EL MARPLATENSE",
@@ -33,6 +45,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25700,
     remanente: 0,
+    campeonatos: 6,
+    copas: 5,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "FIRMAMO",
@@ -40,6 +55,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25200,
     remanente: 1100,
+    campeonatos: 1,
+    copas: 2,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "FLA 3",
@@ -47,6 +65,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25400,
     remanente: 0,
+    campeonatos: 2,
+    copas: 0,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "FLATULENTOS",
@@ -54,6 +75,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25500,
     remanente: 0,
+    campeonatos: 5,
+    copas: 1,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "INDEPTE. SPURS",
@@ -61,6 +85,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25800,
     remanente: 400,
+    campeonatos: 1,
+    copas: 2,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "JRFC",
@@ -68,6 +95,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 26000,
     remanente: 0,
+    campeonatos: 0,
+    copas: 0,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "MORGANTI FC",
@@ -75,6 +105,9 @@ const FANTAEQUIPOS = [
     email: "mmorganti@gmail.com",
     presupuesto: 25900,
     remanente: 600,
+    campeonatos: 2,
+    copas: 2,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "PDC",
@@ -82,6 +115,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 26400,
     remanente: 0,
+    campeonatos: 0,
+    copas: 1,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "PELOTA DE TRAPO",
@@ -89,6 +125,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 28000,
     remanente: 100,
+    campeonatos: 2,
+    copas: 2,
+    campeon_actual: true,
   },
   {
     fantaEquipo: "PITUFOS",
@@ -96,6 +135,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25300,
     remanente: 700,
+    campeonatos: 2,
+    copas: 5,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "ROSTOCK",
@@ -103,6 +145,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 25000,
     remanente: 0,
+    campeonatos: 1,
+    copas: 0,
+    campeon_actual: false,
   },
   {
     fantaEquipo: "VILLA LURO",
@@ -110,6 +155,9 @@ const FANTAEQUIPOS = [
     email: "x@gmail.com",
     presupuesto: 26200,
     remanente: 0,
+    campeonatos: 2,
+    copas: 5,
+    campeon_actual: false,
   },
 ];
 

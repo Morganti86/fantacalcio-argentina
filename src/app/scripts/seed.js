@@ -18,39 +18,25 @@ async function seedFantaEquipos(client) {
         presidente VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         presupuesto INT NOT NULL,
-        remanente INT NOT NULL
+        remanente INT NOT NULL,
+        campeonatos INT NOT NULL, 
+        copas INT NOT NULL, 
+        campeon_actual BOOLEAN NOT NULL
       );
     `;
 
     console.log(`Created "fanta_equipos" table`);
-
-    // Insert or update data into the "fanta_teams" table
+    // Insert data into the "fanta_teams" table
     const fantaEquipos = await Promise.all(
       FANTAEQUIPOS.map(async (equipo) => {
-        // Check if the team already exists
-        const existingTeam = await client.sql`
-          SELECT * FROM fanta_equipos WHERE fanta_equipo = ${equipo.fantaEquipo};
-        `;
-
-        if (existingTeam.length > 0) {
-          // Update budget and remaining if the team exists
-          await client.sql`
-            UPDATE fanta_equipos
-            SET presupuesto = ${equipo.presupuesto}, remanente = ${equipo.remanente}
-            WHERE fanta_equipo = ${equipo.fantaEquipo};
-          `;
-          console.log(`Updated team "${equipo.fantaEquipo}"`);
-          return existingTeam[0];
-        } else {
-          // Insert the team if it doesn't exist
-          const insertedTeam = await client.sql`
-            INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente)
-            VALUES (${equipo.fantaEquipo}, ${equipo.presidente}, ${equipo.email}, ${equipo.presupuesto}, ${equipo.remanente})
+        // Insert the team
+        const insertedTeam = await client.sql`
+            INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente, campeonatos, copas, campeon_actual)
+            VALUES (${equipo.fantaEquipo}, ${equipo.presidente}, ${equipo.email}, ${equipo.presupuesto}, ${equipo.remanente}, ${equipo.campeonatos}, ${equipo.copas}, ${equipo.campeon_actual})
             RETURNING *;
           `;
-          console.log(`Seeded team "${equipo.fantaEquipo}"`);
-          return insertedTeam[0];
-        }
+        console.log(`Seeded team "${equipo.fantaEquipo}"`);
+        return insertedTeam[0];
       })
     );
 
@@ -67,7 +53,6 @@ async function seedFantaEquipos(client) {
 async function seedEquipos(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
     // Create the "league_teams" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS equipos (
@@ -137,7 +122,6 @@ async function seedPosiciones(client) {
     throw error;
   }
 }
-
 
 async function main() {
   const client = await db.connect();

@@ -3,7 +3,6 @@ import { db } from "@vercel/postgres";
 export default async function handler(req, res) {
   // const { equipo, posicion } = req.query;
   const noTeam = "";
-
   if (req.method === "GET") {
     try {
       const client = await db.connect();
