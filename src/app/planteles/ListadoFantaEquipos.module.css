@@ -43,10 +43,11 @@
 .teamContainer {
   position: relative;
   width: 255px;
-  height: 150px;
-  padding: 10px;
+  height: 160px;
+  padding: 15px;
   border: 1px solid #2d2e32;
   font-weight: bold;
+  border-radius: 12px;
 }
 
 .teamContainer:hover {
@@ -64,7 +65,7 @@
 }
 
 .fantaName {
-  font-size: 22px;
+  font-size: 25px;
   /* height: 30px; */
   margin: 5px 0;
 }
@@ -81,6 +82,7 @@
 
 .president {
   font-size: 15px;
+  margin: 5px 0px;
 }
 
 .budgetContainer {
@@ -88,25 +90,25 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .campeonatosContainer {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 50px;
 }
 
 .copasContainer {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 75px;
 }
 
 .cup {
   display: inline-block; 
   height: 5px;
-  width: 10px;
+  width: 12px;
   /* font-size: large; */
   /* color: transparent; */
   /* text-shadow: 0 0 0 yellow; */

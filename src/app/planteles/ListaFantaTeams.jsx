@@ -32,7 +32,7 @@ export function ListaFantaTeams({ fanta }) {
           </div>
           <div className={style.copasContainer}>
             {[...Array(fanta.copas)].map((_, index) => (
-              <span key={index} className={style.cup} style={{opacity: 0.9}}>
+              <span key={index} className={style.cup}>
                 🏆
               </span>
             ))}
