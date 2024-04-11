@@ -31,7 +31,7 @@ export function ListaFantaTeams({ fanta }) {
           </div>
           <div className={style.campeonatosContainer}>
             {[...Array(fanta.campeonatos)].map((_, index) => (
-              <span className={style.estrellaContainer}>
+              <span key={index} className={style.estrellaContainer}>
                 <img
                   className={style.estrella}
                   src="/Images/estrella.webp"
@@ -44,7 +44,7 @@ export function ListaFantaTeams({ fanta }) {
           </div>
           <div className={style.copasContainer}>
             {[...Array(fanta.copas)].map((_, index) => (
-              <span className={style.copaContainer}>
+              <span key={index} className={style.copaContainer}>
                 <img
                   className={style.copa}
                   src="/Images/copa.webp"
