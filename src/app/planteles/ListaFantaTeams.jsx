@@ -20,20 +20,38 @@ export function ListaFantaTeams({ fanta }) {
           <h2 className={style.president}>{fanta.presidente}</h2>
           <h1 className={style.fantaName}>{fanta.fanta_equipo}</h1>
           <div className={style.budgetContainer}>
-            <div>Presupuesto: ${fanta.presupuesto}</div>
-            <div>Remanente: ${fanta.remanente}</div>
+            <div>
+              Presupuesto: $
+              {new Intl.NumberFormat("es-AR").format(fanta.presupuesto)}
+            </div>
+            <div>
+              Remanente: $
+              {new Intl.NumberFormat("es-AR").format(fanta.remanente)}
+            </div>
           </div>
           <div className={style.campeonatosContainer}>
             {[...Array(fanta.campeonatos)].map((_, index) => (
-              <span key={index} className={style.cup}>
-                ⭐
+              <span className={style.estrellaContainer}>
+                <img
+                  className={style.estrella}
+                  src="/Images/estrella.webp"
+                  width={50}
+                  height={50}
+                  alt="estrella img"
+                />
               </span>
             ))}
           </div>
           <div className={style.copasContainer}>
             {[...Array(fanta.copas)].map((_, index) => (
-              <span key={index} className={style.cup}>
-                🏆
+              <span className={style.copaContainer}>
+                <img
+                  className={style.copa}
+                  src="/Images/copa.webp"
+                  width={50}
+                  height={50}
+                  alt="copa img"
+                />
               </span>
             ))}
           </div>
