@@ -70,7 +70,7 @@
 }
 
 .listaCanciones {
-  flex: 0 0 55%;
+  flex: 0 0 70%;
   overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
 }
 
@@ -151,17 +151,17 @@
     padding: 50px 150px 0;
   }
 
-  .listaCanciones {
+  /* .listaCanciones {
     flex: 0 0 45%;
-  }
+  } */
   .reproduccion {
-    flex: 0 0 35%;
+    flex: 0 0 40%;
   }
 }
 
 @media (max-width: 500px) {
   .container {
     padding: 50px 10px 0;
-    height: calc(100vh - 50px);
+    /* height: calc(100vh - 50px); */
   }
 }
