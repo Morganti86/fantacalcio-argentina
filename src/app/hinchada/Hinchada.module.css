@@ -150,13 +150,6 @@
     color: ivory;
     padding: 50px 150px 0;
   }
-
-  /* .listaCanciones {
-    flex: 0 0 45%;
-  } */
-  .reproduccion {
-    flex: 0 0 40%;
-  }
 }
 
 @media (max-width: 500px) {
