@@ -55,6 +55,9 @@ export function ListaFantaTeams({ fanta }) {
               </span>
             ))}
           </div>
+          <div className={style.nextContainer}>
+            <img src="/Icons/next.svg" width={25} height={25} alt="next img" />
+          </div>
         </article>
       </Link>
     </section>
