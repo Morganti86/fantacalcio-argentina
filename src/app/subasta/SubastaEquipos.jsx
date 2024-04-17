@@ -7,7 +7,7 @@ export const SubastaEquipo = ({ equipos }) => {
       {equipos.map((equipo) => (
         <div
           key={equipo.id}
-          style={{ opacity: equipo.estado == false ? 1 : 0.3 }}>
+          style={{ opacity: equipo.pendiente == true ? 1 : 0.3 }}>
           <img
             className={style.imageTeam}
             src={`/LeagueTeams/${equipo.equipo}.webp`}

@@ -9,7 +9,7 @@ export const SubastaPosiciones = ({ posiciones }) => {
           <div
             className={style.position}
             key={posicion.index}
-            style={{ opacity: posicion.estado == false ? 1 : 0.3 }}>
+            style={{ opacity: posicion.pendiente == true ? 1 : 0.3 }}>
             <img
               className={style.positionImage}
               src={`/Positions/${posicion.posicion}.webp`}

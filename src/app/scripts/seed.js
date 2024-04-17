@@ -6,10 +6,31 @@ const {
 } = require("../../app/lib/placeholder-data.jsx");
 const bcrypt = require("bcrypt");
 
+async function seedDropTables(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    // Create the "league_teams" table if it doesn't exist
+    const dropTable = await client.sql`
+      DROP TABLE IF EXISTS jugadores, fanta_equipos, equipos, posiciones;
+    `;
+
+    console.log(
+      `Deleted "jugadores, fanta_equipos, equipos, posiciones" tables`
+    );
+
+    // delete all tables
+    return {
+      dropTable,
+    };
+  } catch (error) {
+    console.error("Error deleting tables:", error);
+    throw error;
+  }
+}
+
 async function seedFantaEquipos(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
     // Create the "fanta_teams" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS fanta_equipos (
@@ -57,7 +78,8 @@ async function seedEquipos(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS equipos (
         equipo VARCHAR(255) PRIMARY KEY,
-        estado BOOLEAN NOT NULL
+        pendiente BOOLEAN NOT NULL,
+        activo BOOLEAN NOT NULL
       );
     `;
 
@@ -67,8 +89,8 @@ async function seedEquipos(client) {
     const equipos = await Promise.all(
       EQUIPOS.map(async (team) => {
         const insertedTeam = await client.sql`
-              INSERT INTO equipos (equipo, estado)
-              VALUES (${team.equipo}, ${team.estado})
+              INSERT INTO equipos (equipo, pendiente, activo)
+              VALUES (${team.equipo}, ${team.pendiente}, ${team.pendiente})
               RETURNING *;
             `;
         console.log(`Seeded team "${team.equipo}"`);
@@ -89,12 +111,12 @@ async function seedEquipos(client) {
 async function seedPosiciones(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
     // Create the "positions" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS posiciones (
         posicion VARCHAR(255) PRIMARY KEY,
-        estado BOOLEAN NOT NULL
+        pendiente BOOLEAN NOT NULL,
+        activo BOOLEAN NOT NULL
       );
     `;
 
@@ -104,8 +126,8 @@ async function seedPosiciones(client) {
     const posicion = await Promise.all(
       POSICIONES.map(async (pos) => {
         const insertedPosition = await client.sql`
-              INSERT INTO posiciones (posicion, estado)
-              VALUES (${pos.posicion}, ${pos.estado})
+              INSERT INTO posiciones (posicion, pendiente, activo)
+              VALUES (${pos.posicion}, ${pos.pendiente}, ${pos.activo})
               RETURNING *;
             `;
         console.log(`Seeded pos "${pos.posicion}"`);
@@ -125,6 +147,7 @@ async function seedPosiciones(client) {
 
 async function main() {
   const client = await db.connect();
+  await seedDropTables(client)
   await seedFantaEquipos(client);
   await seedEquipos(client);
   await seedPosiciones(client);

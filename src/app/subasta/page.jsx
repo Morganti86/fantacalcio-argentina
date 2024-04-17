@@ -36,6 +36,7 @@ export default function Subasta() {
           throw new Error("Failed to fetch posiciones data");
         }
         const posicionesData = await posicionesResponse.json();
+        console.log("posicionesData:", posicionesData);
         setPosiciones(posicionesData);
 
         // Fetch equipos
@@ -116,6 +117,7 @@ export default function Subasta() {
   return (
     <section className={style.container}>
       <h1 className="title">SUBASTA</h1>
+      {/* LOGIN */}
       {contraseña !== true && (
         <div className={style.boxLogin}>
           <SubastaLogin
@@ -127,10 +129,11 @@ export default function Subasta() {
           />
         </div>
       )}
+      {/* SUBASTA */}
       {contraseña === true && (
         <section>
           <SubastaPosiciones posiciones={posiciones} />
-          <SubastaEquipo equipos={equipos} />
+          {/* <SubastaEquipo equipos={equipos} />
           <SubastaJugador
             jugadorActual={jugadorActual}
             jugadores={jugadores}
@@ -140,7 +143,7 @@ export default function Subasta() {
             priceAction={priceAction}
             buyerAction={buyerAction}
             nextAction={nextAction}
-          />
+          /> */}
         </section>
       )}
     </section>
