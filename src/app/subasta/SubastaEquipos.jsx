@@ -4,9 +4,9 @@ import style from "./Subasta.module.css";
 export const SubastaEquipo = ({ equipos }) => {
   return (
     <div className={style.flex}>
-      {equipos.map((equipo) => (
+      {equipos.map((equipo, index) => (
         <div
-          key={equipo.id}
+          key={index}
           style={{ opacity: equipo.pendiente == true ? 1 : 0.3 }}>
           <img
             className={style.imageTeam}

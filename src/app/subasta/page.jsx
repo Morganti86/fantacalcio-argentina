@@ -11,13 +11,24 @@ export default function Subasta() {
   const [credencialesPass, setCredencialesPass] = useState(""); // Estado para el pass
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
+
   const [posiciones, setPosiciones] = useState([]);
+  const [posicionActual, setPosicionActual] = useState("");
+
   const [equipos, setEquipos] = useState([]);
+  // const [equiposSorteados, setEquiposSorteados] = useState([]);
+  // const [equipoActual, setEquipoActual] = useState("");
+
   const [fantaEquipos, setFantaEquipos] = useState([]);
-  const [jugadores, setJugadores] = useState([]);
-  const [jugadorActual, setJugadorActual] = useState(0);
-  const [precioActual, setPrecioActual] = useState("");
+
   const [compradorActual, setCompradorActual] = useState("");
+  const [precioActual, setPrecioActual] = useState("");
+
+  const [jugadores, setJugadores] = useState([]);
+  const [jugadoresFiltrados, setJugadoresFiltrados] = useState([]);
+  const [jugadorActual, setJugadorActual] = useState(0);
+
+  const [mostrarPosiciones, setmostrarPosiciones] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +47,21 @@ export default function Subasta() {
           throw new Error("Failed to fetch posiciones data");
         }
         const posicionesData = await posicionesResponse.json();
-        console.log("posicionesData:", posicionesData);
+
+        const posicionActivaIndex = posicionesData.findIndex(
+          (posicion) => posicion.activo
+        );
+
+        // Separo posicion activa del resto
+        const posicionActual = posicionesData.splice(posicionActivaIndex, 1)[0];
+
+        // Función de comparación que devuelve un número aleatorio entre 0 y 1
+        const compararAleatorio = () => Math.random() - 0.5;
+        // Ordenar aleatoriamente el resto de los elementos
+        posicionesData.sort(compararAleatorio);
+        // Insertar el elemento con activo: true al principio
+        posicionesData.unshift(posicionActual);
+
         setPosiciones(posicionesData);
 
         // Fetch equipos
@@ -70,11 +95,12 @@ export default function Subasta() {
     fetchData();
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
     // Lógica para verificar la contraseña
     if (usuario === credencialesUser && contraseña === credencialesPass) {
       setContraseña(true);
+      setPosicionActual(posiciones[0]);
     } else {
       alert("Contraseña incorrecta. Por favor, inténtalo de nuevo.");
     }
@@ -88,12 +114,54 @@ export default function Subasta() {
     setContraseña(event.target.value);
   };
 
+  const nextPosition = () => {
+    // Sorteo de equipos
+    const EQUIPOS = [...equipos];
+    const Aleatorio = () => Math.random() - 0.5;
+    EQUIPOS.sort(Aleatorio);
+
+    const jugadoresOrdenados = [];
+
+    EQUIPOS.forEach((equipoSorteado) => {
+      const jugadoresEquipo = jugadores.filter(
+        (jugador) =>
+          jugador.posicion === posicionActual.posicion &&
+          jugador.equipo === equipoSorteado.equipo
+      );
+      jugadoresOrdenados.push(...jugadoresEquipo);
+    });
+
+    // Actualizar el estado de jugadoresOrdenados
+    setJugadoresFiltrados(jugadoresOrdenados);
+    setPrecioActual(jugadoresOrdenados[0].precio_base);
+    setmostrarPosiciones(false);
+  };
+
   const nextAction = () => {
     // Si hay más jugadores por mostrar, incrementa el índice
-    if (jugadorActual < jugadores.length - 1) {
+    if (jugadorActual < jugadoresFiltrados.length - 1) {
       setCompradorActual(""); // Establecer compradorActual en null antes de incrementar jugadorActual
       setJugadorActual(jugadorActual + 1);
-      setPrecioActual(jugadores[jugadorActual + 1].precio_base);
+      setPrecioActual(jugadoresFiltrados[jugadorActual + 1].precio_base);
+    } else {
+      const currentIndex = posiciones.findIndex(
+        (posicion) => posicion === posicionActual
+      );
+
+      // Calcula el índice de la siguiente posición
+      const nextIndex = currentIndex + 1;
+      if (nextIndex < posiciones.length) {
+        // Establece la siguiente posición como posición actual
+        setPosicionActual(posiciones[nextIndex]);
+        // Reinicia el índice del jugador actual al primero de la nueva posición
+        setJugadorActual(0);
+        // Actualiza el precio actual con el precio base del primer jugador de la nueva posición
+        setPrecioActual(jugadoresFiltrados[0].precio_base);
+      } else {
+        setPosicionActual(null);
+      }
+      // Muestra las posiciones
+      setmostrarPosiciones(true);
     }
   };
 
@@ -121,7 +189,7 @@ export default function Subasta() {
       {contraseña !== true && (
         <div className={style.boxLogin}>
           <SubastaLogin
-            onSubmit={handleSubmit}
+            onSubmit={handleLogin}
             onChangeUsuario={handleChangeUsuario}
             onChangeContraseña={handleChangeContraseña}
             usuario={usuario}
@@ -132,68 +200,30 @@ export default function Subasta() {
       {/* SUBASTA */}
       {contraseña === true && (
         <section>
-          <SubastaPosiciones posiciones={posiciones} />
-          {/* <SubastaEquipo equipos={equipos} />
-          <SubastaJugador
-            jugadorActual={jugadorActual}
-            jugadores={jugadores}
-            compradorActual={compradorActual}
-            fantaEquipos={fantaEquipos}
-            precioActual={precioActual}
-            priceAction={priceAction}
-            buyerAction={buyerAction}
-            nextAction={nextAction}
-          /> */}
+          {mostrarPosiciones ? (
+            <section>
+              <SubastaPosiciones
+                posiciones={posicionActual}
+                nextPosition={nextPosition}
+              />
+            </section>
+          ) : (
+            <section>
+              <SubastaEquipo equipos={equipos} />
+              <SubastaJugador
+                jugadorActual={jugadorActual}
+                jugadores={jugadoresFiltrados}
+                compradorActual={compradorActual}
+                fantaEquipos={fantaEquipos}
+                precioActual={precioActual}
+                priceAction={priceAction}
+                buyerAction={buyerAction}
+                nextAction={nextAction}
+              />
+            </section>
+          )}
         </section>
       )}
     </section>
   );
-}
-
-{
-  /* <div>
-        {jugadores.map((jugador) => {
-          return <SinglePlayer key={jugador.id} jugador={jugador} />;
-        })}
-      </div> */
-}
-
-{
-  /* <ul>
-              {fantaEquipos.map((equipo) => (
-                <li className={style.fantaEquipo}>
-                  <span
-                    key={equipo.fanta_equipo}
-                    onClick={() => buyerAction(equipo.fanta_equipo)}>
-                    {equipo.fanta_equipo}
-                  </span>
-                  <img
-                    className={style.crest}
-                    src={`/FantaTeams/${equipo.fanta_equipo.toLowerCase()}.svg`}
-                    width={22}
-                    height={22}
-                    alt={`${equipo.fanta_equipo} crest`}
-                  />
-                </li>
-              ))}
-            </ul> */
-}
-
-{
-  /* <div className={style.flex}>
-        {posiciones.map((posicion) => (
-          <div
-            key={posicion.index}
-            style={{ opacity: posicion.estado == false ? 1 : 0.3 }}>
-            <img
-              className={style.positionImage}
-              src={`/Positions/${posicion.posicion}.webp`}
-              width={50}
-              height={50}
-              alt={`${posicion.posicion} image`}
-            />
-            <span>{posicion.posicion}</span>
-          </div>
-        ))}
-      </div> */
 }

@@ -5266,7 +5266,7 @@ const JUGADORES = [
   },
   {
     equipo: "Lanús",
-    jugador: "MORGANTI FCni, Nicolas",
+    jugador: "Morgantini, Nicolas",
     precioBase: "300",
     posicion: "DEF",
     poli: "",

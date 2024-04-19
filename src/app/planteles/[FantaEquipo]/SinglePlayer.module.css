@@ -15,6 +15,7 @@
   width: 150px;
   height: 150px;
 }
+
 .positionPlayer {
   position: absolute;
   left: 15px;
@@ -43,7 +44,6 @@
   padding: 3px 0;
   line-height: 20px;
   font-size: 16px;
-  backdrop-filter: blur(10px);
 }
 
 .imageTeam {
