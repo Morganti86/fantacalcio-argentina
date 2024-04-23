@@ -21,7 +21,13 @@ export default function Subasta() {
 
   const [fantaEquipos, setFantaEquipos] = useState([]);
 
-  const [compradorActual, setCompradorActual] = useState("");
+  // const [compradorActual, setCompradorActual] = useState("");
+  const [compradorActual, setCompradorActual] = useState({
+    fanta_equipo: "",
+    presupuesto: 0,
+    remanente: 0,
+  });
+
   const [precioActual, setPrecioActual] = useState("");
 
   const [jugadores, setJugadores] = useState([]);
@@ -74,7 +80,7 @@ export default function Subasta() {
 
         // Fetch FantaEquipos
         const fantaEquiposResponse = await fetch("/api/getFantaEquipos");
-        if (!equiposResponse.ok) {
+        if (!fantaEquiposResponse.ok) {
           throw new Error("Failed to fetch equipos data");
         }
         const fantaEquiposData = await fantaEquiposResponse.json();
@@ -138,9 +144,28 @@ export default function Subasta() {
   };
 
   const nextAction = () => {
+    console.log(
+      "log: ",
+      jugadoresFiltrados[jugadorActual],
+      compradorActual.fanta_equipo,
+      compradorActual.presupuesto,
+      compradorActual.remanente,
+      precioActual
+    );
+
+    if (
+      compradorActual.fanta_equipo !== "" &&
+      compradorActual.remanente < precioActual
+    ) {
+      alert("no puede comprar al jugador");
+    }
     // Si hay más jugadores por mostrar, incrementa el índice
-    if (jugadorActual < jugadoresFiltrados.length - 1) {
-      setCompradorActual(""); // Establecer compradorActual en null antes de incrementar jugadorActual
+    else if (jugadorActual < jugadoresFiltrados.length - 1) {
+      setCompradorActual({
+        fanta_equipo: "",
+        presupuesto: 0,
+        remanente: 0,
+      }); // Establecer compradorActual en null antes de incrementar jugadorActual
       setJugadorActual(jugadorActual + 1);
       setPrecioActual(jugadoresFiltrados[jugadorActual + 1].precio_base);
     } else {
@@ -178,8 +203,27 @@ export default function Subasta() {
     }
   };
 
+  // const buyerAction = (value) => {
+  //   setCompradorActual(value);
+  // };
+
   const buyerAction = (value) => {
-    setCompradorActual(value);
+    const equipoSeleccionado = fantaEquipos.find(
+      (equipo) => equipo.fanta_equipo === value
+    );
+
+    if (equipoSeleccionado) {
+      setCompradorActual({
+        fanta_equipo: value,
+        presupuesto: equipoSeleccionado.presupuesto,
+        remanente: equipoSeleccionado.remanente,
+      });
+      // Otras acciones necesarias
+    } else {
+      console.error(
+        `No se encontró el equipo de fantasía con el nombre ${value}`
+      );
+    }
   };
 
   return (
@@ -209,7 +253,11 @@ export default function Subasta() {
             </section>
           ) : (
             <section>
-              <SubastaEquipo equipos={equipos} />
+              <SubastaEquipo
+                equipos={equipos}
+                jugadorActual={jugadorActual}
+                jugadores={jugadoresFiltrados}
+              />
               <SubastaJugador
                 jugadorActual={jugadorActual}
                 jugadores={jugadoresFiltrados}

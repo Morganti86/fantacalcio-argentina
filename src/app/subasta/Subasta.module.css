@@ -112,6 +112,7 @@
   margin: 45px 0;
 }
 
+.containerImageTeam,
 .imageTeam {
   width: 55px;
   height: auto;
@@ -189,9 +190,8 @@
 
 .positionText {
   font-family: "Bangers Regular";
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
   font-size: 50px;
 }
 
@@ -210,6 +210,7 @@
     width: 100%;
   }
 
+  .containerImageTeam,
   .imageTeam {
     width: 40px;
     height: auto;
