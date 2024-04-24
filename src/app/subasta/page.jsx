@@ -149,62 +149,133 @@ export default function Subasta() {
   };
 
   const nextAction = () => {
-    console.log(
-      "log: ",
-      jugadoresFiltrados[jugadorActual],
-      compradorActual.fanta_equipo,
-      compradorActual.presupuesto,
-      compradorActual.remanente,
-      precioActual
-    );
-
+    // Verificar si hay un comprador seleccionado y si tiene presupuesto suficiente
     if (
       compradorActual.fanta_equipo !== "" &&
       compradorActual.remanente < precioActual
     ) {
-      // alert("no puede comprar al jugador");
       toast.error("Presupuesto insuficiente!", {
         position: "bottom-left",
       });
-    }
-    // Si hay más jugadores por mostrar, incrementa el índice
-    else if (jugadorActual < jugadoresFiltrados.length - 1) {
-      setCompradorActual({
-        fanta_equipo: "",
-        presupuesto: 0,
-        remanente: 0,
-      }); // Establecer compradorActual en null antes de incrementar jugadorActual
-      setJugadorActual(jugadorActual + 1);
-      setPrecioActual(jugadoresFiltrados[jugadorActual + 1].precio_base);
     } else {
-      const currentIndex = posiciones.findIndex(
-        (posicion) => posicion === posicionActual
-      );
-
-      // Calcula el índice de la siguiente posición
-      const nextIndex = currentIndex + 1;
-      if (nextIndex < posiciones.length) {
-        // Establece la siguiente posición como posición actual
-        setPosicionActual(posiciones[nextIndex]);
-        // Reinicia el índice del jugador actual al primero de la nueva posición
-        setJugadorActual(0);
-        // Actualiza el precio actual con el precio base del primer jugador de la nueva posición
-        setPrecioActual(jugadoresFiltrados[0].precio_base);
-      } else {
-        setPosicionActual(null);
+      if (compradorActual.fanta_equipo !== "") {
+        // Si hay un comprador seleccionado, guardar el jugador actual en la base de datos
+        putJugadores(
+          jugadoresFiltrados[jugadorActual],
+          compradorActual,
+          precioActual
+        );
+        // actualizamos el remanente en el state y la base de datos
+        putFantaEquipo(
+          compradorActual,
+          precioActual
+        );
+        // Limpiamos el comprobadorActual para el siguiente jugador.
+        setCompradorActual({
+          fanta_equipo: "",
+          presupuesto: 0,
+          remanente: 0,
+        });
       }
-      // Muestra las posiciones
-      setmostrarPosiciones(true);
+
+      if (jugadorActual < jugadoresFiltrados.length - 1) {
+        // Si hay más jugadores por mostrar, incrementar el índice del jugador actual
+        setJugadorActual(jugadorActual + 1);
+        setPrecioActual(jugadoresFiltrados[jugadorActual + 1].precio_base);
+      } else {
+        // Si no hay más jugadores en la posición actual, avanzar a la siguiente posición
+        const currentIndex = posiciones.findIndex(
+          (posicion) => posicion === posicionActual
+        );
+        const nextIndex = currentIndex + 1;
+        if (nextIndex < posiciones.length) {
+          setPosicionActual(posiciones[nextIndex]);
+          setJugadorActual(0);
+          setPrecioActual(jugadoresFiltrados[0].precio_base);
+        } else {
+          setPosicionActual(null);
+        }
+        setmostrarPosiciones(true);
+      }
     }
   };
+  
+  const putJugadores = async (jugador, compradorActual, precioActual) => {
+    try {
+      const response = await fetch("/api/putJugadores", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: jugador.id, // Suponiendo que jugador tiene una propiedad 'id'
+          compradorActual: compradorActual.fanta_equipo,
+          precioActual: precioActual,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update player");
+      }
+      const data = await response.json();
+      console.log(data.message); // Mensaje de éxito de la API
+       toast.success(
+         `${jugador.jugador} actualizado!`,
+         {
+           position: "bottom-left",
+         }
+       );
+    } catch (error) {
+      console.error("Error updating player:", error);
+      toast.error("Error al actualizar el jugador", {
+        position: "bottom-left",
+      });
+    }
+  };
+
+  const putFantaEquipo = async (compradorActual, precioActual) => {
+    try {
+      const response = await fetch("/api/putFantaEquipos", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fantaEquipo: compradorActual.fanta_equipo,
+          remanenteActualizado: compradorActual.remanente - precioActual,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update fanta equipos");
+      }
+      // Actualizar el estado de fantaEquipos en el cliente
+      const updatedFantaEquipos = fantaEquipos.map((equipo) => {
+        if (equipo.fanta_equipo === compradorActual.fanta_equipo) {
+          return {
+            ...equipo,
+            remanente: compradorActual.remanente - precioActual,
+          };
+        }
+        return equipo;
+      });
+      setFantaEquipos(updatedFantaEquipos);
+    } catch (error) {
+      console.error("Error updating fanta_equipo:", error);
+      toast.error("Error al actualizar el equipo", {
+        position: "bottom-left",
+      });
+    }
+  };
+
 
   const priceAction = (value) => {
     // Calculamos el nuevo precio sumando el valor al precio actual
     const newPrice = Number(precioActual) + value;
+    const precioBase = jugadoresFiltrados[jugadorActual].precio_base;
+
     // Verificamos si el nuevo precio es menor que el precio base del jugador
-    if (newPrice < jugadores[jugadorActual].precio_base) {
+    if (newPrice < precioBase) {
       // Si es menor, establecemos el precio base como el nuevo precio
-      setPrecioActual(jugadores[jugadorActual].precio_base);
+      setPrecioActual(precioBase);
     } else {
       // Si no es menor, establecemos el nuevo precio calculado
       setPrecioActual(newPrice);
@@ -226,7 +297,6 @@ export default function Subasta() {
         presupuesto: equipoSeleccionado.presupuesto,
         remanente: equipoSeleccionado.remanente,
       });
-      // Otras acciones necesarias
     } else {
       setCompradorActual({
         fanta_equipo: "",
@@ -235,6 +305,8 @@ export default function Subasta() {
       })
     }
   };
+
+  useEffect(() => console.log("fantaEquipos: ", fantaEquipos), [fantaEquipos]);
 
   return (
     <section className={style.container}>
