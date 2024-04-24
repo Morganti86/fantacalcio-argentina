@@ -22,7 +22,7 @@ export const SubastaJugador = ({
           <div className={style.label}>
             <label>COMPRADOR: </label>
             <select
-              value={compradorActual.fanta_equipo}
+              value={compradorActual.fanta_equipo || ""}
               onChange={(e) => buyerAction(e.target.value)}
               className={style.fantaEquipo}>
               <option value=""></option>

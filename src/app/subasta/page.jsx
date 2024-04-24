@@ -5,6 +5,8 @@ import { SubastaLogin } from "./SubastaLogin";
 import { SubastaJugador } from "./SubastaJugador";
 import { SubastaEquipo } from "./SubastaEquipos";
 import { SubastaPosiciones } from "./SubastaPosiciones";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Subasta() {
   const [credencialesUser, setCredencialesUser] = useState(""); // Estado para el usuario
@@ -108,7 +110,10 @@ export default function Subasta() {
       setContraseña(true);
       setPosicionActual(posiciones[0]);
     } else {
-      alert("Contraseña incorrecta. Por favor, inténtalo de nuevo.");
+      // alert("Contraseña incorrecta. Por favor, inténtalo de nuevo.");
+      toast.error("Contraseña incorrecta! Por favor, inténtalo de nuevo.", {
+        position: "bottom-left",
+      });
     }
   };
 
@@ -157,7 +162,10 @@ export default function Subasta() {
       compradorActual.fanta_equipo !== "" &&
       compradorActual.remanente < precioActual
     ) {
-      alert("no puede comprar al jugador");
+      // alert("no puede comprar al jugador");
+      toast.error("Presupuesto insuficiente!", {
+        position: "bottom-left",
+      });
     }
     // Si hay más jugadores por mostrar, incrementa el índice
     else if (jugadorActual < jugadoresFiltrados.length - 1) {
@@ -220,9 +228,11 @@ export default function Subasta() {
       });
       // Otras acciones necesarias
     } else {
-      console.error(
-        `No se encontró el equipo de fantasía con el nombre ${value}`
-      );
+      setCompradorActual({
+        fanta_equipo: "",
+        presupuesto: 0,
+        remanente: 0,
+      })
     }
   };
 
@@ -272,6 +282,7 @@ export default function Subasta() {
           )}
         </section>
       )}
+      <ToastContainer />
     </section>
   );
 }
