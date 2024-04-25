@@ -69,7 +69,6 @@ export default function Subasta() {
         posicionesData.sort(compararAleatorio);
         // Insertar el elemento con activo: true al principio
         posicionesData.unshift(posicionActual);
-
         setPosiciones(posicionesData);
 
         // Fetch equipos
@@ -166,10 +165,7 @@ export default function Subasta() {
           precioActual
         );
         // actualizamos el remanente en el state y la base de datos
-        putFantaEquipo(
-          compradorActual,
-          precioActual
-        );
+        putFantaEquipo(compradorActual, precioActual);
         // Limpiamos el comprobadorActual para el siguiente jugador.
         setCompradorActual({
           fanta_equipo: "",
@@ -199,7 +195,7 @@ export default function Subasta() {
       }
     }
   };
-  
+
   const putJugadores = async (jugador, compradorActual, precioActual) => {
     try {
       const response = await fetch("/api/putJugadores", {
@@ -217,13 +213,9 @@ export default function Subasta() {
         throw new Error("Failed to update player");
       }
       const data = await response.json();
-      console.log(data.message); // Mensaje de éxito de la API
-       toast.success(
-         `${jugador.jugador} actualizado!`,
-         {
-           position: "bottom-left",
-         }
-       );
+      toast.success(`${jugador.jugador} actualizado!`, {
+        position: "bottom-left",
+      });
     } catch (error) {
       console.error("Error updating player:", error);
       toast.error("Error al actualizar el jugador", {
@@ -266,7 +258,6 @@ export default function Subasta() {
     }
   };
 
-
   const priceAction = (value) => {
     // Calculamos el nuevo precio sumando el valor al precio actual
     const newPrice = Number(precioActual) + value;
@@ -302,11 +293,9 @@ export default function Subasta() {
         fanta_equipo: "",
         presupuesto: 0,
         remanente: 0,
-      })
+      });
     }
   };
-
-  useEffect(() => console.log("fantaEquipos: ", fantaEquipos), [fantaEquipos]);
 
   return (
     <section className={style.container}>
@@ -334,12 +323,22 @@ export default function Subasta() {
               />
             </section>
           ) : (
-            <section>
+            <section className={style.boxSubasta}>
               <SubastaEquipo
                 equipos={equipos}
                 jugadorActual={jugadorActual}
                 jugadores={jugadoresFiltrados}
               />
+              <div className={style.teamTextContainer}>
+                {/* Utilizamos Array.fill() para crear un array con un número específico de elementos */}
+                {Array(40)
+                  .fill(jugadoresFiltrados[jugadorActual].equipo)
+                  .map((equipo, index) => (
+                    <span className={style.teamText} key={index}>
+                      {equipo}
+                    </span>
+                  ))}
+              </div>
               <SubastaJugador
                 jugadorActual={jugadorActual}
                 jugadores={jugadoresFiltrados}

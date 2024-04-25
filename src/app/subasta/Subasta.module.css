@@ -48,7 +48,6 @@
 .buttonContainer {
   display: flex;
   justify-content: center;
-  margin: 50px 0; /* Adjust margin as needed */
 }
 
 .button {
@@ -62,7 +61,7 @@
   border-radius: 50px;
   border: 1px solid #2d2e32;
   cursor: pointer;
-  /* margin: 10px 0; */
+  margin-top: 20px;
 }
 
 .input:focus,
@@ -89,10 +88,17 @@
 }
 
 .boxSubasta {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.boxSubastaJugador {
+  position: relative;
   display: flex;
   justify-content: center;
   color: ivory;
   font-weight: 700;
+  overflow-x: hidden;
 }
 
 .label {
@@ -112,8 +118,14 @@
   margin: 45px 0;
 }
 
-.containerImageTeam,
+.containerImageTeam {
+  margin: 2px;
+  width: 55px;
+  height: 55px;
+}
+
 .imageTeam {
+  /* border: 2px solid transparent; */
   width: 55px;
   height: auto;
 }
@@ -193,13 +205,32 @@
   display: flex;
   justify-content: center;
   font-size: 50px;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
 .positionImage {
   /* margin: 13px 0; */
   width: 350px;
   height: auto;
+}
+
+.teamTextContainer {
+  /* width: 500px; */
+  margin: 0 25px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  top: 200px;
+  /* Limitar la altura a 205px para que no supere el tamaño de la carta */
+  max-height: 202px;
+  overflow: hidden;
+}
+
+.teamText {
+  font-family: "Bangers Regular";
+  font-size: 40px;
+  margin: 5px;
 }
 
 @media (max-width: 1024px) {
@@ -236,5 +267,16 @@
 
   .boxContraseña {
     min-width: 0;
+  }
+
+  .teamTextContainer {
+    /* width: 500px; */
+    margin: 0;
+    top: 300px;
+    max-height: 100px;
+  }
+
+  .teamText {
+    font-size: 15px;
   }
 }
