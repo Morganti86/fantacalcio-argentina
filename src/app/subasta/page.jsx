@@ -151,6 +151,11 @@ export default function Subasta() {
     // Nos paramos en el jugador anterior
       setJugadorActual(jugadorActual - 1);
       setPrecioActual(jugadoresFiltrados[jugadorActual - 1].precio_base);
+      setCompradorActual({
+        fanta_equipo: "",
+        presupuesto: 0,
+        remanente: 0,
+      });
     };
 
   const nextAction = () => {

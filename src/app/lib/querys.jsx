@@ -40,7 +40,7 @@ export async function getFantaJugadores({ fantaEquipo }) {
   try {
     const data = await sql`SELECT * FROM jugadores
     WHERE fanta_equipo = ${fantaEquipo}
-    ORDER BY equipo, posicion, jugador;`;
+    ORDER BY posicion, equipo, jugador;`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
@@ -52,7 +52,7 @@ export async function getAllJugadores() {
   noStore();
   try {
     const data =
-      await sql`SELECT * FROM jugadores ORDER BY equipo, posicion, jugador;`;
+      await sql`SELECT * FROM jugadores ORDER BY posicion, equipo, jugador;`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
