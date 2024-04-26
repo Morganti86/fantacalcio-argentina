@@ -146,10 +146,11 @@
 }
 
 .nextButton {
-  width: 95%;
+  width: 45%;
   padding: 8px;
   border-width: 1px;
   border-radius: 50px;
+  margin-right: 5px;
   background-color: black;
   color: ivory;
   cursor: pointer;

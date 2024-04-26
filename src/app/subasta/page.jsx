@@ -147,25 +147,34 @@ export default function Subasta() {
     setmostrarPosiciones(false);
   };
 
+  const previousAction = () => {
+    // Nos paramos en el jugador anterior
+      setJugadorActual(jugadorActual - 1);
+      setPrecioActual(jugadoresFiltrados[jugadorActual - 1].precio_base);
+    };
+
   const nextAction = () => {
     // Verificar si hay un comprador seleccionado y si tiene presupuesto suficiente
     if (
       compradorActual.fanta_equipo !== "" &&
       compradorActual.remanente < precioActual
     ) {
-      toast.error("Presupuesto insuficiente!", {
-        position: "bottom-left",
-      });
+      toast.error(
+        `${compradorActual.fanta_equipo} no cuenta con presupuesto suficiente!`,
+        {
+          position: "bottom-left",
+        }
+      );
     } else {
       if (compradorActual.fanta_equipo !== "") {
         // Si hay un comprador seleccionado, guardar el jugador actual en la base de datos
-        putJugadores(
+        updateJugadores(
           jugadoresFiltrados[jugadorActual],
           compradorActual,
           precioActual
         );
         // actualizamos el remanente en el state y la base de datos
-        putFantaEquipo(compradorActual, precioActual);
+        updateFantaEquipo(compradorActual, precioActual);
         // Limpiamos el comprobadorActual para el siguiente jugador.
         setCompradorActual({
           fanta_equipo: "",
@@ -196,7 +205,7 @@ export default function Subasta() {
     }
   };
 
-  const putJugadores = async (jugador, compradorActual, precioActual) => {
+  const updateJugadores = async (jugador, compradorActual, precioActual) => {
     try {
       const response = await fetch("/api/putJugadores", {
         method: "PUT",
@@ -213,18 +222,21 @@ export default function Subasta() {
         throw new Error("Failed to update player");
       }
       const data = await response.json();
-      toast.success(`${jugador.jugador} actualizado!`, {
-        position: "bottom-left",
-      });
+      toast.success(
+        `${jugador.jugador} adquirido por ${compradorActual.fanta_equipo}!`,
+        {
+          position: "bottom-left",
+        }
+      );
     } catch (error) {
       console.error("Error updating player:", error);
-      toast.error("Error al actualizar el jugador", {
+      toast.error(`Error al actualizar ${jugador.jugador}`, {
         position: "bottom-left",
       });
     }
   };
 
-  const putFantaEquipo = async (compradorActual, precioActual) => {
+  const updateFantaEquipo = async (compradorActual, precioActual) => {
     try {
       const response = await fetch("/api/putFantaEquipos", {
         method: "PUT",
@@ -252,7 +264,7 @@ export default function Subasta() {
       setFantaEquipos(updatedFantaEquipos);
     } catch (error) {
       console.error("Error updating fanta_equipo:", error);
-      toast.error("Error al actualizar el equipo", {
+      toast.error(`Error al actualizar el ${compradorActual.fanta_equipo}`, {
         position: "bottom-left",
       });
     }
@@ -348,6 +360,7 @@ export default function Subasta() {
                 priceAction={priceAction}
                 buyerAction={buyerAction}
                 nextAction={nextAction}
+                previousAction={previousAction}
               />
             </section>
           )}

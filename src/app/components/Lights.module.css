@@ -10,12 +10,12 @@
 
 .lights {
   --stripesDark: repeating-linear-gradient(
-    100deg,
+    92deg,
     #000 0%,
     transparent 10%,
     #000 16%
   );
-  --rainbow: repeating-linear-gradient(100deg, #d5ff00 5%, #d5ff00 10%);
+  --rainbow: repeating-linear-gradient(92deg, #d5ff00 5%, #d5ff00 10%);
   background-position: 50%, 50%;
   background-size: 300%, 100%;
   background-image: var(--stripesDark), var(--rainbow);
