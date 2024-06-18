@@ -56,6 +56,10 @@
   -webkit-text-stroke-width: 1px;
 }
 
+.logoContainer img {
+    filter: drop-shadow(0 0 20px black);
+}
+
 /* .logo:hover {
   color: black;
   -webkit-text-stroke: ivory;
