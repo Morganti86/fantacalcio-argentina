@@ -149,14 +149,14 @@ export default function Subasta() {
 
   const previousAction = () => {
     // Nos paramos en el jugador anterior
-      setJugadorActual(jugadorActual - 1);
-      setPrecioActual(jugadoresFiltrados[jugadorActual - 1].precio_base);
-      setCompradorActual({
-        fanta_equipo: "",
-        presupuesto: 0,
-        remanente: 0,
-      });
-    };
+    setJugadorActual(jugadorActual - 1);
+    setPrecioActual(jugadoresFiltrados[jugadorActual - 1].precio_base);
+    setCompradorActual({
+      fanta_equipo: "",
+      presupuesto: 0,
+      remanente: 0,
+    });
+  };
 
   const nextAction = () => {
     // Verificar si hay un comprador seleccionado y si tiene presupuesto suficiente
@@ -198,13 +198,21 @@ export default function Subasta() {
           (posicion) => posicion === posicionActual
         );
         const nextIndex = currentIndex + 1;
+        let posAnt = null;
+        let posAct = null;
         if (nextIndex < posiciones.length) {
           setPosicionActual(posiciones[nextIndex]);
           setJugadorActual(0);
           setPrecioActual(jugadoresFiltrados[0].precio_base);
+          posAnt = posiciones[currentIndex].posicion;
+          posAct = posiciones[nextIndex].posicion;
+          // console.log("posicionAnterior: ", posAnt);
+          // console.log("posicionActual: ", posAct);
         } else {
           setPosicionActual(null);
         }
+        // actualizamos posiciones en DB (pendientes y actual)
+        updatePosiciones(posAnt, posAct);
         setmostrarPosiciones(true);
       }
     }
@@ -218,7 +226,7 @@ export default function Subasta() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: jugador.id, // Suponiendo que jugador tiene una propiedad 'id'
+          id: jugador.id,
           compradorActual: compradorActual.fanta_equipo,
           precioActual: precioActual,
         }),
@@ -272,6 +280,60 @@ export default function Subasta() {
       toast.error(`Error al actualizar el ${compradorActual.fanta_equipo}`, {
         position: "bottom-left",
       });
+    }
+  };
+
+  // const updateEquipo = async (compradorActual) => {
+  //   try {
+  //     const response = await fetch("/api/putFantaEquipos", {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         fantaEquipo: compradorActual.fanta_equipo,
+  //         remanenteActualizado: compradorActual.remanente - precioActual,
+  //       }),
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error("Failed to update fanta equipos");
+  //     }
+  //     // Actualizar el estado de Equipos en el cliente
+  //     const updatedEquipos = Equipos.map((equipo) => {
+  //       if (equipo.equipo === compradorActual.fanta_equipo) {
+  //         return {
+  //           ...equipo,
+  //           remanente: compradorActual.remanente - precioActual,
+  //         };
+  //       }
+  //       return equipo;
+  //     });
+  //     setFantaEquipos(updatedFantaEquipos);
+  //   } catch (error) {
+  //     console.error("Error updating fanta_equipo:", error);
+  //     toast.error(`Error al actualizar el ${compradorActual.fanta_equipo}`, {
+  //       position: "bottom-left",
+  //     });
+  //   }
+  // };
+
+  const updatePosiciones = async (posAnt, posAct) => {
+    try {
+      const response = await fetch("/api/putPosiciones", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          posicionAnt: posAnt,
+          posicionAct: posAct,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update posiciones");
+      }
+    } catch (error) {
+      console.error("Error updating posiciones:", error);
     }
   };
 
