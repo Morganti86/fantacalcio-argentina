@@ -1,24 +1,49 @@
 import { db } from "@vercel/postgres";
 
 export default async function handler(req, res) {
-  const { equipo } = req.body;
-  const pendiente = false;
-  const activo = false;
+  const { equipoAct, equipoAnt } = req.body;
+  const False = false;
+  const True = true;
 
   if (req.method === "PUT") {
     try {
       const client = await db.connect();
-      const result = await client.query(
-        "UPDATE equipos SET pendiente = $2, activo = $3 WHERE equipo = $1",
-        [equipo, pendiente, activo]
-      );
+
+      // Start a transaction
+      await client.query("BEGIN");
+
+      if (equipoAnt === null && equipoAct !== null) {
+        // Set 'ARQ' to pendiente=true, activo=true
+        await client.query(
+          "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
+          [equipoAct, True]
+        );
+      } else {
+        // Update to set activo to True for the new position
+        await client.query(
+          "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
+          [equipoAct, True]
+        );
+
+        // Update to set pendiente and activo to False for the old position
+        await client.query(
+          "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
+          [equipoAnt, False]
+        );
+      }
+
+      // Commit the transaction
+      await client.query("COMMIT");
+
       await client.release();
-      res.status(200).json({ message: "equipo updated successfully" });
+      res.status(200).json({ message: "Equipo updated successfully" });
     } catch (error) {
+      // Rollback the transaction in case of error
+      await client.query("ROLLBACK");
       res.status(500).json({ error: "Internal Server Error" });
     }
   } else {
-    // Manejar cualquier otro método que no sea GET o PUT
+    // Handle any other method that is not PUT
     res.status(405).json({ error: "Method Not Allowed" });
   }
 }

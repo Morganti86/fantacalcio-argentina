@@ -18,12 +18,9 @@ export default function Subasta() {
   const [posicionActual, setPosicionActual] = useState("");
 
   const [equipos, setEquipos] = useState([]);
-  // const [equiposSorteados, setEquiposSorteados] = useState([]);
-  // const [equipoActual, setEquipoActual] = useState("");
+  const [equipoActual, setEquipoActual] = useState("");
 
   const [fantaEquipos, setFantaEquipos] = useState([]);
-
-  // const [compradorActual, setCompradorActual] = useState("");
   const [compradorActual, setCompradorActual] = useState({
     fanta_equipo: "",
     presupuesto: 0,
@@ -126,10 +123,20 @@ export default function Subasta() {
 
   const nextPosition = () => {
     // Sorteo de equipos
-    const EQUIPOS = [...equipos];
-    const Aleatorio = () => Math.random() - 0.5;
-    EQUIPOS.sort(Aleatorio);
+    const EQUIPOS = [...equipos].filter((equipo) => equipo.pendiente === true);
+    console.log("equipooooooos: ", EQUIPOS);
 
+    const posicionActivaEquipo = EQUIPOS.findIndex(
+      (posicion) => posicion.activo
+    );
+    // Separo posicion activa del resto
+    const equipoActivo = EQUIPOS.splice(posicionActivaEquipo, 1)[0];
+    // Función de comparación que devuelve un número aleatorio entre 0 y 1
+    const Aleatorio = () => Math.random() - 0.5;
+    // Ordenar aleatoriamente el resto de los elementos
+    EQUIPOS.sort(Aleatorio);
+    // Insertar el elemento con activo: true al principio
+    EQUIPOS.unshift(equipoActivo);
     const jugadoresOrdenados = [];
 
     EQUIPOS.forEach((equipoSorteado) => {
@@ -144,6 +151,7 @@ export default function Subasta() {
     // Actualizar el estado de jugadoresOrdenados
     setJugadoresFiltrados(jugadoresOrdenados);
     setPrecioActual(jugadoresOrdenados[0].precio_base);
+    setEquipoActual(jugadoresOrdenados[0].equipo);
     setmostrarPosiciones(false);
   };
 
@@ -187,6 +195,22 @@ export default function Subasta() {
           remanente: 0,
         });
       }
+      // Actualizamos el equipo actual
+      let equipoAnt = equipoActual;
+      let equipoAct = jugadoresFiltrados[jugadorActual + 1]?.equipo || null;
+      console.log("dudaaaaaaa: ", jugadorActual);
+      if (equipoAct !== equipoAnt || jugadorActual === 0) {
+        //El primero de la lista
+        if (jugadorActual === 0) {
+          equipoAnt = null;
+        }
+        try {
+          updateEquipos(equipoAct, equipoAnt); // Actualizar en la base de datos
+        } catch (error) {
+          console.error("Error updating equipos:", error);
+        }
+        setEquipoActual(equipoAct);
+      }
 
       if (jugadorActual < jugadoresFiltrados.length - 1) {
         // Si hay más jugadores por mostrar, incrementar el índice del jugador actual
@@ -206,12 +230,10 @@ export default function Subasta() {
           setPrecioActual(jugadoresFiltrados[0].precio_base);
           posAnt = posiciones[currentIndex].posicion;
           posAct = posiciones[nextIndex].posicion;
-          // console.log("posicionAnterior: ", posAnt);
-          // console.log("posicionActual: ", posAct);
         } else {
           setPosicionActual(null);
         }
-        // actualizamos posiciones en DB (pendientes y actual)
+        // Actualizamos posiciones en DB (pendientes y actual)
         updatePosiciones(posAnt, posAct);
         setmostrarPosiciones(true);
       }
@@ -283,40 +305,6 @@ export default function Subasta() {
     }
   };
 
-  // const updateEquipo = async (compradorActual) => {
-  //   try {
-  //     const response = await fetch("/api/putFantaEquipos", {
-  //       method: "PUT",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         fantaEquipo: compradorActual.fanta_equipo,
-  //         remanenteActualizado: compradorActual.remanente - precioActual,
-  //       }),
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error("Failed to update fanta equipos");
-  //     }
-  //     // Actualizar el estado de Equipos en el cliente
-  //     const updatedEquipos = Equipos.map((equipo) => {
-  //       if (equipo.equipo === compradorActual.fanta_equipo) {
-  //         return {
-  //           ...equipo,
-  //           remanente: compradorActual.remanente - precioActual,
-  //         };
-  //       }
-  //       return equipo;
-  //     });
-  //     setFantaEquipos(updatedFantaEquipos);
-  //   } catch (error) {
-  //     console.error("Error updating fanta_equipo:", error);
-  //     toast.error(`Error al actualizar el ${compradorActual.fanta_equipo}`, {
-  //       position: "bottom-left",
-  //     });
-  //   }
-  // };
-
   const updatePosiciones = async (posAnt, posAct) => {
     try {
       const response = await fetch("/api/putPosiciones", {
@@ -334,6 +322,26 @@ export default function Subasta() {
       }
     } catch (error) {
       console.error("Error updating posiciones:", error);
+    }
+  };
+
+  const updateEquipos = async (equipoAct, equipoAnt) => {
+    try {
+      const response = await fetch("/api/putEquipos", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          equipoAct: equipoAct,
+          equipoAnt: equipoAnt,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update equipos");
+      }
+    } catch (error) {
+      console.error("Error updating equipos:", error);
     }
   };
 
