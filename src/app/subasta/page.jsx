@@ -123,20 +123,28 @@ export default function Subasta() {
 
   const nextPosition = () => {
     // Sorteo de equipos
+    console.log("EQUIPOS EN NEXT POSITION: ", equipos);
     const EQUIPOS = [...equipos].filter((equipo) => equipo.pendiente === true);
-    console.log("equipooooooos: ", EQUIPOS);
+    const indiceEquipoActivo = EQUIPOS.findIndex((equipo) => equipo.activo);
+    let equipoActivo;
+    if (indiceEquipoActivo !== -1) {
+      // Separo posicion activa del resto
+       equipoActivo = EQUIPOS.splice(indiceEquipoActivo, 1)[0];
+      console.log("equipoActivo: ", equipoActivo);
+      // Función de comparación que devuelve un número aleatorio entre 0 y 1
+    } else {
+      equipoActivo = null; // No hay equipo activo
+    }
 
-    const posicionActivaEquipo = EQUIPOS.findIndex(
-      (posicion) => posicion.activo
-    );
-    // Separo posicion activa del resto
-    const equipoActivo = EQUIPOS.splice(posicionActivaEquipo, 1)[0];
-    // Función de comparación que devuelve un número aleatorio entre 0 y 1
     const Aleatorio = () => Math.random() - 0.5;
     // Ordenar aleatoriamente el resto de los elementos
     EQUIPOS.sort(Aleatorio);
-    // Insertar el elemento con activo: true al principio
-    EQUIPOS.unshift(equipoActivo);
+
+    if (equipoActivo) {
+      // Insertar el elemento con activo: true al principio
+      EQUIPOS.unshift(equipoActivo);
+    }
+
     const jugadoresOrdenados = [];
 
     EQUIPOS.forEach((equipoSorteado) => {
@@ -198,7 +206,6 @@ export default function Subasta() {
       // Actualizamos el equipo actual
       let equipoAnt = equipoActual;
       let equipoAct = jugadoresFiltrados[jugadorActual + 1]?.equipo || null;
-      console.log("dudaaaaaaa: ", jugadorActual);
       if (equipoAct !== equipoAnt || jugadorActual === 0) {
         //El primero de la lista
         if (jugadorActual === 0) {
@@ -234,6 +241,15 @@ export default function Subasta() {
           setPosicionActual(null);
         }
         // Actualizamos posiciones en DB (pendientes y actual)
+        updateEquipos(null, null); // Actualizar todos los equipos en la base de datos
+        // Reiniciamos el estado de todos los equipos
+        const equiposActualizados = equipos.map((equipo) => ({
+          ...equipo,
+          pendiente: true,
+          activo: false,
+        }));
+        setEquipos(equiposActualizados);
+        console.log("actualizo estado setEquipos!!!!");
         updatePosiciones(posAnt, posAct);
         setmostrarPosiciones(true);
       }

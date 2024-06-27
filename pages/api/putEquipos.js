@@ -11,21 +11,25 @@ export default async function handler(req, res) {
 
       // Start a transaction
       await client.query("BEGIN");
-
-      if (equipoAnt === null && equipoAct !== null) {
-        // Set 'ARQ' to pendiente=true, activo=true
+      if (equipoAct === null) {
+        // reiniciar valores
+        await client.query("UPDATE equipos SET pendiente = $1, activo = $2", [
+          True,
+          False,
+        ]);
+      } else if (equipoAnt === null && equipoAct !== null) {
+        // actualizo primer equipo sorteado como activo
         await client.query(
           "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
           [equipoAct, True]
         );
       } else {
-        // Update to set activo to True for the new position
+        // Update to set activo to True for the new team sorted
         await client.query(
           "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
           [equipoAct, True]
         );
-
-        // Update to set pendiente and activo to False for the old position
+        // Update to set update old team sorted
         await client.query(
           "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
           [equipoAnt, False]
