@@ -8,6 +8,10 @@ export const HEROLIST = [
     route: "/subasta",
   },
   {
+    name: "Fixture",
+    route: "/fixture",
+  },
+  {
     name: "Hinchada",
     route: "/hinchada",
   },
