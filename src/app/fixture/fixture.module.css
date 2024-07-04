@@ -1,83 +1,62 @@
 .container {
-  /* background-color: black; */
   text-align: left;
   color: ivory;
   padding: 50px 100px 20px;
+  min-height: 100vh;
 }
 
 .grid {
-  padding: 50px 0;
+  justify-content: center;
+  align-content: center;
+  padding: 80px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 15px;
-  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
   text-align: center;
   align-items: center;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  align-items: center;
-}
-
-.flexCenter {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  text-align: center;
-  align-items: center;
-  margin: 60px 0;
-}
-
-.flexTeamContainer {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 60px 0;
-}
-
-.teamContainer {
+.jornada {
+  padding: 15px 5px;
   position: relative;
-  width: 255px;
-  height: 160px;
-  padding: 15px;
-  border: 2px solid #2d2e32;
+  border: 1px solid #2d2e32;
   font-weight: bold;
   border-radius: 12px;
   background-color: #2d2e32;
 }
 
-.teamContainer:hover {
+.jornada:hover {
   border-color: ivory;
-  /* background-color: #2d2e32; */
   background-image: url("/FantaTeams/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.fantaContainer {
+.fecha {
+  margin-bottom: 10px;
+}
+
+.match {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 50px;
+  align-items: center;
+  height: 35px;
+  gap: 5px;
 }
 
 .fantaName {
-  font-size: 20px;
-  /* height: 30px; */
+  font-size: 15px;
   margin: 5px 0;
+  width: 130px;
 }
 
-.bigCrest {
-  width: 90px;
-  height: 90px;
+.local {
+  text-align: right;
+}
+
+.visitante {
+  text-align: left;
 }
 
 .crest {
@@ -85,66 +64,13 @@
   height: 25px;
 }
 
-.president {
-  font-size: 15px;
-  margin: 5px 0px;
-}
-
-.budgetContainer {
-  text-align: right;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 15px;
-}
-
-.budgetContainer div {
-  margin-bottom: 3px;
-}
-
-.campeonatosContainer {
-  position: absolute;
-  right: 13px;
-  top: 55px;
-}
-
-.copasContainer {
-  position: absolute;
-  right: 13px;
-  top: 82px;
-}
-
-.estrellaContainer {
-  display: inline-block;
-  width: 15px;
-}
-
-.estrella {
-  display: inline-block;
-  width: 20px;
-  height: auto;
-}
-
-.copaContainer {
-  display: inline-block;
-  width: 12px;
-}
-
-.copa {
-  display: inline-block;
-  width: 18px;
-  height: auto;
-}
-
-.nextContainer {
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
-}
-
-.next {
-  width: 24px;
-  height: 24px;
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
 }
 
 .button {
@@ -164,15 +90,26 @@
   color: black;
 }
 
+@media (max-width: 1024px) {
+  .grid {
+    padding: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 50px 20px;
   }
-  .bigCrest {
-    width: 60px;
-    height: 60px;
+
+  .grid {
+    gap: 20px;
   }
-  .flexCenter {
-    margin: 30px 0;
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

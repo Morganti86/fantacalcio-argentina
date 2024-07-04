@@ -42,19 +42,24 @@ async function seedFantaEquipos(client) {
         remanente INT NOT NULL,
         campeonatos INT NOT NULL, 
         copas INT NOT NULL, 
-        campeon_actual BOOLEAN NOT NULL
+        campeon_actual BOOLEAN NOT NULL,
+        orden INT NOT NULL
       );
     `;
 
     console.log(`Created "fanta_equipos" table`);
     // Insert data into the "fanta_teams" table
     const fantaEquipos = await Promise.all(
-      FANTAEQUIPOS.map(async (equipo) => {
+      FANTAEQUIPOS.map(async (equipo, index) => {
         // Insert the team
         const insertedTeam = await client.sql`
-            INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente, campeonatos, copas, campeon_actual)
-            VALUES (${equipo.fantaEquipo}, ${equipo.presidente}, ${equipo.email}, ${equipo.presupuesto}, ${equipo.remanente}, ${equipo.campeonatos}, ${equipo.copas}, ${equipo.campeon_actual})
-            RETURNING *;
+        INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente, campeonatos, copas, campeon_actual, orden)
+        VALUES (${equipo.fantaEquipo}, ${equipo.presidente}, ${equipo.email}, 
+        ${equipo.presupuesto}, ${equipo.remanente}, ${equipo.campeonatos}, ${
+          equipo.copas
+        }, 
+        ${equipo.campeon_actual}, ${index + 1})
+        RETURNING *;
           `;
         console.log(`Seeded team "${equipo.fantaEquipo}"`);
         return insertedTeam[0];
@@ -147,7 +152,7 @@ async function seedPosiciones(client) {
 
 async function main() {
   const client = await db.connect();
-  await seedDropTables(client)
+  await seedDropTables(client);
   await seedFantaEquipos(client);
   await seedEquipos(client);
   await seedPosiciones(client);
