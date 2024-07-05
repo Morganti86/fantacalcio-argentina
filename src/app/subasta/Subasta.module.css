@@ -105,6 +105,8 @@
 .label {
   margin: 10px;
   color: black;
+  display: flex;
+  align-items: center;
 }
 
 .flex {
@@ -164,6 +166,7 @@
 .fantaEquipo {
   border-radius: 20px;
   width: 150px;
+  height: 22px;
   color: ivory;
   background-color: black;
 }
