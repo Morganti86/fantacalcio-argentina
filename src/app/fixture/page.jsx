@@ -106,11 +106,13 @@ export default function Fixture() {
     // Establecer fuente y tamaño personalizados
     doc.setFont("helvetica");
     doc.setFontSize(15);
-    doc.text("FIXTURE FANTACALCIO", 10, y);
-    y += 15;
+    doc.text("FANTACALCIO ARGENTINA", 10, y);
+    y += 6;
+    doc.text("FIXTURE", 10, y);
+    y += 13;
 
     fixture.forEach((jornada, jornadaIndex) => {
-      const jornadaHeight = 6 + jornada.length * 6 + 3; // Calcular el espacio necesario para una jornada
+      const jornadaHeight = 6 + jornada.length * 6 + 2; // Calcular el espacio necesario para una jornada
 
       if (y + jornadaHeight > 280) {
         doc.addPage();
@@ -119,7 +121,12 @@ export default function Fixture() {
       }
 
       doc.setFontSize(13);
-      doc.text(`FECHA ${jornadaIndex + 1}`, 10, y);
+      // Resaltar la palabra "FECHA" con fondo amarillo
+      doc.setFillColor(255, 255, 0); // Amarillo
+      const fechaText = `FECHA ${jornadaIndex + 1}`;
+      const textWidth = doc.getTextWidth(fechaText);
+      doc.rect(10, y - 4, textWidth, 5, "F"); // Dibuja un rectángulo relleno
+      doc.text(fechaText, 10, y);
       y += 7;
 
       jornada.forEach((partido) => {
