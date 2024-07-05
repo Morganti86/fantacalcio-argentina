@@ -98,32 +98,34 @@ export default function Fixture() {
 
   const downloadPDF = () => {
     const doc = new jsPDF();
-    // Cargar la imagen SVG como fondo
     const backgroundImg = "/Images/afa-logo.webp"; // Ruta del archivo WebP
-    doc.addImage(backgroundImg, "WEBP", 183, 0, 22, 31);
+    doc.addImage(backgroundImg, "WEBP", 178, 0, 22, 31);
 
-    let y = 10; // Posición inicial en Y
+    let y = 15; // Posición inicial en Y
 
     // Establecer fuente y tamaño personalizados
     doc.setFont("helvetica");
-    doc.text("FIXTURE", 5, y);
-    y += 10; // Añadir espacio después de cada jornada
+    doc.setFontSize(15);
+    doc.text("FIXTURE FANTACALCIO", 10, y);
+    y += 15;
 
     fixture.forEach((jornada, jornadaIndex) => {
-      doc.setFontSize(12);
-      doc.text(`FECHA ${jornadaIndex + 1}`, 5, y);
-      y += 6;
+      const jornadaHeight = 6 + jornada.length * 6 + 3; // Calcular el espacio necesario para una jornada
+
+      if (y + jornadaHeight > 280) {
+        doc.addPage();
+        doc.addImage(backgroundImg, "WEBP", 178, 0, 22, 31);
+        y = 20;
+      }
+
+      doc.setFontSize(13);
+      doc.text(`FECHA ${jornadaIndex + 1}`, 10, y);
+      y += 7;
 
       jornada.forEach((partido) => {
         doc.setFontSize(10);
-        if (y > 280) {
-          // Limite de pagina para el contenido
-          doc.addPage();
-          doc.addImage(backgroundImg, "WEBP", 183, 0, 22, 31);
-          y = 10; // Reiniciar la posición en Y para la nueva página
-        }
-        doc.text(`${partido.equipoLocal} vs ${partido.equipoVisitante}`, 5, y);
-        y += 5;
+        doc.text(`${partido.equipoLocal} vs ${partido.equipoVisitante}`, 10, y);
+        y += 6;
       });
 
       y += 8; // Añadir espacio después de cada jornada
@@ -146,18 +148,18 @@ export default function Fixture() {
                 </span>
                 <img
                   className={style.crest}
-                  src={`/FantaTeams/${partido.equipoLocal}.svg`}
+                  src={`/FantaTeams/${partido.equipoLocal.toLowerCase()}.svg`}
                   width={20}
                   height={20}
-                  alt=""
+                  alt={`${partido.equipoLocal} + img`}
                 />
                 vs
                 <img
                   className={style.crest}
-                  src={`/FantaTeams/${partido.equipoVisitante}.svg`}
+                  src={`/FantaTeams/${partido.equipoVisitante.toLowerCase()}.svg`}
                   width={20}
                   height={20}
-                  alt=""
+                  alt={`${partido.equipoVisitante} + img`}
                 />
                 <span className={`${style.fantaName} ${style.visitante}`}>
                   {partido.equipoVisitante}
