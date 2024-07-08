@@ -123,14 +123,12 @@ export default function Subasta() {
 
   const nextPosition = () => {
     // Sorteo de equipos
-    console.log("EQUIPOS EN NEXT POSITION: ", equipos);
     const EQUIPOS = [...equipos].filter((equipo) => equipo.pendiente === true);
     const indiceEquipoActivo = EQUIPOS.findIndex((equipo) => equipo.activo);
     let equipoActivo;
     if (indiceEquipoActivo !== -1) {
       // Separo posicion activa del resto
        equipoActivo = EQUIPOS.splice(indiceEquipoActivo, 1)[0];
-      console.log("equipoActivo: ", equipoActivo);
       // Función de comparación que devuelve un número aleatorio entre 0 y 1
     } else {
       equipoActivo = null; // No hay equipo activo
@@ -249,7 +247,6 @@ export default function Subasta() {
           activo: false,
         }));
         setEquipos(equiposActualizados);
-        console.log("actualizo estado setEquipos!!!!");
         updatePosiciones(posAnt, posAct);
         setmostrarPosiciones(true);
       }
