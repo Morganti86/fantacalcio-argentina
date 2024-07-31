@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "node -r dotenv/config ./src/app/scripts/seed.js",
-    "seedJugadores": "node -r dotenv/config ./src/app/scripts/seedJugadores.js"
+    "seedJugadores": "node -r dotenv/config ./src/app/scripts/seedJugadores.js",
+    "seedControl": "node -r dotenv/config ./src/app/scripts/seedControl.js"
+
   },
   "dependencies": {
     "@vercel/postgres": "^0.9.0",
