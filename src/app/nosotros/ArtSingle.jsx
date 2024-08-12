@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import style from "./Nosotros.module.css";
 
@@ -12,13 +12,13 @@ export default function ArtSingle({ images }) {
       return setInterval(() => {
         setCurrentImageIndices((prevIndices) => {
           const nextIndices = [...prevIndices];
-          nextIndices[index] =
-            nextIndices[index] === 0 ? 1 : nextIndices[index] - 1;
+          nextIndices[index] = nextIndices[index] === 0 ? 1 : 0;
           return nextIndices;
         });
       }, image.transitionTime);
     });
 
+    // Cleanup intervals on component unmount
     return () => {
       intervals.forEach((interval) => clearInterval(interval));
     };
@@ -30,11 +30,6 @@ export default function ArtSingle({ images }) {
         <img
           key={index}
           src={currentImageIndices[index] === 0 ? image.image : image.image2}
-          // src={
-          //   currentImageIndices[index] === 0
-          //     ? "/Images/a.jpeg"
-          //     : "/Images/b.jpeg"
-          // }
           alt={`Image ${index + 1}`}
           className={style[image.size]}
         />
