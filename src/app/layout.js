@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={mainFont.className}>
         <div className="relative">
-          <Lights />
+          {/* <Lights /> */}
           {children}
         </div>
       </body>

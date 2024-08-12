@@ -41,7 +41,7 @@
 }
 
 .logo {
-  font-size: 60px;
+  font-size: 30px;
   -webkit-text-stroke: black;
   -webkit-text-stroke-width: 1px;
 }
@@ -72,7 +72,7 @@
 }
 
 .afa {
-  width: 200px;
+  width: 100px;
   height: auto;
   margin-bottom: 5px;
 }

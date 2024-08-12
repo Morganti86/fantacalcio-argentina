@@ -113,6 +113,7 @@ a {
 }
 
 .relative {
+  background-color: black;
   position: relative;
 }
 
