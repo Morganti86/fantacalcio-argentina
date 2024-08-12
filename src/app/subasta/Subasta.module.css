@@ -56,7 +56,6 @@
   width: 150px;
   padding: 8px;
   background-color: #2d2e32;
-  background-color: black;
   color: ivory;
   border-radius: 50px;
   border: 1px solid #2d2e32;
@@ -69,7 +68,7 @@
   outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
   border-color: #2d2e32; /* Cambia el color del borde al enfocar el input */
   caret-color: #2d2e32;
-  color: black;
+  color: ivory;
 }
 
 .input::placeholder,
@@ -104,9 +103,10 @@
 
 .label {
   margin: 10px;
-  color: black;
+  color: ivory;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .flex {
@@ -154,7 +154,7 @@
   border-width: 1px;
   border-radius: 50px;
   margin-right: 5px;
-  background-color: black;
+  background-color: #023D88;
   color: ivory;
   cursor: pointer;
 }
@@ -217,7 +217,10 @@
   /* margin: 13px 0; */
   width: 350px;
   height: auto;
+  filter: drop-shadow(0 0 10px rgb(51, 49, 49));
 }
+
+
 
 .teamTextContainer {
   /* width: 500px; */

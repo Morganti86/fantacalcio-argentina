@@ -74,8 +74,8 @@
 }
 
 @font-face {
-  font-family: 'Bangers Regular';
-  src: url('/Fuentes/Bangers-Regular.ttf') format('truetype');
+  font-family: "Bangers Regular";
+  src: url("/Fuentes/Bangers-Regular.ttf") format("truetype");
 }
 
 * {
