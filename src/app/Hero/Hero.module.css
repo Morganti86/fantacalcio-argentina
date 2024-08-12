@@ -1,5 +1,8 @@
 .hero {
   /* background-color: #4801ff; */
+  background-image: url("/Images/fireBall.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
   position: relative;
   padding: 100px 100px 20px;
   min-height: 100vh;
@@ -23,6 +26,7 @@
   animation: dropDown 2s ease-in-out;
   -webkit-text-stroke: ivory;
   -webkit-text-stroke-width: 1px;
+  filter: drop-shadow(0 0 10px rgb(51, 49, 49));
 }
 
 .link:hover {
@@ -49,7 +53,7 @@
 .logoContainer {
   color: ivory;
   position: fixed;
-  left: 100px;
+  left: 60px;
   bottom: 50px;
   text-align: center;
   -webkit-text-stroke: black;
@@ -57,7 +61,7 @@
 }
 
 .logoContainer img {
-    filter: drop-shadow(0 0 20px black);
+    filter: drop-shadow(0 0 20px rgb(51, 49, 49));
 }
 
 /* .logo:hover {
@@ -65,11 +69,6 @@
   -webkit-text-stroke: ivory;
   -webkit-text-stroke-width: 1px;
 } */
-
-.cup {
-  width: 200px;
-  height: 240px;
-}
 
 .afa {
   width: 100px;
@@ -85,7 +84,7 @@
     font-size: 150px;
   }
   .logo {
-    font-size: 40px;
+    font-size: 25px;
   }
   .logoContainer {
     left: 50px;
@@ -93,7 +92,7 @@
   }
 
   .afa {
-    width: 150px;
+    width: 60px;
     height: auto;
   }
 }
@@ -106,14 +105,14 @@
     font-size: 120px;
   }
   .logo {
-    font-size: 30px;
+    font-size: 20px;
   }
   .logoContainer {
-    left: 20px;
-    bottom: 20px;
+    left: 30px;
+    bottom: 30px;
   }
   .afa {
-    width: 120px;
+    width: 70px;
     height: auto;
   }
 }
@@ -126,16 +125,16 @@
     font-size: 50px;
   }
   .logo {
-    font-size: 20px;
+    font-size: 15px;
   }
 
-  .cup {
-    width: 100px;
-    height: auto;
+  .logoContainer {
+    left: 10px;
+    bottom: 10px;
   }
 
   .afa {
-    width: 70px;
+    width: 40px;
     height: auto;
   }
 }
