@@ -2,7 +2,8 @@
   /* background-color: #4801ff; */
   background-image: url("/Images/fireBall.webp");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   position: relative;
   padding: 100px 100px 20px;
   min-height: 100vh;
