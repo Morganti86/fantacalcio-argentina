@@ -3,6 +3,10 @@
   text-align: left;
   color: ivory;
   padding: 50px 100px 20px;
+    background-image: url("/Images/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .grid {
@@ -155,7 +159,7 @@
   background-color: #2d2e32;
   color: ivory;
   border-radius: 50px;
-  border: 1px solid #2d2e32;
+  border: 1px solid #050505;
   cursor: pointer;
 }
 
