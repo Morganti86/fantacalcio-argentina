@@ -3,7 +3,7 @@
   text-align: left;
   color: ivory;
   padding: 50px 100px 20px;
-    background-image: url("/Images/background.webp");
+  background-image: url("/Images/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -49,7 +49,7 @@
   width: 255px;
   height: 160px;
   padding: 15px;
-  border: 1px solid #2d2e32;
+  border: 1px solid #050505;
   font-weight: bold;
   border-radius: 12px;
   background-color: #2d2e32;
