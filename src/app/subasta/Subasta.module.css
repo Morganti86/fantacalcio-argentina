@@ -2,6 +2,10 @@
   color: ivory;
   padding: 50px 250px;
   min-height: 100vh;
+  background-image: url("/Images/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .boxLogin {
@@ -58,7 +62,7 @@
   background-color: #2d2e32;
   color: ivory;
   border-radius: 50px;
-  border: 1px solid #2d2e32;
+  border: 1px solid #050505;
   cursor: pointer;
   margin-top: 20px;
 }
@@ -66,9 +70,10 @@
 .input:focus,
 .inputArea:focus {
   outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
-  border-color: #2d2e32; /* Cambia el color del borde al enfocar el input */
-  caret-color: #2d2e32;
-  color: ivory;
+  border-color: #ffff92; /* Cambia el color del borde al enfocar el input */
+  caret-color: #ffff92;
+  /* caret-color: #2d2e32; */
+  color: #ffff92;
 }
 
 .input::placeholder,
@@ -79,7 +84,7 @@
 
 .input:focus::placeholder,
 .inputArea:focus::placeholder {
-  color: black; /* Cambia el color del placeholder cuando el input está enfocado */
+  color: #ffff92; /* Cambia el color del placeholder cuando el input está enfocado */
 }
 
 .button:hover {
@@ -107,6 +112,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  font-weight: 500;
 }
 
 .flex {
@@ -154,7 +160,7 @@
   border-width: 1px;
   border-radius: 50px;
   margin-right: 5px;
-  background-color: #023D88;
+  background-color: #023d88;
   color: ivory;
   cursor: pointer;
 }
@@ -219,8 +225,6 @@
   height: auto;
   filter: drop-shadow(0 0 10px rgb(51, 49, 49));
 }
-
-
 
 .teamTextContainer {
   /* width: 500px; */

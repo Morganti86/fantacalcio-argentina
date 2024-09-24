@@ -16,7 +16,7 @@ export const SubastaEquipo = ({ equipos, jugadores, jugadorActual }) => {
             //     : "transparent",
             boxShadow:
               equipo.equipo === jugadores[jugadorActual].equipo
-                ? "0 0 5px 5px black" // Cambia el color de la sombra a negro cuando el equipo está seleccionado
+                ? "0 0 3px 3px ivory" // Cambia el color de la sombra a negro cuando el equipo está seleccionado
                 : "0 0 1px 1px transparent", // De lo contrario, usa una sombra transparente
           }}>
           <img
