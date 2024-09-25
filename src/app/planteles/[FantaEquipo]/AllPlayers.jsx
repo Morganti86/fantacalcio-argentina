@@ -4,16 +4,30 @@ import style from "../ListadoFantaEquipos.module.css";
 import { SinglePlayer } from "./SinglePlayer";
 
 export function AllPlayers({ jugadores }) {
-  const [posicion, setPosicion] = useState("ALL");
+  const [posicion, setPosicion] = useState("");
+
+  const help = [
+    { id: "1", pos: "ARQ" },
+    { id: "2", pos: "DEF" },
+    { id: "3", pos: "MED" },
+    { id: "4", pos: "DEL" },
+  ];
 
   let filteredPlayers =
-    posicion === "ALL"
+    posicion === ""
       ? jugadores
       : jugadores.filter((jugador) => {
-          if (posicion === "MED") {
-            return jugador.posicion === "MED" || jugador.poli === true;
+          let selectedPos = help.find((p) => p.id === posicion);
+          if (!selectedPos) {
+            return true;
+          }
+          if (selectedPos === "3") {
+            //mediocampistas + polis
+            return (
+              jugador.posicion === selectedPos.pos || jugador.poli === true
+            );
           } else {
-            return jugador.posicion === posicion;
+            return jugador.posicion === selectedPos.pos;
           }
         });
 
@@ -25,19 +39,19 @@ export function AllPlayers({ jugadores }) {
   return (
     <section>
       <div className={style.fantaContainer}>
-        <button onClick={filterPosicion} value={"ARQ"} className={style.button}>
+        <button onClick={filterPosicion} value={"1"} className={style.button}>
           ARQUEROS
         </button>
-        <button onClick={filterPosicion} value={"DEF"} className={style.button}>
+        <button onClick={filterPosicion} value={"2"} className={style.button}>
           DEFENSORES
         </button>
-        <button onClick={filterPosicion} value={"MED"} className={style.button}>
+        <button onClick={filterPosicion} value={"3"} className={style.button}>
           MEDIOCAMPISTAS
         </button>
-        <button onClick={filterPosicion} value={"DEL"} className={style.button}>
+        <button onClick={filterPosicion} value={"4"} className={style.button}>
           DELANTEROS
         </button>
-        <button onClick={filterPosicion} value={"ALL"} className={style.button}>
+        <button onClick={filterPosicion} value={""} className={style.button}>
           TODOS
         </button>
       </div>
