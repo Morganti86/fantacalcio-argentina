@@ -21,7 +21,7 @@ export function AllPlayers({ jugadores }) {
           if (!selectedPos) {
             return true;
           }
-          if (selectedPos === "3") {
+          if (selectedPos.pos === "MED") {
             //mediocampistas + polis
             return (
               jugador.posicion === selectedPos.pos || jugador.poli === true
