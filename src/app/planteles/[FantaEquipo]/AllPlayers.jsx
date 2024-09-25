@@ -17,7 +17,7 @@ export function AllPlayers({ jugadores }) {
     posicion === ""
       ? jugadores
       : jugadores.filter((jugador) => {
-          let selectedPos = help.find((p) => p.id === posicion);
+          let selectedPos = help.find((h) => h.id === posicion);
           if (!selectedPos) {
             return true;
           }
