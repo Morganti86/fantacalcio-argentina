@@ -2,8 +2,8 @@
 //https://products.aspose.app/cells/conversion/excel-to-json
 
 const { db } = require("@vercel/postgres");
-const { JUGADORES } = require("../lib/placeholder-data.jsx");
-const bcrypt = require("bcrypt");
+const { JUGADORES } = require("../lib/data-jugadores.jsx");
+// const bcrypt = require("bcrypt");
 
 async function seedJugadores(client) {
   try {
@@ -32,7 +32,8 @@ async function seedJugadores(client) {
         const poli = player.poli ? true : false;
         const fantaEquipo = player.fantaEquipo.toUpperCase();
         const precioCompra = player.precioCompra ? player.precioCompra : null;
-        const imagen = player.imagen ? player.imagen : null;
+        // const imagen = player.imagen ? player.imagen : null;
+        const imagen = null;
         const insertedPlayer = await client.sql`
         INSERT INTO jugadores (equipo, jugador, precio_base, posicion, poli, fanta_equipo, precio_compra, imagen)
         VALUES (

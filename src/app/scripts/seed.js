@@ -1,10 +1,8 @@
 const { db } = require("@vercel/postgres");
-const {
-  FANTAEQUIPOS,
-  EQUIPOS,
-  POSICIONES,
-} = require("../../app/lib/placeholder-data.jsx");
-const bcrypt = require("bcrypt");
+const { FANTAEQUIPOS } = require("../../app/lib/data-fantaequipos.jsx");
+const { EQUIPOS } = require("../../app/lib/data-equipos.jsx");
+const { POSICIONES } = require("../../app/lib/data-posiciones.jsx");
+// const bcrypt = require("bcrypt");
 
 async function seedDropTables(client) {
   try {
@@ -82,7 +80,8 @@ async function seedEquipos(client) {
     // Create the "league_teams" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS equipos (
-        equipo VARCHAR(255) PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
+        equipo VARCHAR(255) UNIQUE,
         pendiente BOOLEAN NOT NULL,
         activo BOOLEAN NOT NULL
       );
@@ -119,7 +118,8 @@ async function seedPosiciones(client) {
     // Create the "positions" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS posiciones (
-        posicion VARCHAR(255) PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
+        posicion VARCHAR(255) UNIQUE,
         pendiente BOOLEAN NOT NULL,
         activo BOOLEAN NOT NULL
       );
