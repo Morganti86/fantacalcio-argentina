@@ -3,6 +3,9 @@
 
 const { db } = require("@vercel/postgres");
 const { JUGADORES } = require("../lib/data-jugadores.jsx");
+const { EQUIPOS } = require("../lib/data-equipos.jsx");
+const { IMAGENJUGADORES } = require("../lib/data-imagenjugadores.jsx");
+
 // const bcrypt = require("bcrypt");
 
 async function seedJugadores(client) {
@@ -29,22 +32,32 @@ async function seedJugadores(client) {
     // Insert or update data into the "position" table
     const players = await Promise.all(
       JUGADORES.map(async (player) => {
+        //chequeamos consistencia con equipos
+        const equipo = EQUIPOS.find(
+          (nomEquipo) => nomEquipo.equipo === player.equipo
+        );
+        const posicion =
+          player.posicion === "VOL" || player.posicion === "MED"
+            ? "MED"
+            : player.posicion;
         const poli = player.poli ? true : false;
         const fantaEquipo = player.fantaEquipo.toUpperCase();
         const precioCompra = player.precioCompra ? player.precioCompra : null;
-        // const imagen = player.imagen ? player.imagen : null;
-        const imagen = null;
+        //cargamos imagenes de jugadores
+        const imagen = IMAGENJUGADORES.find(
+          (imgJugador) => imgJugador.jugador === player.jugador);
+        player.imagen = imagen ? imagen.imagen : null;
         const insertedPlayer = await client.sql`
         INSERT INTO jugadores (equipo, jugador, precio_base, posicion, poli, fanta_equipo, precio_compra, imagen)
         VALUES (
-        ${player.equipo}, 
+        ${equipo.equipo}, 
         ${player.jugador}, 
         ${player.precioBase}, 
-        ${player.posicion}, 
+        ${posicion}, 
         ${poli}, 
         ${fantaEquipo}, 
         ${precioCompra}, 
-        ${imagen}
+        ${player.imagen}
         )
         RETURNING *;
         `;

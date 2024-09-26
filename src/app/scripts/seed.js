@@ -50,9 +50,15 @@ async function seedFantaEquipos(client) {
     const fantaEquipos = await Promise.all(
       FANTAEQUIPOS.map(async (equipo, index) => {
         // Insert the team
+        if (equipo.fantaEquipo.toUpperCase() === "INDEPENDIENTE SPURS") {
+          equipo.fantaEquipo = "INDEPTE. SPURS";
+        }
+        if (equipo.fantaEquipo.toUpperCase() === "MORGANTI") {
+          equipo.fantaEquipo = "MORGANTI FC";
+        }
         const insertedTeam = await client.sql`
         INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente, campeonatos, copas, campeon_actual, orden)
-        VALUES (${equipo.fantaEquipo}, ${equipo.presidente}, ${equipo.email}, 
+        VALUES (${equipo.fantaEquipo.toUpperCase()}, ${equipo.presidente}, ${equipo.email}, 
         ${equipo.presupuesto}, ${equipo.remanente}, ${equipo.campeonatos}, ${
           equipo.copas
         }, 

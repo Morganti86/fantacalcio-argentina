@@ -1,6 +1,6 @@
 const EQUIPOS = [
   { equipo: "Argentinos", pendiente: true, activo: false },
-  { equipo: "Atl. Tucumán", pendiente: true, activo: false },
+  { equipo: "Atl. Tucuman", pendiente: true, activo: false },
   { equipo: "Banfield", pendiente: true, activo: false },
   { equipo: "Barracas Central", pendiente: true, activo: false },
   { equipo: "Belgrano", pendiente: true, activo: false },
