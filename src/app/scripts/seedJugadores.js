@@ -3,6 +3,7 @@
 
 const { db } = require("@vercel/postgres");
 const { JUGADORES } = require("../lib/data-jugadores.jsx");
+const { FANTAEQUIPOS } = require("../lib/data-fantaequipos.jsx");
 const { EQUIPOS } = require("../lib/data-equipos.jsx");
 const { IMAGENJUGADORES } = require("../lib/data-imagenjugadores.jsx");
 
@@ -41,11 +42,30 @@ async function seedJugadores(client) {
             ? "MED"
             : player.posicion;
         const poli = player.poli ? true : false;
-        const fantaEquipo = player.fantaEquipo.toUpperCase();
+        let fantaEquipo = player.fantaEquipo.toUpperCase();
+        if (fantaEquipo && fantaEquipo !== "") {
+          if (fantaEquipo === "INDEPENDIENTE SPURS") {
+            fantaEquipo = "INDEPTE. SPURS";
+          }
+          if (fantaEquipo === "MORGANTI") {
+            fantaEquipo = "MORGANTI FC";
+          }
+          const fantaEquipoAux = FANTAEQUIPOS.find(
+            (FEquipo) => FEquipo.fantaEquipo === fantaEquipo
+          );
+          if (!fantaEquipoAux) {
+            console.error(
+              `No se encontró el equipo para el jugador ${player.jugador}`
+            );
+            return;
+          }
+        }
+
         const precioCompra = player.precioCompra ? player.precioCompra : null;
         //cargamos imagenes de jugadores
         const imagen = IMAGENJUGADORES.find(
-          (imgJugador) => imgJugador.jugador === player.jugador);
+          (imgJugador) => imgJugador.jugador === player.jugador
+        );
         player.imagen = imagen ? imagen.imagen : null;
         const insertedPlayer = await client.sql`
         INSERT INTO jugadores (equipo, jugador, precio_base, posicion, poli, fanta_equipo, precio_compra, imagen)
