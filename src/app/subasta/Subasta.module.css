@@ -70,10 +70,10 @@
 .input:focus,
 .inputArea:focus {
   outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
-  border-color: #ffff92; /* Cambia el color del borde al enfocar el input */
-  caret-color: #ffff92;
+  border-color: #49a4f5; /* Cambia el color del borde al enfocar el input */
+  caret-color: #49a4f5;
   /* caret-color: #2d2e32; */
-  color: #ffff92;
+  color: #49a4f5;
 }
 
 .input::placeholder,
@@ -84,7 +84,7 @@
 
 .input:focus::placeholder,
 .inputArea:focus::placeholder {
-  color: #ffff92; /* Cambia el color del placeholder cuando el input está enfocado */
+  color: #49a4f5; /* Cambia el color del placeholder cuando el input está enfocado */
 }
 
 .button:hover {
