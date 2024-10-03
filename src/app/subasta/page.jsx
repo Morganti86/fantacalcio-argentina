@@ -214,6 +214,27 @@ export default function Subasta() {
         } catch (error) {
           console.error("Error updating equipos:", error);
         }
+        // Actualizar el estado de los equipos
+        let equiposActualizados = equipos.map((equipo) => {
+        if (equipo.equipo === equipoAct) {
+          return {
+          ...equipo,
+          pendiente: true,
+          activo: true,
+          };
+        } else if (equipoAnt !== null && equipo.equipo === equipoAnt) {
+          return {
+          ...equipo,
+          pendiente: false,
+          activo: false,
+          };
+        } else {
+          return {
+          ...equipo,
+        };
+        }
+        });
+        setEquipos(equiposActualizados); // Actualizar el estado con los equipos modificados
         setEquipoActual(equipoAct);
       }
 

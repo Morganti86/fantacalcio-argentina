@@ -9,14 +9,14 @@ export const SubastaEquipo = ({ equipos, jugadores, jugadorActual }) => {
           className={style.containerImageTeam}
           key={index}
           style={{
-            opacity: equipo.pendiente === true ? 1 : 0.3,
+            opacity: equipo.pendiente === true ? 1 : 0.4,
             // backgroundColor:
             //   equipo.equipo === jugadores[jugadorActual].equipo
             //     ? "black"
             //     : "transparent",
             boxShadow:
               equipo.equipo === jugadores[jugadorActual].equipo
-                ? "0 0 3px 3px ivory" // Cambia el color de la sombra a negro cuando el equipo está seleccionado
+                ? "0 0 3px 3px ivory" // Cambia el color de la sombra a ivory cuando el equipo está seleccionado
                 : "0 0 1px 1px transparent", // De lo contrario, usa una sombra transparente
           }}>
           <img

@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   const { equipoAct, equipoAnt } = req.body;
   const False = false;
   const True = true;
-
+  
   if (req.method === "PUT") {
     try {
       const client = await db.connect();
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       await client.query("BEGIN");
       if (equipoAct === null) {
         // reiniciar valores
-        await client.query("UPDATE equipos SET pendiente = $1, activo = $2", [
+          await client.query("UPDATE equipos SET pendiente = $1, activo = $2", [
           True,
           False,
         ]);
@@ -24,15 +24,15 @@ export default async function handler(req, res) {
           [equipoAct, True]
         );
       } else {
+        // Update to set activo to False for the previous team sorted
+        await client.query(
+          "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
+          [equipoAnt, False]
+        );
         // Update to set activo to True for the new team sorted
         await client.query(
           "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
           [equipoAct, True]
-        );
-        // Update to set update old team sorted
-        await client.query(
-          "UPDATE equipos SET pendiente = $2, activo = $2 WHERE equipo = $1",
-          [equipoAnt, False]
         );
       }
 

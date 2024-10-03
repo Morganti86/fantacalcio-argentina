@@ -100,7 +100,7 @@ async function seedEquipos(client) {
       EQUIPOS.map(async (team) => {
         const insertedTeam = await client.sql`
               INSERT INTO equipos (equipo, pendiente, activo)
-              VALUES (${team.equipo}, ${team.pendiente}, ${team.pendiente})
+              VALUES (${team.equipo}, ${team.pendiente}, ${team.activo})
               RETURNING *;
             `;
         console.log(`Seeded team "${team.equipo}"`);
