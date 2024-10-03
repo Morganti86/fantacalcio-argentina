@@ -129,13 +129,13 @@
 
 .containerImageTeam {
   margin: 2px;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
 }
 
 .imageTeam {
   /* border: 2px solid transparent; */
-  width: 55px;
+  width: 45px;
   height: auto;
 }
 
@@ -228,7 +228,6 @@
 
 .teamTextContainer {
   /* width: 500px; */
-  margin: 0 25px;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -284,11 +283,19 @@
   .teamTextContainer {
     /* width: 500px; */
     margin: 0;
-    top: 300px;
+    justify-content: space-around;
+    top: 220px;
     max-height: 100px;
   }
 
   .teamText {
-    font-size: 15px;
+    font-size: 20px;
+    margin: 2px;
+  }
+
+  .containerImageTeam,
+  .imageTeam {
+    width: 30px;
+    height: 30px;
   }
 }
