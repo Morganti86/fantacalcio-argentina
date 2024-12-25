@@ -16,10 +16,23 @@ export const SubastaJugador = ({
   return (
     <div className={style.boxSubastaJugador}>
       {jugadores.length > 0 && (
-        <div className={style.boxJugador}>
+        <div>
           <div className={`${style.flex} ${style.singlePlayer}`}>
             <SinglePlayer jugador={jugadores[jugadorActual]} />
           </div>
+          <button
+            style={{
+              width: "20px",
+              height: "20px",
+              backgroundColor: "transparent",
+              margin: "0",
+              padding: "0",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={() => priceAction(200)}>
+            <img src="/Icons/x.svg" width={20} height={20} alt="x image" />
+          </button>
           <div className={style.label}>
             <label>COMPRADOR: </label>
             <select
