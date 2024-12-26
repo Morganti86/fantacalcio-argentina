@@ -48,7 +48,7 @@ export function DownloadPlayers({ fantaJugadores, fantaEquipo }) {
   return (
     <div className={style.fantaContainer}>
       <button onClick={handleDownload} className={style.button}>
-        DESCARGAR XLSX
+        DESCARGAR
       </button>
     </div>
   );

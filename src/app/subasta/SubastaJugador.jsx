@@ -20,19 +20,12 @@ export const SubastaJugador = ({
           <div className={`${style.flex} ${style.singlePlayer}`}>
             <SinglePlayer jugador={jugadores[jugadorActual]} />
           </div>
-          <button
-            style={{
-              width: "20px",
-              height: "20px",
-              backgroundColor: "transparent",
-              margin: "0",
-              padding: "0",
-              border: "none",
-              cursor: "pointer",
-            }}
-            onClick={() => priceAction(200)}>
-            <img src="/Icons/x.svg" width={20} height={20} alt="x image" />
-          </button>
+          <div className={style.label}>
+            <button className={style.xButton}
+              onClick={() => priceAction(200)}>
+              <img src="/Icons/x.svg" width={40} height={40} alt="x image" />
+            </button>
+          </div>
           <div className={style.label}>
             <label>COMPRADOR: </label>
             <select

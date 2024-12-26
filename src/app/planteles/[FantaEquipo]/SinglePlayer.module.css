@@ -26,9 +26,9 @@
 
 .poliPlayer {
   position: absolute;
-  left: 25px;
+  left: 22px;
   top: 70px;
-  font-size: 20px;
+  font-size: 25px;
   backdrop-filter: blur(10px);
 }
 
