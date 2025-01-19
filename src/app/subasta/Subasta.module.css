@@ -254,6 +254,7 @@
   top: 200px;
   /* Limitar la altura a 205px para que no supere el tamaño de la carta */
   max-height: 202px;
+  color: #a3a3a3;
   overflow: hidden;
 }
 

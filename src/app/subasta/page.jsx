@@ -128,7 +128,7 @@ export default function Subasta() {
     let equipoActivo;
     if (indiceEquipoActivo !== -1) {
       // Separo posicion activa del resto
-       equipoActivo = EQUIPOS.splice(indiceEquipoActivo, 1)[0];
+      equipoActivo = EQUIPOS.splice(indiceEquipoActivo, 1)[0];
       // Función de comparación que devuelve un número aleatorio entre 0 y 1
     } else {
       equipoActivo = null; // No hay equipo activo
@@ -216,23 +216,23 @@ export default function Subasta() {
         }
         // Actualizar el estado de los equipos
         let equiposActualizados = equipos.map((equipo) => {
-        if (equipo.equipo === equipoAct) {
-          return {
-          ...equipo,
-          pendiente: true,
-          activo: true,
-          };
-        } else if (equipoAnt !== null && equipo.equipo === equipoAnt) {
-          return {
-          ...equipo,
-          pendiente: false,
-          activo: false,
-          };
-        } else {
-          return {
-          ...equipo,
-        };
-        }
+          if (equipo.equipo === equipoAct) {
+            return {
+              ...equipo,
+              pendiente: true,
+              activo: true,
+            };
+          } else if (equipoAnt !== null && equipo.equipo === equipoAnt) {
+            return {
+              ...equipo,
+              pendiente: false,
+              activo: false,
+            };
+          } else {
+            return {
+              ...equipo,
+            };
+          }
         });
         setEquipos(equiposActualizados); // Actualizar el estado con los equipos modificados
         setEquipoActual(equipoAct);
@@ -338,6 +338,43 @@ export default function Subasta() {
       });
     }
   };
+
+  const handleRetrieveInfo = async () => {
+    const JugadorRetrieve = jugadoresFiltrados[jugadorActual].id;
+    console.log(`Jugador: ${JugadorRetrieve}`);
+  
+    try {
+      const response = await fetch("/api/putJugadorRetrieve", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: JugadorRetrieve,
+        }),
+      });
+  
+      // Procesar la respuesta si es exitosa
+      if (response.ok && response.status === 200) {
+        const data = await response.json(); // Obtener los datos de la respuesta
+        // Mostrar el toast solo si hubo una modificación
+        toast.success(`${data.monto} reintegrados a ${data.equipo}`, {
+          position: "bottom-left",
+        });
+      } else if (response.status === 204) {
+        // Si no hubo actualización, no hacer nada
+        return;
+      } else {
+        throw new Error("Failed to update player");
+      }
+    } catch (error) {
+      console.error("Error updating player:", error);
+      toast.error(`Error al actualizar ${jugador.jugador}`, {
+        position: "bottom-left",
+      });
+    }
+  };
+
 
   const updatePosiciones = async (posAnt, posAct) => {
     try {
@@ -470,6 +507,7 @@ export default function Subasta() {
                 buyerAction={buyerAction}
                 nextAction={nextAction}
                 previousAction={previousAction}
+                handleRetrieveInfo={handleRetrieveInfo}
               />
             </section>
           )}

@@ -12,6 +12,7 @@ export const SubastaJugador = ({
   buyerAction,
   nextAction,
   previousAction,
+  handleRetrieveInfo,
 }) => {
   return (
     <div className={style.boxSubastaJugador}>
@@ -22,7 +23,7 @@ export const SubastaJugador = ({
           </div>
           <div className={style.label}>
             <button className={style.xButton}
-              onClick={() => priceAction(200)}>
+              onClick={() => handleRetrieveInfo()}>
               <img src="/Icons/x.svg" width={40} height={40} alt="x image" />
             </button>
           </div>

@@ -1,4 +1,5 @@
 const EQUIPOS = [
+  { equipo: "Aldosivi", pendiente: true, activo: false },
   { equipo: "Argentinos", pendiente: true, activo: false },
   { equipo: "Atl. Tucuman", pendiente: true, activo: false },
   { equipo: "Banfield", pendiente: true, activo: false },
@@ -22,6 +23,7 @@ const EQUIPOS = [
   { equipo: "River", pendiente: true, activo: false },
   { equipo: "Rosario Central", pendiente: true, activo: false },
   { equipo: "San Lorenzo", pendiente: true, activo: false },
+  { equipo: "San Martin", pendiente: true, activo: false },
   { equipo: "Sarmiento", pendiente: true, activo: false },
   { equipo: "Talleres", pendiente: true, activo: false },
   { equipo: "Tigre", pendiente: true, activo: false },
