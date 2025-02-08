@@ -2,24 +2,14 @@ const { db } = require("@vercel/postgres");
 const { FANTAEQUIPOS } = require("../../app/lib/data-fantaequipos.jsx");
 const { EQUIPOS } = require("../../app/lib/data-equipos.jsx");
 const { POSICIONES } = require("../../app/lib/data-posiciones.jsx");
-// const bcrypt = require("bcrypt");
 
 async function seedDropTables(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "league_teams" table if it doesn't exist
-    const dropTable = await client.sql`
+    await client.sql`
       DROP TABLE IF EXISTS jugadores, fanta_equipos, equipos, posiciones;
     `;
-
-    console.log(
-      `Deleted "jugadores, fanta_equipos, equipos, posiciones" tables`
-    );
-
-    // delete all tables
-    return {
-      dropTable,
-    };
+    console.log(`Deleted tables: jugadores, fanta_equipos, equipos, posiciones`);
   } catch (error) {
     console.error("Error deleting tables:", error);
     throw error;
@@ -29,8 +19,7 @@ async function seedDropTables(client) {
 async function seedFantaEquipos(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "fanta_teams" table if it doesn't exist
-    const createTable = await client.sql`
+    await client.sql`
       CREATE TABLE IF NOT EXISTS fanta_equipos (
         id SERIAL PRIMARY KEY,
         fanta_equipo VARCHAR(255) NOT NULL UNIQUE,
@@ -41,41 +30,33 @@ async function seedFantaEquipos(client) {
         campeonatos INT NOT NULL, 
         copas INT NOT NULL, 
         campeon_actual BOOLEAN NOT NULL,
-        orden INT NOT NULL
+        estado INT NOT NULL,
+        orden INT
       );
     `;
-
     console.log(`Created "fanta_equipos" table`);
-    // Insert data into the "fanta_teams" table
-    const fantaEquipos = await Promise.all(
-      FANTAEQUIPOS.map(async (equipo, index) => {
-        // Insert the team
+
+    let ordenActual = 1; // Contador solo para equipos activos
+    await Promise.all(
+      FANTAEQUIPOS.map(async (equipo) => {
         if (equipo.fantaEquipo.toUpperCase() === "INDEPENDIENTE SPURS") {
           equipo.fantaEquipo = "INDEPTE. SPURS";
         }
         if (equipo.fantaEquipo.toUpperCase() === "MORGANTI") {
           equipo.fantaEquipo = "MORGANTI FC";
         }
-        const insertedTeam = await client.sql`
-        INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente, campeonatos, copas, campeon_actual, orden)
-        VALUES (${equipo.fantaEquipo.toUpperCase()}, ${equipo.presidente}, ${equipo.email}, 
-        ${equipo.presupuesto}, ${equipo.remanente}, ${equipo.campeonatos}, ${
-          equipo.copas
-        }, 
-        ${equipo.campeon_actual}, ${index + 1})
-        RETURNING *;
-          `;
+        const orden = equipo.estado === 1 ? ordenActual++ : null;
+        await client.sql`
+          INSERT INTO fanta_equipos (fanta_equipo, presidente, email, presupuesto, remanente, campeonatos, copas, campeon_actual, estado, orden)
+          VALUES (${equipo.fantaEquipo.toUpperCase()}, ${equipo.presidente}, ${equipo.email}, 
+          ${equipo.presupuesto}, ${equipo.remanente}, ${equipo.campeonatos}, ${equipo.copas}, 
+          ${equipo.campeon_actual}, ${equipo.estado}, ${orden});
+        `;
         console.log(`Seeded team "${equipo.fantaEquipo}"`);
-        return insertedTeam[0];
       })
     );
-
-    return {
-      createTable,
-      teams: fantaEquipos,
-    };
   } catch (error) {
-    console.error("Error seeding teams:", error);
+    console.error("Error seeding fanta_equipos:", error);
     throw error;
   }
 }
@@ -83,8 +64,7 @@ async function seedFantaEquipos(client) {
 async function seedEquipos(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "league_teams" table if it doesn't exist
-    const createTable = await client.sql`
+    await client.sql`
       CREATE TABLE IF NOT EXISTS equipos (
         id SERIAL PRIMARY KEY,
         equipo VARCHAR(255) UNIQUE,
@@ -92,28 +72,19 @@ async function seedEquipos(client) {
         activo BOOLEAN NOT NULL
       );
     `;
+    console.log(`Created "equipos" table`);
 
-    console.log(`Created "Equipos" table`);
-
-    // Insert or update data into the "league_teams" table
-    const equipos = await Promise.all(
+    await Promise.all(
       EQUIPOS.map(async (team) => {
-        const insertedTeam = await client.sql`
-              INSERT INTO equipos (equipo, pendiente, activo)
-              VALUES (${team.equipo}, ${team.pendiente}, ${team.activo})
-              RETURNING *;
-            `;
+        await client.sql`
+          INSERT INTO equipos (equipo, pendiente, activo)
+          VALUES (${team.equipo}, ${team.pendiente}, ${team.activo});
+        `;
         console.log(`Seeded team "${team.equipo}"`);
-        return insertedTeam[0];
       })
     );
-
-    return {
-      createTable,
-      teams: equipos,
-    };
   } catch (error) {
-    console.error("Error seeding teams:", error);
+    console.error("Error seeding equipos:", error);
     throw error;
   }
 }
@@ -121,8 +92,7 @@ async function seedEquipos(client) {
 async function seedPosiciones(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "positions" table if it doesn't exist
-    const createTable = await client.sql`
+    await client.sql`
       CREATE TABLE IF NOT EXISTS posiciones (
         id SERIAL PRIMARY KEY,
         posicion VARCHAR(255) UNIQUE,
@@ -130,28 +100,19 @@ async function seedPosiciones(client) {
         activo BOOLEAN NOT NULL
       );
     `;
-
     console.log(`Created "posiciones" table`);
 
-    // Insert or update data into the "position" table
-    const posicion = await Promise.all(
+    await Promise.all(
       POSICIONES.map(async (pos) => {
-        const insertedPosition = await client.sql`
-              INSERT INTO posiciones (posicion, pendiente, activo)
-              VALUES (${pos.posicion}, ${pos.pendiente}, ${pos.activo})
-              RETURNING *;
-            `;
-        console.log(`Seeded pos "${pos.posicion}"`);
-        return insertedPosition[0];
+        await client.sql`
+          INSERT INTO posiciones (posicion, pendiente, activo)
+          VALUES (${pos.posicion}, ${pos.pendiente}, ${pos.activo});
+        `;
+        console.log(`Seeded posicion "${pos.posicion}"`);
       })
     );
-
-    return {
-      createTable,
-      teams: posicion,
-    };
   } catch (error) {
-    console.error("Error seeding teams:", error);
+    console.error("Error seeding posiciones:", error);
     throw error;
   }
 }
@@ -166,8 +127,5 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(
-    "An error occurred while attempting to seed the database:",
-    err
-  );
+  console.error("An error occurred while attempting to seed the database:", err);
 });

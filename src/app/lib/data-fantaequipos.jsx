@@ -7,7 +7,9 @@ const FANTAEQUIPOS = [
     "remanente": 0,
     "campeonatos": 4,
     "copas": 3,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
+
   },
   {
     "fantaEquipo": "BALDOSERA",
@@ -17,7 +19,9 @@ const FANTAEQUIPOS = [
     "remanente": 100,
     "campeonatos": 2,
     "copas": 0,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
+
   },
   {
     "fantaEquipo": "DECO",
@@ -27,7 +31,9 @@ const FANTAEQUIPOS = [
     "remanente": 400,
     "campeonatos": 4,
     "copas": 0,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
+
   },
   {
     "fantaEquipo": "DEP. ARECO",
@@ -37,7 +43,8 @@ const FANTAEQUIPOS = [
     "remanente": 25000,
     "campeonatos": 1,
     "copas": 2,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 1 // inactivo
   },
   {
     "fantaEquipo": "EL MARPLATENSE",
@@ -47,7 +54,8 @@ const FANTAEQUIPOS = [
     "remanente": 0,
     "campeonatos": 6,
     "copas": 5,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo    
   },
   {
     "fantaEquipo": "FIRMAMO",
@@ -57,7 +65,8 @@ const FANTAEQUIPOS = [
     "remanente": 1600,
     "campeonatos": 1,
     "copas": 2,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "FLA 3",
@@ -67,7 +76,8 @@ const FANTAEQUIPOS = [
     "remanente": 600,
     "campeonatos": 2,
     "copas": 0,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "FLATULENTOS",
@@ -77,7 +87,8 @@ const FANTAEQUIPOS = [
     "remanente": 1100,
     "campeonatos": 5,
     "copas": 1,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "INDEPTE. SPURS",
@@ -87,7 +98,8 @@ const FANTAEQUIPOS = [
     "remanente": 800,
     "campeonatos": 2,
     "copas": 2,
-    "campeon_actual": false
+    "campeon_actual": true,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "JRFC",
@@ -97,7 +109,8 @@ const FANTAEQUIPOS = [
     "remanente": 900,
     "campeonatos": 0,
     "copas": 0,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "MORGANTI FC",
@@ -107,7 +120,8 @@ const FANTAEQUIPOS = [
     "remanente": 0,
     "campeonatos": 2,
     "copas": 3,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "PDC",
@@ -117,7 +131,8 @@ const FANTAEQUIPOS = [
     "remanente": 1000,
     "campeonatos": 1,
     "copas": 1,
-    "campeon_actual": true
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "PELOTA DE TRAPO",
@@ -127,7 +142,8 @@ const FANTAEQUIPOS = [
     "remanente": 0,
     "campeonatos": 2,
     "copas": 2,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "PITUFOS",
@@ -137,7 +153,8 @@ const FANTAEQUIPOS = [
     "remanente": 1200,
     "campeonatos": 2,
     "copas": 5,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "ROSTOCK",
@@ -147,7 +164,8 @@ const FANTAEQUIPOS = [
     "remanente": 0,
     "campeonatos": 1,
     "copas": 0,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "SUPER CELTICS",
@@ -157,7 +175,8 @@ const FANTAEQUIPOS = [
     "remanente": 900,
     "campeonatos": 0,
     "copas": 0,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   },
   {
     "fantaEquipo": "VILLA LURO",
@@ -167,7 +186,8 @@ const FANTAEQUIPOS = [
     "remanente": 100,
     "campeonatos": 2,
     "copas": 5,
-    "campeon_actual": false
+    "campeon_actual": false,
+    "estado": 0 // activo
   }
 ];
 
