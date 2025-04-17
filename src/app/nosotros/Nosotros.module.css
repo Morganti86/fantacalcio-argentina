@@ -68,34 +68,35 @@
 
 @media (max-width: 500px) {
   .container {
-    padding: 0px;
+    padding: 0;
   }
 
   .imagesContainer {
-    display: block; 
+    display: block; /* Todas las imágenes en una sola columna */
+    margin: 0;
   }
 
   .flexColumn {
-    width: 100%; 
+    width: 100%; /* Ocupan todo el ancho del contenedor */
     height: auto;
-    margin-bottom: 0px; 
-    display: block; 
+    margin-bottom: 0; /* Espaciado entre imágenes */
+    display: block;
   }
 
   .flexColumn img {
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
+    width: 100%; /* Ajustamos al ancho completo */
+    height: 450px; /* Fijamos una altura estándar para todas las imágenes */
+    object-fit: cover; /* Aseguramos que las imágenes se adapten correctamente */
     margin: 0;
-    border: none; 
+    border: none; /* Elimina bordes para un diseño más limpio */
   }
 
   .flexColumn img:hover {
-    transform: none; 
+    transform: none; /* Evitamos efectos de hover */
     opacity: 1;
   }
 
   .small, .medium, .big {
-    height: auto; 
+    height: 450px; /* Todas las imágenes tendrán la misma altura */
   }
 }
