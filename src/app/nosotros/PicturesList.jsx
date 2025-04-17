@@ -1,4 +1,5 @@
-//
+//https://ezgif.com/
+//https://squoosh.app/
 
 export const PICTURES = [
   {
@@ -39,13 +40,13 @@ export const PICTURES = [
   },
   {
     image: "/Fotos/7.webp",
-    image2: "/Fotos/16.webp",
+    image2: "/Fotos/17.webp",
     size: "small",
     transitionTime: 7000,
   },
   {
     image: "/Fotos/20.webp",
-    image2: "/Fotos/17.webp",
+    image2: "/Fotos/8.webp",
     size: "medium",
     transitionTime: 5000,
   },
@@ -59,13 +60,13 @@ export const PICTURES = [
     image: "/Fotos/19.webp",
     image2: "/Fotos/24.webp",
     size: "medium",
-    transitionTime: 8000,
+    transitionTime: 7000,
   },
   {
-    image: "/Fotos/8.webp",
+    image: "/Fotos/16.webp",
     image2: "/Fotos/23.webp",
     size: "big",
-    transitionTime: 7000,
+    transitionTime: 6000,
   },
   {
     image: "/Fotos/22.webp",
