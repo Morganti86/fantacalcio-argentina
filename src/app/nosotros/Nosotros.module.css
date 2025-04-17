@@ -4,6 +4,17 @@
   padding: 20px 80px;
 }
 
+
+.container {
+  min-height: 100vh;
+  color: ivory;
+  padding: 20px 80px;
+  background-image: url("/Images/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .imagesContainer {
   display: flex;
   margin: 20px 0;
@@ -28,7 +39,7 @@
   max-height: 100%; 
   flex-grow: 1;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   /* margin: 5px; */
   border: 1px solid ivory;
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease,
