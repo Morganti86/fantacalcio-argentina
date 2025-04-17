@@ -61,11 +61,15 @@
 } */
 
 .small {
-  height: 25%;
+  height: 20%;
+}
+
+.medium {
+  height: 35%;
 }
 
 .big {
-  height: 50%;
+  height: 45%;
 }
 
 @media (max-width: 500px) {
