@@ -1,4 +1,3 @@
-import { Lights } from "./components/Lights";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 
