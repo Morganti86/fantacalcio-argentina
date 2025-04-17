@@ -1,11 +1,4 @@
 .container {
-  background-color: black;
-  color: ivory;
-  padding: 20px 80px;
-}
-
-
-.container {
   min-height: 100vh;
   color: ivory;
   padding: 20px 80px;
@@ -68,7 +61,7 @@
 
 @media (max-width: 500px) {
   .container {
-    padding: 0;
+    padding: 20px 0px 0px;
   }
 
   .imagesContainer {
