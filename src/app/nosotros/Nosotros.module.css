@@ -10,7 +10,7 @@
 
 .imagesContainer {
   display: flex;
-  margin: 20px 0;
+  margin: 30px 0;
   overflow: hidden;
 }
 
@@ -59,9 +59,9 @@
   height: 45%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .container {
-    padding: 20px 0px 0px;
+    padding: 35px 0px 0px;
   }
 
   .imagesContainer {

@@ -66,18 +66,13 @@
 .titulo {
   margin: 2px 5px;
   font-weight: 600;
+  font-size: 14px;
 }
 
 .artista {
   margin: 2px 5px;
   font-weight: 400;
   font-style: italic;
-}
-
-.titulo {
-  font-size: 14px;
-}
-.artista {
   font-size: 12px;
 }
 
@@ -145,6 +140,7 @@
 
 .onTrack {
   margin-top: 15px;
+  font-style: italic;
 }
 
 .progressImage {
@@ -170,7 +166,7 @@
 
 @media (max-width: 500px) {
   .container {
-    padding: 50px 10px 0;
+    padding: 35px 10px 0;
     /* height: calc(100vh - 50px); */
   }
 }

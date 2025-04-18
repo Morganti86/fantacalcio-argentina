@@ -40,20 +40,21 @@
 
 .fecha {
   margin-bottom: 10px;
+  font-style: italic;
 }
 
 .match {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35px;
+  height: 25px;
   gap: 5px;
 }
 
 .fantaName {
-  font-size: 15px;
+  font-size: 13px;
   margin: 5px 0;
-  width: 130px;
+  width: 120px;
 }
 
 .local {
@@ -65,8 +66,8 @@
 }
 
 .crest {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 }
 
 .buttonContainer {
@@ -97,7 +98,6 @@
 
 @media (max-width: 1024px) {
   .grid {
-    padding: 80px;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
@@ -105,7 +105,7 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 50px 20px;
+    padding: 35px 20px;
   }
 
   .grid {

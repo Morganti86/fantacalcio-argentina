@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
               width={40}
               height={40}
               alt={"home.svg"}
+              className="homeIcon"
             />
           </a>
           {children}
