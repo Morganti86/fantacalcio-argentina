@@ -10,7 +10,7 @@ export default function Nosotros() {
 
   return (
     <section className={style.container}>
-      <h1 className="title">Nosotros</h1>
+      <h1 className="title">NOSOTROS</h1>
       <div className={style.imagesContainer}>
         {imageChunks.map((chunk, index) => (
           <ArtSingle key={index} images={chunk} />

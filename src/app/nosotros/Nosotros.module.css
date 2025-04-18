@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   color: ivory;
-  padding: 20px 80px;
+  padding: 50px 80px;
   background-image: url("/Images/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
