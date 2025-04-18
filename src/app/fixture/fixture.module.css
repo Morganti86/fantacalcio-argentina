@@ -12,7 +12,7 @@
 .grid {
   justify-content: center;
   align-content: center;
-  padding: 80px;
+  padding: 35px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
@@ -99,7 +99,6 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
   }
 }
 
