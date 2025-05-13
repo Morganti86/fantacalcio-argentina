@@ -1,6 +1,7 @@
-import ArtSingle from "./ArtSingle";
-import style from "./Nosotros.module.css";
 import { PICTURES } from "./PicturesList";
+import ArtSingle from "./ArtSingle";
+import BackButton from "../components/BackButton";
+import style from "./Nosotros.module.css";
 
 export default function Nosotros() {
   const imageChunks = [];
@@ -10,6 +11,7 @@ export default function Nosotros() {
 
   return (
     <section className={style.container}>
+      <BackButton />
       <h1 className="title">NOSOTROS</h1>
       <div className={style.imagesContainer}>
         {imageChunks.map((chunk, index) => (

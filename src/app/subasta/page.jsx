@@ -1,12 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import style from "./Subasta.module.css";
 import { SubastaLogin } from "./SubastaLogin";
 import { SubastaJugador } from "./SubastaJugador";
 import { SubastaEquipo } from "./SubastaEquipos";
 import { SubastaPosiciones } from "./SubastaPosiciones";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BackButton from "../components/BackButton";
+import style from "./Subasta.module.css";
+
+
 
 export default function Subasta() {
   const [credencialesUser, setCredencialesUser] = useState(""); // Estado para el usuario
@@ -342,7 +345,7 @@ export default function Subasta() {
   const handleRetrieveInfo = async () => {
     const JugadorRetrieve = jugadoresFiltrados[jugadorActual].id;
     console.log(`Jugador: ${JugadorRetrieve}`);
-  
+
     try {
       const response = await fetch("/api/putJugadorRetrieve", {
         method: "PUT",
@@ -353,7 +356,7 @@ export default function Subasta() {
           id: JugadorRetrieve,
         }),
       });
-  
+
       // Procesar la respuesta si es exitosa
       if (response.ok && response.status === 200) {
         const data = await response.json(); // Obtener los datos de la respuesta
@@ -457,6 +460,7 @@ export default function Subasta() {
 
   return (
     <section className={style.container}>
+      <BackButton />
       <h1 className="title">SUBASTA</h1>
       {/* LOGIN */}
       {contraseña !== true && (

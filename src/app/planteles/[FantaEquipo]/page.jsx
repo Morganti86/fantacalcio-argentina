@@ -1,7 +1,9 @@
-import style from "../ListadoFantaEquipos.module.css";
 import { getFantaJugadores } from "../../lib/querys";
 import { AllPlayers } from "./AllPlayers";
 import { DownloadPlayers } from "../DownloadPlayers";
+import BackButton from "@/app/components/BackButton";
+import style from "../ListadoFantaEquipos.module.css";
+
 
 export default async function Planteles({ params }) {
   const { FantaEquipo } = params;
@@ -11,6 +13,7 @@ export default async function Planteles({ params }) {
 
   return (
     <section className={style.container}>
+      <BackButton />
       <div className={style.fantaContainer}>
         <h1 className="title">{fantaEquipo}</h1>
         <img

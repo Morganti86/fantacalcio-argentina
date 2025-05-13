@@ -27,21 +27,7 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
       </head>
       <body className={mainFont.className}>
-        <div className="relative">
-          {/* <Lights /> */}
-          <a
-            href="/"
-            className="home">
-            <img
-              src={"/Icons/home.svg"}
-              width={40}
-              height={40}
-              alt={"home.svg"}
-              className="homeIcon"
-            />
-          </a>
           {children}
-        </div>
       </body>
     </html>
   );

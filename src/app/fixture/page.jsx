@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import BackButton from "../components/BackButton";
 import style from "./fixture.module.css";
 import jsPDF from "jspdf";
 
@@ -143,6 +144,7 @@ export default function Fixture() {
 
   return (
     <section className={style.container}>
+      <BackButton />
       <h1 className="title">FIXTURE</h1>
       <div className={style.grid}>
         {fixture.map((jornada, jornadaIndex) => (

@@ -4,36 +4,33 @@ const FANTAEQUIPOS = [
     "presidente": "Federico Smurra",
     "email": "x@gmail.com",
     "presupuesto": 25200,
-    "remanente": 0,
+    "remanente": 3300,
     "campeonatos": 4,
     "copas": 3,
     "campeon_actual": false,
-    "estado": 0 // activo
-
+    "estado": 0
   },
   {
     "fantaEquipo": "BALDOSERA",
     "presidente": "Maximiliano Ferraris",
     "email": "x@gmail.com",
     "presupuesto": 26000,
-    "remanente": 100,
+    "remanente": 1200,
     "campeonatos": 2,
     "copas": 0,
     "campeon_actual": false,
-    "estado": 0 // activo
-
+    "estado": 0
   },
   {
     "fantaEquipo": "DECO",
     "presidente": "Sebastian Canosa",
     "email": "x@gmail.com",
     "presupuesto": 26100,
-    "remanente": 400,
+    "remanente": 4500,
     "campeonatos": 4,
     "copas": 0,
     "campeon_actual": false,
-    "estado": 0 // activo
-
+    "estado": 0
   },
   {
     "fantaEquipo": "DEP. ARECO",
@@ -51,55 +48,55 @@ const FANTAEQUIPOS = [
     "presidente": "Ezequiel Zema",
     "email": "x@gmail.com",
     "presupuesto": 25900,
-    "remanente": 0,
+    "remanente": 3700,
     "campeonatos": 6,
     "copas": 5,
     "campeon_actual": false,
-    "estado": 0 // activo    
+    "estado": 0
   },
   {
     "fantaEquipo": "FIRMAMO",
     "presidente": "Maximiliano Gurnik",
     "email": "x@gmail.com",
     "presupuesto": 25400,
-    "remanente": 1600,
+    "remanente": 3500,
     "campeonatos": 1,
     "copas": 2,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "FLA 3",
     "presidente": "Flavio Smurra",
     "email": "x@gmail.com",
     "presupuesto": 25000,
-    "remanente": 600,
+    "remanente": 0,
     "campeonatos": 2,
     "copas": 0,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "FLATULENTOS",
     "presidente": "Sebastian Mondillo",
     "email": "x@gmail.com",
     "presupuesto": 25800,
-    "remanente": 1100,
+    "remanente": 2500,
     "campeonatos": 5,
     "copas": 1,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "INDEPTE. SPURS",
     "presidente": "Sergio Castro",
     "email": "x@gmail.com",
     "presupuesto": 27000,
-    "remanente": 800,
+    "remanente": 4200,
     "campeonatos": 2,
     "copas": 2,
     "campeon_actual": true,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "JRFC",
@@ -110,7 +107,7 @@ const FANTAEQUIPOS = [
     "campeonatos": 0,
     "copas": 0,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "MORGANTI FC",
@@ -121,62 +118,62 @@ const FANTAEQUIPOS = [
     "campeonatos": 2,
     "copas": 3,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "PDC",
     "presidente": "David Alarcón",
     "email": "x@gmail.com",
     "presupuesto": 25600,
-    "remanente": 1000,
+    "remanente": 2300,
     "campeonatos": 1,
     "copas": 1,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "PELOTA DE TRAPO",
     "presidente": "Pedro Bombur",
     "email": "x@gmail.com",
     "presupuesto": 25700,
-    "remanente": 0,
+    "remanente": 600,
     "campeonatos": 2,
     "copas": 2,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "PITUFOS",
     "presidente": "Matias Zema",
     "email": "x@gmail.com",
     "presupuesto": 26400,
-    "remanente": 1200,
+    "remanente": 3300,
     "campeonatos": 2,
     "copas": 5,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "ROSTOCK",
     "presidente": "Leonel Chiappetta",
     "email": "x@gmail.com",
     "presupuesto": 24700,
-    "remanente": 0,
+    "remanente": 1000,
     "campeonatos": 1,
     "copas": 0,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "SUPER CELTICS",
     "presidente": "Valentino Zema",
     "email": "x@gmail.com",
     "presupuesto": 25000,
-    "remanente": 900,
+    "remanente": 2200,
     "campeonatos": 0,
     "copas": 0,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   },
   {
     "fantaEquipo": "VILLA LURO",
@@ -187,10 +184,10 @@ const FANTAEQUIPOS = [
     "campeonatos": 2,
     "copas": 5,
     "campeon_actual": false,
-    "estado": 0 // activo
+    "estado": 0
   }
 ];
 
 module.exports = {
   FANTAEQUIPOS
-}
+};

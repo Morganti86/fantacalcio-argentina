@@ -4,12 +4,22 @@
 const JUGADORES = [
     {
         "equipo": "Aldosivi",
+        "jugador": "Barlasina, Williams",
+        "precioBase": "100",
+        "posicion": "ARQ",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Aldosivi",
         "jugador": "Carranza, Jorge",
         "precioBase": "300",
         "posicion": "ARQ",
         "poli": "",
-        "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -26,6 +36,16 @@ const JUGADORES = [
         "equipo": "Aldosivi",
         "jugador": "Breitenbruch, Nestor",
         "precioBase": "200",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Aldosivi",
+        "jugador": "Cabral, Yonathan",
+        "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "",
@@ -68,16 +88,6 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Aldosivi",
-        "jugador": "Indacoechea, Joaquin",
-        "precioBase": "200",
-        "posicion": "DEF",
-        "poli": "SI",
         "fantaEquipo": "",
         "precioCompra": "",
         "": ""
@@ -184,6 +194,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Aldosivi",
+        "jugador": "Mendez, Emiliano",
+        "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Aldosivi",
         "jugador": "Serrago, Tiago",
         "precioBase": "100",
         "posicion": "VOL",
@@ -218,8 +238,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Rostock",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -238,8 +258,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -258,8 +278,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Rostock",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -318,8 +338,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "200",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -330,16 +350,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Firmamo",
         "precioCompra": "300",
-        "": ""
-    },
-    {
-        "equipo": "Argentinos",
-        "jugador": "Guillen, Manuel",
-        "precioBase": "100",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -544,16 +554,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Argentinos",
-        "jugador": "Cordero, Nicolas",
-        "precioBase": "300",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Argentinos",
         "jugador": "Herrera, Jose",
         "precioBase": "300",
         "posicion": "DEL",
@@ -688,8 +688,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "PDC",
-        "precioCompra": "500",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -778,8 +778,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "500",
+        "fantaEquipo": "Deco",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -804,12 +804,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Atl. Tucuman",
-        "jugador": "Bajamich, Mateo",
+        "jugador": "Auzqui, Carlos",
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "SI",
         "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "1900",
+        "precioCompra": "400",
+        "": ""
+    },
+    {
+        "equipo": "Atl. Tucuman",
+        "jugador": "Bajamich, Mateo",
+        "precioBase": "400",
+        "posicion": "DEL",
+        "poli": "SI",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "1300",
         "": ""
     },
     {
@@ -834,12 +844,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Atl. Tucuman",
-        "jugador": "Estigarribia, Marcelo",
+        "jugador": "Diaz, Leandro",
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "1100",
+        "fantaEquipo": "Super Celtics",
+        "precioCompra": "900",
         "": ""
     },
     {
@@ -858,8 +868,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pelota de Trapo",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -964,6 +974,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Banfield",
+        "jugador": "Riveros, Paul",
+        "precioBase": "200",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Banfield",
         "jugador": "Adoryan, Tomas",
         "precioBase": "200",
         "posicion": "VOL",
@@ -978,8 +998,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pitufos",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -1054,12 +1074,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Banfield",
+        "jugador": "Rios, Gonzalo",
+        "precioBase": "300",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Deco",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Banfield",
         "jugador": "Rios, Lautaro",
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "PDC",
+        "precioCompra": "600",
         "": ""
     },
     {
@@ -1134,16 +1164,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Banfield",
-        "jugador": "Echeverria, Marcos",
-        "precioBase": "100",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Banfield",
         "jugador": "Garate, Leandro",
         "precioBase": "300",
         "posicion": "DEL",
@@ -1178,8 +1198,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Rostock",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -1228,8 +1248,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Rostock",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1318,8 +1338,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "El Marplatense",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -1384,12 +1404,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Barracas Central",
+        "jugador": "Blandi, Nicolas",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Barracas Central",
         "jugador": "Bruera, Facundo",
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "1300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1398,8 +1428,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pelota de Trapo",
+        "precioCompra": "800",
         "": ""
     },
     {
@@ -1420,6 +1450,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Pitufos",
         "precioCompra": "600",
+        "": ""
+    },
+    {
+        "equipo": "Barracas Central",
+        "jugador": "Perugini, Thiago",
+        "precioBase": "100",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1488,13 +1528,13 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "SI",
-        "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "900",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
         "equipo": "Belgrano",
-        "jugador": "Facello, Francisco",
+        "jugador": "Dattola, Agustin",
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
@@ -1508,8 +1548,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Fla 3",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -1518,8 +1558,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1558,8 +1598,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Ay de Mi",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -1568,8 +1608,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "SI",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1610,6 +1650,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "El Marplatense",
         "precioCompra": "300",
+        "": ""
+    },
+    {
+        "equipo": "Belgrano",
+        "jugador": "Longo, Santiago",
+        "precioBase": "500",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Pitufos",
+        "precioCompra": "1000",
         "": ""
     },
     {
@@ -1658,8 +1708,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "PDC",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1798,8 +1848,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1858,8 +1908,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -1878,8 +1928,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "PDC",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -1954,16 +2004,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Boca",
-        "jugador": "Brochero, Lucas",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Boca",
         "jugador": "Ceballos, Julian",
         "precioBase": "100",
         "posicion": "VOL",
@@ -2020,16 +2060,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Villa Luro",
         "precioCompra": "700",
-        "": ""
-    },
-    {
-        "equipo": "Boca",
-        "jugador": "Ramirez, Juan",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -2128,8 +2158,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -2144,7 +2174,7 @@ const JUGADORES = [
     },
     {
         "equipo": "Boca",
-        "jugador": "Rodriguez, Ignacio",
+        "jugador": "Ruiz, Joaquin",
         "precioBase": "100",
         "posicion": "DEL",
         "poli": "",
@@ -2204,6 +2234,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Central Cordoba",
+        "jugador": "Zozaya, Juan Pablo",
+        "precioBase": "100",
+        "posicion": "ARQ",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Central Cordoba",
         "jugador": "Abascia, Lucas",
         "precioBase": "300",
         "posicion": "DEF",
@@ -2238,8 +2278,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Baldosera",
-        "precioCompra": "200",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2294,6 +2334,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Central Cordoba",
+        "jugador": "Pignani, Juan Pablo",
+        "precioBase": "200",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Central Cordoba",
         "jugador": "Pillud, Ivan",
         "precioBase": "300",
         "posicion": "DEF",
@@ -2324,12 +2374,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Central Cordoba",
+        "jugador": "Alfonso, Franco",
+        "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Central Cordoba",
         "jugador": "Cristoforo, Sebastian",
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Pelota de Trapo",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2398,8 +2458,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Pelota de Trapo",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2458,8 +2518,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Super Celtics",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -2504,6 +2564,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Defensa y Justicia",
+        "jugador": "Leon, Roberto",
+        "precioBase": "100",
+        "posicion": "ARQ",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Defensa y Justicia",
         "jugador": "Masuero, Facundo",
         "precioBase": "100",
         "posicion": "ARQ",
@@ -2524,12 +2594,32 @@ const JUGADORES = [
     },
     {
         "equipo": "Defensa y Justicia",
+        "jugador": "Balanta, Kevin",
+        "precioBase": "300",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Defensa y Justicia",
         "jugador": "Cannavo, Ezequiel",
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "Villa Luro",
         "precioCompra": "600",
+        "": ""
+    },
+    {
+        "equipo": "Defensa y Justicia",
+        "jugador": "Delgado, Rafael",
+        "precioBase": "300",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2628,8 +2718,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2668,8 +2758,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Deco",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -2688,8 +2778,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "200",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2734,6 +2824,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Defensa y Justicia",
+        "jugador": "Gonzalez, Francisco",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Defensa y Justicia",
         "jugador": "Gonzalez, Gaston",
         "precioBase": "400",
         "posicion": "DEL",
@@ -2758,18 +2858,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Defensa y Justicia",
-        "jugador": "Herrera, Luciano",
-        "precioBase": "300",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Fla 3",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -2844,22 +2934,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Estudiantes",
-        "jugador": "Zozaya, Juan Pablo",
-        "precioBase": "100",
-        "posicion": "ARQ",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Estudiantes",
         "jugador": "Arzamendia, Santiago",
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "El Marplatense",
+        "precioCompra": "500",
         "": ""
     },
     {
@@ -2880,6 +2960,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Deco",
         "precioCompra": "500",
+        "": ""
+    },
+    {
+        "equipo": "Estudiantes",
+        "jugador": "Funes Mori, Ramiro",
+        "precioBase": "300",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2908,8 +2998,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -2920,16 +3010,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Super Celtics",
         "precioCompra": "3600",
-        "": ""
-    },
-    {
-        "equipo": "Estudiantes",
-        "jugador": "Benedetti, Nehuen",
-        "precioBase": "100",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -3138,8 +3218,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "200",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3164,22 +3244,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Gimnasia",
-        "jugador": "Mastrangelo, Diego",
-        "precioBase": "100",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "Pelota de Trapo",
-        "precioCompra": "200",
-        "": ""
-    },
-    {
-        "equipo": "Gimnasia",
         "jugador": "Melluso, Matias",
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Pelota de Trapo",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3208,8 +3278,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pelota de Trapo",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -3258,8 +3328,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pitufos",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -3314,10 +3384,10 @@ const JUGADORES = [
     },
     {
         "equipo": "Gimnasia",
-        "jugador": "Abaldo, Matias",
-        "precioBase": "400",
-        "posicion": "DEL",
-        "poli": "SI",
+        "jugador": "Moreno, Junior",
+        "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
         "fantaEquipo": "",
         "precioCompra": "",
         "": ""
@@ -3344,12 +3414,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Gimnasia",
+        "jugador": "Hurtado, Jan",
+        "precioBase": "400",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "PDC",
+        "precioCompra": "400",
+        "": ""
+    },
+    {
+        "equipo": "Gimnasia",
         "jugador": "Mammini, Ivo",
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Super Celtics",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3360,6 +3440,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Pitufos",
         "precioCompra": "1100",
+        "": ""
+    },
+    {
+        "equipo": "Gimnasia",
+        "jugador": "Piedrahita, Alejandro",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "Ay de Mi",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3444,6 +3534,26 @@ const JUGADORES = [
     },
     {
         "equipo": "Godoy Cruz",
+        "jugador": "Facello, Francisco",
+        "precioBase": "200",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Godoy Cruz",
+        "jugador": "Jara, Leonardo",
+        "precioBase": "300",
+        "posicion": "DEF",
+        "poli": "SI",
+        "fantaEquipo": "Pelota de Trapo",
+        "precioCompra": "300",
+        "": ""
+    },
+    {
+        "equipo": "Godoy Cruz",
         "jugador": "Meli, Andres",
         "precioBase": "300",
         "posicion": "DEF",
@@ -3504,16 +3614,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Godoy Cruz",
-        "jugador": "Salvareschi, Brian",
-        "precioBase": "200",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Godoy Cruz",
         "jugador": "Abrego, Gonzalo",
         "precioBase": "400",
         "posicion": "VOL",
@@ -3548,8 +3648,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "900",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3614,12 +3714,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Godoy Cruz",
+        "jugador": "Auzmendi, Agustin",
+        "precioBase": "200",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Godoy Cruz",
         "jugador": "Barrea, Daniel",
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3628,16 +3738,6 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Godoy Cruz",
-        "jugador": "Galeano, Mario",
-        "precioBase": "100",
-        "posicion": "DEL",
-        "poli": "",
         "fantaEquipo": "",
         "precioCompra": "",
         "": ""
@@ -3654,22 +3754,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Godoy Cruz",
+        "jugador": "Martinez Dupuy, Luca",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "El Marplatense",
+        "precioCompra": "600",
+        "": ""
+    },
+    {
+        "equipo": "Godoy Cruz",
         "jugador": "Parzajuk, Kevin",
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
         "fantaEquipo": "Morganti",
         "precioCompra": "300",
-        "": ""
-    },
-    {
-        "equipo": "Godoy Cruz",
-        "jugador": "Pino, Martin",
-        "precioBase": "200",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "Baldosera",
-        "precioCompra": "700",
         "": ""
     },
     {
@@ -3688,8 +3788,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "El Marplatense",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -3794,16 +3894,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Huracán",
-        "jugador": "Villar, Mauro",
-        "precioBase": "100",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Huracán",
         "jugador": "Zabala, Daniel",
         "precioBase": "200",
         "posicion": "DEF",
@@ -3888,8 +3978,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "PDC",
-        "precioCompra": "700",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3938,8 +4028,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "Super Celtics",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -3996,16 +4086,6 @@ const JUGADORES = [
         "equipo": "Independiente",
         "jugador": "De Irastorza, Jonathan",
         "precioBase": "100",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Independiente",
-        "jugador": "Fedorco, Juan Manuel",
-        "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "",
@@ -4090,16 +4170,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Independiente Spurs",
         "precioCompra": "600",
-        "": ""
-    },
-    {
-        "equipo": "Independiente",
-        "jugador": "Barcia, Baltasar",
-        "precioBase": "200",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -4214,16 +4284,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Independiente",
-        "jugador": "Lopez, Santiago",
-        "precioBase": "400",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Independiente",
         "jugador": "Maestro Puch, Ignacio",
         "precioBase": "300",
         "posicion": "DEL",
@@ -4254,6 +4314,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Independiente",
+        "jugador": "Roman, Lucas",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Independiente",
         "jugador": "Taborda, Enzo",
         "precioBase": "100",
         "posicion": "DEL",
@@ -4270,16 +4340,6 @@ const JUGADORES = [
         "poli": "SI",
         "fantaEquipo": "Flatulentos",
         "precioCompra": "1900",
-        "": ""
-    },
-    {
-        "equipo": "Independiente",
-        "jugador": "Vallejo, Nicolas",
-        "precioBase": "300",
-        "posicion": "DEL",
-        "poli": "SI",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -4474,16 +4534,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Indepte. Rivadavia",
-        "jugador": "Rios, Gonzalo",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Indepte. Rivadavia",
         "jugador": "Rodriguez, Laureano",
         "precioBase": "200",
         "posicion": "VOL",
@@ -4518,8 +4568,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Baldosera",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -4548,8 +4598,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -4564,6 +4614,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Indepte. Rivadavia",
+        "jugador": "Retamar, Nicolas",
+        "precioBase": "200",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "Baldosera",
+        "precioCompra": "300",
+        "": ""
+    },
+    {
+        "equipo": "Indepte. Rivadavia",
         "jugador": "Romero, Fernando",
         "precioBase": "300",
         "posicion": "DEL",
@@ -4574,12 +4634,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Indepte. Rivadavia",
-        "jugador": "Sanguina, Jorge",
-        "precioBase": "200",
+        "jugador": "Sartori, Fabrizio",
+        "precioBase": "100",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Independiente Spurs",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -4814,6 +4874,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Instituto",
+        "jugador": "Cordero, Nicolas",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Instituto",
         "jugador": "Dellarossa, Jonathan",
         "precioBase": "200",
         "posicion": "DEL",
@@ -4868,8 +4938,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "1600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -4904,16 +4974,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Lanús",
-        "jugador": "Caceres, Juan Jose",
-        "precioBase": "300",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "Rostock",
-        "precioCompra": "500",
-        "": ""
-    },
-    {
-        "equipo": "Lanús",
         "jugador": "De Jesus, Ronaldo",
         "precioBase": "200",
         "posicion": "DEF",
@@ -4944,12 +5004,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Lanús",
+        "jugador": "Mendez, Armando",
+        "precioBase": "400",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Lanús",
         "jugador": "Morgantini, Nicolas",
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Rostock",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -4958,8 +5028,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Deco",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5000,16 +5070,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Pitufos",
         "precioCompra": "700",
-        "": ""
-    },
-    {
-        "equipo": "Lanús",
-        "jugador": "Boggio, Luciano",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -5064,6 +5124,26 @@ const JUGADORES = [
     },
     {
         "equipo": "Lanús",
+        "jugador": "Medina, Agustin",
+        "precioBase": "100",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Lanús",
+        "jugador": "Ramirez, Juan",
+        "precioBase": "300",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Lanús",
         "jugador": "Rodriguez, Agustin",
         "precioBase": "200",
         "posicion": "VOL",
@@ -5078,8 +5158,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "Baldosera",
-        "precioCompra": "400",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5114,16 +5194,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Lanús",
-        "jugador": "Diaz, Leandro",
-        "precioBase": "500",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Lanús",
         "jugador": "Moreno, Marcelino",
         "precioBase": "800",
         "posicion": "DEL",
@@ -5138,8 +5208,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "1100",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5174,16 +5244,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Newell's",
-        "jugador": "Macagno, Ramiro",
-        "precioBase": "300",
-        "posicion": "ARQ",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Newell's",
         "jugador": "Navas, Keylor",
         "precioBase": "500",
         "posicion": "ARQ",
@@ -5208,8 +5268,18 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "SI",
-        "fantaEquipo": "Super Celtics",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Newell's",
+        "jugador": "Cuesta, Victor",
+        "precioBase": "400",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "Baldosera",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -5254,16 +5324,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Newell's",
-        "jugador": "Mendez, Armando",
-        "precioBase": "400",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Newell's",
         "jugador": "Mihovilcevich, Lucas",
         "precioBase": "100",
         "posicion": "DEF",
@@ -5278,8 +5338,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Ay de mi",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -5318,8 +5378,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "900",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5338,8 +5398,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Flatulentos",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -5384,16 +5444,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Newell's",
-        "jugador": "Perez, Tomas",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "300",
-        "": ""
-    },
-    {
-        "equipo": "Newell's",
         "jugador": "Regiardo, Luca",
         "precioBase": "100",
         "posicion": "VOL",
@@ -5406,6 +5456,16 @@ const JUGADORES = [
         "equipo": "Newell's",
         "jugador": "Sotelo, David",
         "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Baldosera",
+        "precioCompra": "200",
+        "": ""
+    },
+    {
+        "equipo": "Newell's",
+        "jugador": "Tirado, Fabricio",
+        "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
         "fantaEquipo": "",
@@ -5444,12 +5504,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Newell's",
-        "jugador": "Gonzalez, Francisco",
+        "jugador": "Gonzalez, Carlos",
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Rostock",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Newell's",
+        "jugador": "Herrera, Luciano",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5508,14 +5578,24 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "500",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
         "equipo": "Platense",
         "jugador": "Elizalde, Edgar",
         "precioBase": "200",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Platense",
+        "jugador": "Goñi, Gonzalo",
+        "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "",
@@ -5540,16 +5620,6 @@ const JUGADORES = [
         "poli": "SI",
         "fantaEquipo": "Baldosera",
         "precioCompra": "700",
-        "": ""
-    },
-    {
-        "equipo": "Platense",
-        "jugador": "Pignani, Juan Pablo",
-        "precioBase": "200",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -5600,16 +5670,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Villa Luro",
         "precioCompra": "1300",
-        "": ""
-    },
-    {
-        "equipo": "Platense",
-        "jugador": "Alonso, Agustin",
-        "precioBase": "100",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -5668,16 +5728,6 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "800",
-        "": ""
-    },
-    {
-        "equipo": "Platense",
-        "jugador": "Ocampo, Lucas",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
         "fantaEquipo": "",
         "precioCompra": "",
         "": ""
@@ -5728,8 +5778,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "PDC",
-        "precioCompra": "700",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5854,6 +5904,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Racing",
+        "jugador": "Escudero, Gonzalo",
+        "precioBase": "100",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Racing",
         "jugador": "Garcia Basso, Agustin",
         "precioBase": "500",
         "posicion": "DEF",
@@ -5878,8 +5938,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -5924,22 +5984,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Racing",
-        "jugador": "Banega, Tiago",
-        "precioBase": "200",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Racing",
         "jugador": "Barrios, Martin",
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "PDC",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -5974,22 +6024,22 @@ const JUGADORES = [
     },
     {
         "equipo": "Racing",
-        "jugador": "Rodriguez, Baltasar",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Racing",
         "jugador": "Rodriguez, Ignacio",
         "precioBase": "400",
         "posicion": "VOL",
         "poli": "",
         "fantaEquipo": "Villa Luro",
         "precioCompra": "700",
+        "": ""
+    },
+    {
+        "equipo": "Racing",
+        "jugador": "Sanchez, Richard",
+        "precioBase": "500",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "El Marplatense",
+        "precioCompra": "1800",
         "": ""
     },
     {
@@ -6114,16 +6164,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Riestra",
-        "jugador": "Saracho, Rodrigo",
-        "precioBase": "200",
-        "posicion": "ARQ",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Riestra",
         "jugador": "Bracamonte, Mariano",
         "precioBase": "200",
         "posicion": "DEF",
@@ -6164,8 +6204,8 @@ const JUGADORES = [
     },
     {
         "equipo": "Riestra",
-        "jugador": "James, Jeremias",
-        "precioBase": "200",
+        "jugador": "Mastrangelo, Diego",
+        "precioBase": "100",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "",
@@ -6258,8 +6298,18 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "500",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Riestra",
+        "jugador": "Montoya, Nehuen",
+        "precioBase": "100",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -6278,8 +6328,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Independiente Spurs",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -6308,8 +6358,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Rostock",
-        "precioCompra": "500",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -6318,8 +6368,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Deco",
-        "precioCompra": "300",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -6468,8 +6518,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -6478,8 +6528,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -6490,16 +6540,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Rostock",
         "precioCompra": "800",
-        "": ""
-    },
-    {
-        "equipo": "River",
-        "jugador": "Funes Mori, Ramiro",
-        "precioBase": "300",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {
@@ -6518,8 +6558,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "700",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -6554,16 +6594,6 @@ const JUGADORES = [
     },
     {
         "equipo": "River",
-        "jugador": "Sant'Anna, Agustin",
-        "precioBase": "300",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "River",
         "jugador": "Simon, Santiago",
         "precioBase": "400",
         "posicion": "DEF",
@@ -6574,22 +6604,32 @@ const JUGADORES = [
     },
     {
         "equipo": "River",
-        "jugador": "Alfonso, Franco",
-        "precioBase": "200",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "River",
         "jugador": "Aliendro, Rodrigo",
         "precioBase": "500",
         "posicion": "VOL",
         "poli": "",
         "fantaEquipo": "Pelota de Trapo",
         "precioCompra": "500",
+        "": ""
+    },
+    {
+        "equipo": "River",
+        "jugador": "Castaño, Kevin",
+        "precioBase": "500",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Deco",
+        "precioCompra": "2000",
+        "": ""
+    },
+    {
+        "equipo": "River",
+        "jugador": "Costantini, Giorgio",
+        "precioBase": "100",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Ay de mi",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -6608,18 +6648,8 @@ const JUGADORES = [
         "precioBase": "600",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "3100",
-        "": ""
-    },
-    {
-        "equipo": "River",
-        "jugador": "Galvan, Tomas",
-        "precioBase": "300",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Independiente Spurs",
+        "precioCompra": "1000",
         "": ""
     },
     {
@@ -6628,8 +6658,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Flatulentos",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -6638,8 +6668,18 @@ const JUGADORES = [
         "precioBase": "500",
         "posicion": "VOL",
         "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "River",
+        "jugador": "Lencina, Santiago",
+        "precioBase": "100",
+        "posicion": "VOL",
+        "poli": "",
         "fantaEquipo": "Deco",
-        "precioCompra": "3100",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -6694,16 +6734,6 @@ const JUGADORES = [
     },
     {
         "equipo": "River",
-        "jugador": "Villagra, Rodrigo",
-        "precioBase": "500",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "500",
-        "": ""
-    },
-    {
-        "equipo": "River",
         "jugador": "Borja, Miguel",
         "precioBase": "1000",
         "posicion": "DEL",
@@ -6740,16 +6770,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Deco",
         "precioCompra": "500",
-        "": ""
-    },
-    {
-        "equipo": "River",
-        "jugador": "Solari, Pablo",
-        "precioBase": "600",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "Pelota de Trapo",
-        "precioCompra": "1400",
         "": ""
     },
     {
@@ -6884,16 +6904,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Rosario Central",
-        "jugador": "Rodriguez, Alan",
-        "precioBase": "300",
-        "posicion": "DEF",
-        "poli": "SI",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Rosario Central",
         "jugador": "Sandez, Agustin",
         "precioBase": "400",
         "posicion": "DEF",
@@ -6938,8 +6948,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Super Celtics",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -6980,6 +6990,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Morganti",
         "precioCompra": "2700",
+        "": ""
+    },
+    {
+        "equipo": "Rosario Central",
+        "jugador": "Navarro, Federico",
+        "precioBase": "400",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Flatulentos",
+        "precioCompra": "1500",
         "": ""
     },
     {
@@ -7038,14 +7058,14 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Ay de Mi",
-        "precioCompra": "900",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
         "equipo": "Rosario Central",
-        "jugador": "Martinez Dupuy, Luca",
-        "precioBase": "300",
+        "jugador": "Lopez, Santiago",
+        "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
         "fantaEquipo": "",
@@ -7118,8 +7138,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Independiente Spurs",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -7218,8 +7238,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Fla 3",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -7240,6 +7260,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Independiente Spurs",
         "precioCompra": "900",
+        "": ""
+    },
+    {
+        "equipo": "San Lorenzo",
+        "jugador": "Ladstatter, Agustin",
+        "precioBase": "100",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Fla 3",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -7278,8 +7308,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "400",
+        "fantaEquipo": "Flatulentos",
+        "precioCompra": "500",
         "": ""
     },
     {
@@ -7296,6 +7326,16 @@ const JUGADORES = [
         "equipo": "San Lorenzo",
         "jugador": "Hernandez, Matias",
         "precioBase": "100",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "San Lorenzo",
+        "jugador": "Peralta, Jaime",
+        "precioBase": "200",
         "posicion": "DEL",
         "poli": "",
         "fantaEquipo": "",
@@ -7464,6 +7504,16 @@ const JUGADORES = [
     },
     {
         "equipo": "San Martin",
+        "jugador": "Gonzalez, Diego",
+        "precioBase": "300",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "San Martin",
         "jugador": "Gonzalez, Sebastian",
         "precioBase": "300",
         "posicion": "VOL",
@@ -7478,8 +7528,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pitufos",
+        "precioCompra": "500",
         "": ""
     },
     {
@@ -7488,8 +7538,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Baldosera",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -7508,8 +7558,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "Rostock",
-        "precioCompra": "200",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -7558,8 +7608,8 @@ const JUGADORES = [
         "precioBase": "200",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -7568,8 +7618,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pelota de Trapo",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -7598,8 +7648,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Super Celtics",
-        "precioCompra": "400",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -7608,8 +7658,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "Super Celtics",
-        "precioCompra": "1500",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -7674,16 +7724,6 @@ const JUGADORES = [
     },
     {
         "equipo": "Sarmiento",
-        "jugador": "Castet, Facundo",
-        "precioBase": "200",
-        "posicion": "DEF",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Sarmiento",
         "jugador": "Diaz, Gabriel",
         "precioBase": "300",
         "posicion": "DEF",
@@ -7698,8 +7738,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "SI",
-        "fantaEquipo": "Baldosera",
-        "precioCompra": "400",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -7838,8 +7878,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Rostock",
+        "precioCompra": "200",
         "": ""
     },
     {
@@ -7884,6 +7924,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Sarmiento",
+        "jugador": "Villalba, Carlos",
+        "precioBase": "300",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Sarmiento",
         "jugador": "Frias, Franco",
         "precioBase": "200",
         "posicion": "DEL",
@@ -7898,8 +7948,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -7954,6 +8004,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Talleres",
+        "jugador": "Cardona, Tomas",
+        "precioBase": "400",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "Rostock",
+        "precioCompra": "500",
+        "": ""
+    },
+    {
+        "equipo": "Talleres",
         "jugador": "Catalan, Matias",
         "precioBase": "400",
         "posicion": "DEF",
@@ -7974,8 +8034,8 @@ const JUGADORES = [
     },
     {
         "equipo": "Talleres",
-        "jugador": "Mantilla, Kevin",
-        "precioBase": "200",
+        "jugador": "Gelos, Valentin",
+        "precioBase": "100",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "",
@@ -8028,14 +8088,24 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Baldosera",
-        "precioCompra": "1100",
+        "fantaEquipo": "Flatulentos",
+        "precioCompra": "500",
         "": ""
     },
     {
         "equipo": "Talleres",
         "jugador": "Schott, Augusto",
         "precioBase": "300",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Talleres",
+        "jugador": "Suarez, Emilio",
+        "precioBase": "200",
         "posicion": "DEF",
         "poli": "",
         "fantaEquipo": "",
@@ -8118,8 +8188,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Pitufos",
+        "precioCompra": "1500",
         "": ""
     },
     {
@@ -8154,22 +8224,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Talleres",
-        "jugador": "Villalba, Carlos",
-        "precioBase": "300",
+        "jugador": "Reynoso, Emanuel",
+        "precioBase": "500",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Talleres",
-        "jugador": "Barticcioto, Bruno",
-        "precioBase": "400",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "Deco",
-        "precioCompra": "600",
+        "fantaEquipo": "Independiente Spurs",
+        "precioCompra": "900",
         "": ""
     },
     {
@@ -8200,16 +8260,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Super Celtics",
         "precioCompra": "700",
-        "": ""
-    },
-    {
-        "equipo": "Talleres",
-        "jugador": "Martinez, Alejandro",
-        "precioBase": "400",
-        "posicion": "DEL",
-        "poli": "SI",
-        "fantaEquipo": "Villa Luro",
-        "precioCompra": "400",
         "": ""
     },
     {
@@ -8384,32 +8434,12 @@ const JUGADORES = [
     },
     {
         "equipo": "Tigre",
-        "jugador": "Fernandez, Tomas",
-        "precioBase": "100",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Tigre",
-        "jugador": "Forclaz, Ezequiel",
-        "precioBase": "200",
-        "posicion": "VOL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
-        "": ""
-    },
-    {
-        "equipo": "Tigre",
         "jugador": "Gonzalez, Santiago",
         "precioBase": "200",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Baldosera",
+        "precioCompra": "900",
         "": ""
     },
     {
@@ -8430,6 +8460,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Ay de Mi",
         "precioCompra": "300",
+        "": ""
+    },
+    {
+        "equipo": "Tigre",
+        "jugador": "Neira, Ignacio",
+        "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8478,8 +8518,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "400",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8498,8 +8538,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "500",
+        "fantaEquipo": "Super Celtics",
+        "precioCompra": "300",
         "": ""
     },
     {
@@ -8518,8 +8558,18 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Tigre",
+        "jugador": "Oviedo, Alfio",
+        "precioBase": "300",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8588,8 +8638,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "SI",
-        "fantaEquipo": "Firmamo",
-        "precioCompra": "1600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8688,8 +8738,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Deco",
-        "precioCompra": "1600",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8698,8 +8748,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "El Marplatense",
-        "precioCompra": "700",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8764,6 +8814,16 @@ const JUGADORES = [
     },
     {
         "equipo": "Unión",
+        "jugador": "Profini, Rafael",
+        "precioBase": "100",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "300",
+        "": ""
+    },
+    {
+        "equipo": "Unión",
         "jugador": "Verde, Lionel",
         "precioBase": "200",
         "posicion": "VOL",
@@ -8788,8 +8848,18 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "800",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Unión",
+        "jugador": "Diaz, Diego",
+        "precioBase": "100",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8800,6 +8870,16 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Ay de Mi",
         "precioCompra": "900",
+        "": ""
+    },
+    {
+        "equipo": "Unión",
+        "jugador": "Estigarribia, Marcelo",
+        "precioBase": "400",
+        "posicion": "DEL",
+        "poli": "",
+        "fantaEquipo": "Firmamo",
+        "precioCompra": "1100",
         "": ""
     },
     {
@@ -8818,8 +8898,8 @@ const JUGADORES = [
         "precioBase": "400",
         "posicion": "DEL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Super Celtics",
+        "precioCompra": "400",
         "": ""
     },
     {
@@ -8838,8 +8918,8 @@ const JUGADORES = [
         "precioBase": "500",
         "posicion": "ARQ",
         "poli": "",
-        "fantaEquipo": "Deco",
-        "precioCompra": "1000",
+        "fantaEquipo": "Independiente Spurs",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8878,8 +8958,8 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "500",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8904,12 +8984,32 @@ const JUGADORES = [
     },
     {
         "equipo": "Vélez",
+        "jugador": "Gomez, Valentin",
+        "precioBase": "500",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Vélez",
+        "jugador": "Gordon, Jano",
+        "precioBase": "100",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Vélez",
         "jugador": "Lagos, Agustin",
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Flatulentos",
-        "precioCompra": "700",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8938,8 +9038,28 @@ const JUGADORES = [
         "precioBase": "300",
         "posicion": "DEF",
         "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "1000",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Vélez",
+        "jugador": "Silvero, Thiago",
+        "precioBase": "100",
+        "posicion": "DEF",
+        "poli": "",
+        "fantaEquipo": "Villa Luro",
+        "precioCompra": "100",
+        "": ""
+    },
+    {
+        "equipo": "Vélez",
+        "jugador": "Baeza, Claudio",
+        "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
         "": ""
     },
     {
@@ -8959,6 +9079,16 @@ const JUGADORES = [
         "posicion": "VOL",
         "poli": "",
         "fantaEquipo": "Pitufos",
+        "precioCompra": "300",
+        "": ""
+    },
+    {
+        "equipo": "Vélez",
+        "jugador": "Galvan, Tomas",
+        "precioBase": "300",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "Villa Luro",
         "precioCompra": "300",
         "": ""
     },
@@ -8988,8 +9118,8 @@ const JUGADORES = [
         "precioBase": "100",
         "posicion": "VOL",
         "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
+        "fantaEquipo": "Flatulentos",
+        "precioCompra": "100",
         "": ""
     },
     {
@@ -9006,6 +9136,16 @@ const JUGADORES = [
         "equipo": "Vélez",
         "jugador": "Seoane, Mateo",
         "precioBase": "200",
+        "posicion": "VOL",
+        "poli": "",
+        "fantaEquipo": "",
+        "precioCompra": "",
+        "": ""
+    },
+    {
+        "equipo": "Vélez",
+        "jugador": "Vazquez, Kevin",
+        "precioBase": "300",
         "posicion": "VOL",
         "poli": "",
         "fantaEquipo": "",
@@ -9070,26 +9210,6 @@ const JUGADORES = [
         "poli": "",
         "fantaEquipo": "Fla 3",
         "precioCompra": "400",
-        "": ""
-    },
-    {
-        "equipo": "Vélez",
-        "jugador": "Pellegrino, Mateo",
-        "precioBase": "400",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "Pitufos",
-        "precioCompra": "700",
-        "": ""
-    },
-    {
-        "equipo": "Vélez",
-        "jugador": "Piñeiro, Rodrigo",
-        "precioBase": "300",
-        "posicion": "DEL",
-        "poli": "",
-        "fantaEquipo": "",
-        "precioCompra": "",
         "": ""
     },
     {

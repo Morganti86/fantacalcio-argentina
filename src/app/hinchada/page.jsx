@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import style from "./Hinchada.module.css";
 import { HINCHADA } from "./HinchadaList";
+import BackButton from "../components/BackButton";
+import style from "./Hinchada.module.css";
 
 export default function Hinchada() {
   const [currentAudio, setCurrentAudio] = useState(null);
@@ -77,6 +78,7 @@ export default function Hinchada() {
 
   return (
     <section className={style.container}>
+      <BackButton />
       <h1 className="title">HINCHADA</h1>
       <div className={style.listaCanciones}>
         <div className={style.scrollableList}>
