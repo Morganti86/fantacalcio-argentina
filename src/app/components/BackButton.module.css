@@ -4,7 +4,7 @@
 } */
 
 .home {
-    position: absolute;
+    position: fixed;
     border-radius: 9999px;
     left: 0;
     margin: 35px;
@@ -34,7 +34,7 @@
     }
 
     .homeIcon {
-        width: 30px;
+        width: px;
         height: auto;
     }
 }

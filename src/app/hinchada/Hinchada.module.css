@@ -9,9 +9,9 @@
 } */
 
 .container {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   color: ivory;
-  padding: 50px 250px 0;
+  padding: 50px 350px 0;
   background-image: url("/Images/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,7 +55,8 @@
 .infoContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrar verticalmente */
+  justify-content: center;
+  /* Centrar verticalmente */
 }
 
 .mediaContainer {
@@ -81,12 +82,14 @@
 }
 
 .listaCanciones {
-  flex: 0 0 70%;
-  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+  flex: 0 0 50%;
+  overflow-y: auto;
+  /* Agrega una barra de desplazamiento vertical si es necesario */
 }
 
 .scrollableList {
-  max-height: 100%; /* Ocupa todo el espacio disponible */
+  max-height: 100%;
+  /* Ocupa todo el espacio disponible */
 }
 
 .reproduccion {
@@ -98,9 +101,12 @@
 
 .button {
   margin-top: 20px;
-  background-color: transparent; /* Establece el fondo del botón como transparente */
-  border: none; /* Elimina el borde del botón si lo hay */
-  padding: 0; /* Elimina el relleno del botón si lo hay */
+  background-color: transparent;
+  /* Establece el fondo del botón como transparente */
+  border: none;
+  /* Elimina el borde del botón si lo hay */
+  padding: 0;
+  /* Elimina el relleno del botón si lo hay */
   z-index: 2;
 }
 
@@ -120,13 +126,15 @@
 }
 
 .timeLabel {
-  width: 40px; /* Ajusta el ancho según tus necesidades */
+  width: 40px;
+  /* Ajusta el ancho según tus necesidades */
 }
 
 .progressBar {
   width: 100%;
   height: 10px;
-  background-color: #333; /* Color de fondo de la barra de progreso */
+  background-color: #333;
+  /* Color de fondo de la barra de progreso */
   cursor: pointer;
   margin-top: 25px;
   /* overflow: hidden; */
@@ -149,10 +157,13 @@
 
 @keyframes slide {
   0% {
-    transform: translateX(0); /* Comienza desde la posición inicial */
+    transform: translateX(0);
+    /* Comienza desde la posición inicial */
   }
+
   100% {
-    transform: translateX(100%); /* Termina en la posición final */
+    transform: translateX(100%);
+    /* Termina en la posición final */
   }
 }
 
@@ -168,5 +179,16 @@
   .container {
     padding: 35px 10px 0;
     /* height: calc(100vh - 50px); */
+  }
+
+  .listaCanciones {
+    flex: 0 0 60%;
+    overflow-y: auto;
+    /* Agrega una barra de desplazamiento vertical si es necesario */
+  }
+
+  .reproduccion {
+    height: auto;
+    flex: 0 0 25%;
   }
 }
