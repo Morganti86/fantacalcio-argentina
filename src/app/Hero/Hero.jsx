@@ -39,7 +39,9 @@ export default function Hero() {
           className={style.afa}
           src="/Images/afa-logo.webp"
           width="268"
-          height="377"></img>
+          height="377"
+          alt="afa-logo image">
+        </img>
         <div className={style.logo}>FANTACALCIO</div>
         <div className={style.logo}>ARGENTINA</div>
       </div>

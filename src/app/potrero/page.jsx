@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { POTRERO } from "./PotreroList";
 import style from "./Potrero.module.css";
 import BackButton from "../components/BackButton";
+import SliderButton from "../components/SliderButton";
 
 export default function Potrero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,8 +33,7 @@ export default function Potrero() {
 
       <div className={style.sliderWrapper}>
         <div className={style.slider}>
-          <button className={style.boton} onClick={prevVideo}>◀</button>
-
+          <SliderButton direction="prev" onClick={prevVideo} />
           <div className={style.videoContainer}>
             <iframe
               src={`https://www.youtube.com/embed/${currentVideo.videoId}?autoplay=1&mute=1&loop=0&playlist=${currentVideo.videoId}`}
@@ -42,8 +42,7 @@ export default function Potrero() {
               allowFullScreen
             />
           </div>
-
-          <button className={style.boton} onClick={nextVideo}>▶</button>
+          <SliderButton direction="next" onClick={nextVideo} />
         </div>
       </div>
     </div>

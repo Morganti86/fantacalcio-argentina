@@ -1,0 +1,25 @@
+.boton {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 9999px;
+  cursor: pointer;
+  /* transition: background 0.3s; */
+}
+
+.boton:hover {
+  background: #333;
+}
+
+.homeIcon {
+  width: 60px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .homeIcon {
+    width: 25px;
+    height: auto;
+  }
+}
