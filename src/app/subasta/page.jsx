@@ -6,6 +6,7 @@ import { SubastaEquipo } from "./SubastaEquipos";
 import { SubastaPosiciones } from "./SubastaPosiciones";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ConfettiSpread } from "../utils/ConfettiSpread";
 import BackButton from "../components/BackButton";
 import style from "./Subasta.module.css";
 
@@ -16,6 +17,8 @@ export default function Subasta() {
   const [credencialesPass, setCredencialesPass] = useState(""); // Estado para el pass
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
+  const [autenticado, setAutenticado] = useState(false);
+
 
   const [posiciones, setPosiciones] = useState([]);
   const [posicionActual, setPosicionActual] = useState("");
@@ -106,11 +109,11 @@ export default function Subasta() {
     event.preventDefault();
     // Lógica para verificar la contraseña
     if (usuario === credencialesUser && contraseña === credencialesPass) {
-      setContraseña(true);
+      setAutenticado(true);
       setPosicionActual(posiciones[0]);
     } else {
       // alert("Contraseña incorrecta. Por favor, inténtalo de nuevo.");
-      toast.error("Contraseña incorrecta! Por favor, inténtalo de nuevo.", {
+      toast.error("Credenciales inválidas! Por favor, inténtalo de nuevo.", {
         position: "bottom-left",
       });
     }
@@ -162,6 +165,8 @@ export default function Subasta() {
     setPrecioActual(jugadoresOrdenados[0].precio_base);
     setEquipoActual(jugadoresOrdenados[0].equipo);
     setmostrarPosiciones(false);
+
+    ConfettiSpread(jugadoresOrdenados[0].equipo)
   };
 
   const previousAction = () => {
@@ -211,7 +216,11 @@ export default function Subasta() {
         //El primero de la lista
         if (jugadorActual === 0) {
           equipoAnt = null;
+        } else {
+
+          ConfettiSpread(jugadoresFiltrados[jugadorActual + 1]?.equipo || null)
         }
+
         try {
           updateEquipos(equipoAct, equipoAnt); // Actualizar en la base de datos
         } catch (error) {
@@ -239,6 +248,8 @@ export default function Subasta() {
         });
         setEquipos(equiposActualizados); // Actualizar el estado con los equipos modificados
         setEquipoActual(equipoAct);
+
+        
       }
 
       if (jugadorActual < jugadoresFiltrados.length - 1) {
@@ -344,7 +355,7 @@ export default function Subasta() {
 
   const handleRetrieveInfo = async () => {
     const JugadorRetrieve = jugadoresFiltrados[jugadorActual].id;
-    console.log(`Jugador: ${JugadorRetrieve}`);
+    // console.log(`Jugador: ${JugadorRetrieve}`);
 
     try {
       const response = await fetch("/api/putJugadorRetrieve", {
@@ -463,7 +474,7 @@ export default function Subasta() {
       <BackButton />
       <h1 className="title">SUBASTA</h1>
       {/* LOGIN */}
-      {contraseña !== true && (
+      {autenticado !== true && (
         <div className={style.boxLogin}>
           <SubastaLogin
             onSubmit={handleLogin}
@@ -475,7 +486,7 @@ export default function Subasta() {
         </div>
       )}
       {/* SUBASTA */}
-      {contraseña === true && (
+      {autenticado === true && (
         <section>
           {mostrarPosiciones ? (
             <section>

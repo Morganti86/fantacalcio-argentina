@@ -151,6 +151,11 @@
 .next {
   width: 24px;
   height: 24px;
+  border-radius: 9999px;
+}
+
+.next:hover {
+  background: #333;
 }
 
 .button {

@@ -2,6 +2,11 @@ import React from "react";
 import style from "./Subasta.module.css";
 
 export const SubastaEquipo = ({ equipos, jugadores, jugadorActual }) => {
+  // console.log("SubastaEquipo - INI" )
+
+  // console.log(equipos )
+  // console.log("SubastaEquipo - FIN" )
+
   return (
     <div className={style.flex}>
       {equipos.map((equipo, index) => (
@@ -10,10 +15,6 @@ export const SubastaEquipo = ({ equipos, jugadores, jugadorActual }) => {
           key={index}
           style={{
             opacity: equipo.pendiente === true ? 1 : 0.4,
-            // backgroundColor:
-            //   equipo.equipo === jugadores[jugadorActual].equipo
-            //     ? "black"
-            //     : "transparent",
             boxShadow:
               equipo.equipo === jugadores[jugadorActual].equipo
                 ? "0 0 3px 3px ivory" // Cambia el color de la sombra a ivory cuando el equipo está seleccionado
