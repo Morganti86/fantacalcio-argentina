@@ -13,6 +13,7 @@ export const SubastaJugador = ({
   nextAction,
   previousAction,
   handleRetrieveInfo,
+  handleCheckInfo,
 }) => {
   return (
     <div className={style.boxSubastaJugador}>
@@ -21,12 +22,18 @@ export const SubastaJugador = ({
           <div className={`${style.flex} ${style.singlePlayer}`}>
             <SinglePlayer jugador={jugadores[jugadorActual]} />
           </div>
+
           <div className={style.label}>
-            <button className={style.xButton}
+            <button className={style.retrieveButton}
               onClick={() => handleRetrieveInfo()}>
-              <img src="/Icons/x.svg" width={40} height={40} alt="x image" />
+              <img src="/Icons/retrieve.png" width={40} height={40} alt="retrieve image" />
+            </button>
+            <button className={style.checkerButton}
+              onClick={() => handleCheckInfo()}>
+              <img src="/Icons/checker.png" width={40} height={40} alt="checker image" />
             </button>
           </div>
+          
           <div className={style.label}>
             <label>COMPRADOR: </label>
             <select

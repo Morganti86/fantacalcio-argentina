@@ -55,7 +55,8 @@
 }
 
 .button {
-  font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto */
+  font-family: "Roboto", sans-serif;
+  /* Cambiar la fuente a Roboto */
   font-size: 16px;
   width: 150px;
   padding: 8px;
@@ -69,8 +70,10 @@
 
 .input:focus,
 .inputArea:focus {
-  outline: none; /* Esto elimina el borde predeterminado al enfocar el input */
-  border-color: #49a4f5; /* Cambia el color del borde al enfocar el input */
+  outline: none;
+  /* Esto elimina el borde predeterminado al enfocar el input */
+  border-color: #49a4f5;
+  /* Cambia el color del borde al enfocar el input */
   caret-color: #49a4f5;
   /* caret-color: #2d2e32; */
   color: #49a4f5;
@@ -84,7 +87,8 @@
 
 .input:focus::placeholder,
 .inputArea:focus::placeholder {
-  color: #49a4f5; /* Cambia el color del placeholder cuando el input está enfocado */
+  color: #49a4f5;
+  /* Cambia el color del placeholder cuando el input está enfocado */
 }
 
 .button:hover {
@@ -144,7 +148,7 @@
 .buyButton {
   width: 22%;
   padding: 6px;
-  border-width: 1px;
+  border-width: 0.5px;
   border-radius: 50px;
   margin-right: 5px;
   font-weight: 400;
@@ -153,7 +157,7 @@
 }
 
 .buyButton:hover {
-  border-color: ivory;
+  border-color: #2d2e32;
 }
 
 .nextButton {
@@ -168,23 +172,40 @@
 }
 
 .nextButton:hover {
-  border-color: ivory;
+  border-color: #2d2e32;
 }
 
-.xButton {
-  width: 40px;
-  height: 40px;
+.retrieveButton {
+  width: 50px;
+  height: 50px;
   background-color: transparent;
   margin: 0;
   padding: 0;
   position: absolute;
   top: -50px;
-  left: 0;
+  left: 0px;
   border: none;
   cursor: pointer;
 }
 
-.xButton:hover {
+.checkerButton {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -50px;
+  left: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.retrieveButton:hover {
+  transform: scale(1.2);
+}
+
+.checkerButton:hover {
   transform: scale(1.2);
 }
 
@@ -264,10 +285,36 @@
   margin: 5px;
 }
 
+.table {
+  margin-top: 30px;
+  table-layout: auto;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+
+
+.ttitle {
+  line-height: 30px;
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+
+.tr {
+  line-height: 25px;
+  border: 1px solid black;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
 @media (max-width: 1024px) {
   .container {
     padding: 50px 100px;
   }
+
   .grid {
     padding: 50px 0;
     width: 100%;
@@ -280,13 +327,21 @@
   }
 }
 
+@media (max-width: 750px) {
+  .hideMobile {
+    display: none;
+  }
+}
+
 @media (max-width: 500px) {
   .container {
     padding: 35px 15px;
   }
+
   .fantaEquipo {
     margin: 0 5px 5px;
   }
+
   .singlePlayer {
     transform: scale(1);
     margin: 0;

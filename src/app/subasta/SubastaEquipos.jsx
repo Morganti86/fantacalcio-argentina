@@ -2,11 +2,6 @@ import React from "react";
 import style from "./Subasta.module.css";
 
 export const SubastaEquipo = ({ equipos, jugadores, jugadorActual }) => {
-  // console.log("SubastaEquipo - INI" )
-
-  // console.log(equipos )
-  // console.log("SubastaEquipo - FIN" )
-
   return (
     <div className={style.flex}>
       {equipos.map((equipo, index) => (

@@ -4,13 +4,12 @@ import { SubastaLogin } from "./SubastaLogin";
 import { SubastaJugador } from "./SubastaJugador";
 import { SubastaEquipo } from "./SubastaEquipos";
 import { SubastaPosiciones } from "./SubastaPosiciones";
+import { SubastaFantaEquiposChecker } from "./SubastaFantaEquiposChecker";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ConfettiSpread } from "../utils/ConfettiSpread";
 import BackButton from "../components/BackButton";
 import style from "./Subasta.module.css";
-
-
 
 export default function Subasta() {
   const [credencialesUser, setCredencialesUser] = useState(""); // Estado para el usuario
@@ -40,6 +39,9 @@ export default function Subasta() {
   const [jugadorActual, setJugadorActual] = useState(0);
 
   const [mostrarPosiciones, setmostrarPosiciones] = useState(true);
+
+  const [equiposChecker, setEquiposChecker] = useState([]);
+  const [mostrarChecker, setMostrarChecker] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -171,6 +173,7 @@ export default function Subasta() {
 
   const previousAction = () => {
     // Nos paramos en el jugador anterior
+    setMostrarChecker(false);
     setJugadorActual(jugadorActual - 1);
     setPrecioActual(jugadoresFiltrados[jugadorActual - 1].precio_base);
     setCompradorActual({
@@ -182,6 +185,7 @@ export default function Subasta() {
 
   const nextAction = () => {
     // Verificar si hay un comprador seleccionado y si tiene presupuesto suficiente
+    setMostrarChecker(false);
     if (
       compradorActual.fanta_equipo !== "" &&
       compradorActual.remanente < precioActual
@@ -249,7 +253,7 @@ export default function Subasta() {
         setEquipos(equiposActualizados); // Actualizar el estado con los equipos modificados
         setEquipoActual(equipoAct);
 
-        
+
       }
 
       if (jugadorActual < jugadoresFiltrados.length - 1) {
@@ -306,7 +310,7 @@ export default function Subasta() {
       }
       const data = await response.json();
       toast.success(
-        `${jugador.jugador} adquirido por ${compradorActual.fanta_equipo}!`,
+        `${compradorActual.fanta_equipo} adquiere a ${jugador.jugador} por $${precioActual}!`,
         {
           position: "bottom-left",
         }
@@ -372,10 +376,13 @@ export default function Subasta() {
       if (response.ok && response.status === 200) {
         const data = await response.json(); // Obtener los datos de la respuesta
         // Mostrar el toast solo si hubo una modificación
-        toast.success(`${data.monto} reintegrados a ${data.equipo}`, {
+        toast.success(`Jugador libre. $${data.monto} reintegrados a ${data.equipo}`, {
           position: "bottom-left",
         });
       } else if (response.status === 204) {
+        toast.error(`Jugador libre. Acción sin efecto`, {
+          position: "bottom-left",
+        });
         // Si no hubo actualización, no hacer nada
         return;
       } else {
@@ -384,6 +391,71 @@ export default function Subasta() {
     } catch (error) {
       console.error("Error updating player:", error);
       toast.error(`Error al actualizar ${jugador.jugador}`, {
+        position: "bottom-left",
+      });
+    }
+  };
+
+
+  const handleCheckInfo = async () => {
+    // console.table(fantaEquipos, ["fanta_equipo", "presupuesto", "remanente"]);
+
+    try {
+      console.log("Llamando a la API...");
+      const res = await fetch('/api/getFantaEquiposChecker');
+      if (!res.ok) throw new Error(`Error en la API: ${res.status}`);
+
+      const equiposChecker = await res.json();
+
+      console.log("Datos recibidos de la API:");
+      console.table(equiposChecker, ["fanta_equipo", "presupuesto", "remanente", "gasto", "consistente"]);
+
+      setEquiposChecker(equiposChecker);
+      setMostrarChecker(true);
+
+    } catch (error) {
+      console.error("Error en llamada a la API:", error);
+    }
+
+  };
+
+  const fixRemanente = async (fantaEquipo) => {
+    // console.table(fantaEquipos, ["fanta_equipo", "presupuesto", "remanente"]);
+    const remanenteCorregido = fantaEquipo.presupuesto - fantaEquipo.gasto;
+
+    try {
+      const response = await fetch("/api/putFantaEquipos", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fantaEquipo: fantaEquipo.fanta_equipo,
+          remanenteActualizado: remanenteCorregido,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Fallo al corregir el remanente");
+      }
+
+      // Actualizar fantaEquipos en el cliente
+      const actualizado = fantaEquipos.map((e) =>
+        e.fanta_equipo === fantaEquipo.fanta_equipo
+          ? {
+            ...e,
+            remanente: remanenteCorregido,
+          }
+          : e
+      );
+
+      setFantaEquipos(actualizado);
+      toast.success(`Remanente corregido para ${fantaEquipo.fanta_equipo}`, {
+        position: "bottom-left",
+      });
+    } catch (error) {
+      console.error("Error en fixFantaEquipo:", error);
+      toast.error(`Error al corregir el equipo ${fantaEquipo.fanta_equipo}`, {
         position: "bottom-left",
       });
     }
@@ -523,7 +595,12 @@ export default function Subasta() {
                 nextAction={nextAction}
                 previousAction={previousAction}
                 handleRetrieveInfo={handleRetrieveInfo}
+                handleCheckInfo={handleCheckInfo}
               />
+
+              {mostrarChecker && (
+                <SubastaFantaEquiposChecker equiposChecker={equiposChecker} fixRemanente={fixRemanente} />
+              )}
             </section>
           )}
         </section>
