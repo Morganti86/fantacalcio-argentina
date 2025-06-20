@@ -19,10 +19,10 @@ export const HEROLIST = [
     name: "Nosotros",
     route: "/nosotros",
   },
-  // {
-  //   name: "Potrero", // Leyendas Momentazos Destacados
-  //   route: "/potrero",
-  // },
+  {
+    name: "Potrero", // Leyendas Momentazos Destacados
+    route: "/potrero",
+  },
   {
     name: "Reglamento",
     route: "/Reglamento Fantacalcio - 2024.pdf", // Ruta real al archivo PDF
