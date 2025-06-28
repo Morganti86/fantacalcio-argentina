@@ -51,13 +51,6 @@ export const HINCHADA = [
     cover: "/Images/sin gloria.jpg",
   },
   {
-    titulo: "Capo del interior",
-    artista: "Maximiliano Ferraris",
-    duracion: "0:49",
-    scr: "/Audios/capo del interior.mp3",
-    cover: "/Images/capo del interior.jpg",
-  },
-  {
     titulo: "Puro humo",
     artista: "Maximiliano Ferraris",
     duracion: "1:16",
@@ -65,10 +58,31 @@ export const HINCHADA = [
     cover: "/Images/puro humo.jpg",
   },
   {
+    titulo: "Capo del interior",
+    artista: "Maximiliano Ferraris",
+    duracion: "0:49",
+    scr: "/Audios/capo del interior.mp3",
+    cover: "/Images/capo del interior.jpg",
+  },
+  {
     titulo: "Le gusta",
     artista: "Maximiliano Ferraris",
     duracion: "0:44",
     scr: "/Audios/le gusta.mp3",
     cover: "/Images/le gusta.jpg",
+  },
+  {
+    titulo: "El famoso",
+    artista: "Maximiliano Ferraris",
+    duracion: "0:26",
+    scr: "/Audios/el famoso.mp3",
+    cover: "/Images/el famoso.jpg",
+  },
+  {
+    titulo: "Te vas a divertir",
+    artista: "Maximiliano Ferraris",
+    duracion: "1:06",
+    scr: "/Audios/te vas a divertir.mp3",
+    cover: "/Images/te vas a divertir.jpg",
   },
 ];
