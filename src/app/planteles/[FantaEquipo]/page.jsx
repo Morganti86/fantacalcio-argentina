@@ -6,7 +6,7 @@ import style from "../ListadoFantaEquipos.module.css";
 
 
 export default async function Planteles({ params }) {
-  const { FantaEquipo } = params;
+  const { FantaEquipo } = await params;
   const fantaEquipo = FantaEquipo.replace(/\+|%20/g, " ").toUpperCase();
   const fantaEscudo = fantaEquipo.toLowerCase();
   const jugadores = await getFantaJugadores({ fantaEquipo });

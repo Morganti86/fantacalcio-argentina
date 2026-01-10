@@ -47,7 +47,7 @@ export default function Subasta() {
     const fetchData = async () => {
       try {
         // Fetch credenciales
-        const credencialesResponse = await fetch("/api/getCredenciales");
+        const credencialesResponse = await fetch("/api/credenciales");
         if (!credencialesResponse.ok) {
           throw new Error("Failed to fetch credenciales data");
         }
@@ -55,7 +55,7 @@ export default function Subasta() {
         setCredencialesUser(credencialesData.user);
         setCredencialesPass(credencialesData.pass);
         // Fetch posiciones
-        const posicionesResponse = await fetch("/api/getPosiciones");
+        const posicionesResponse = await fetch("/api/posiciones");
         if (!posicionesResponse.ok) {
           throw new Error("Failed to fetch posiciones data");
         }
@@ -77,7 +77,7 @@ export default function Subasta() {
         setPosiciones(posicionesData);
 
         // Fetch equipos
-        const equiposResponse = await fetch("/api/getEquipos");
+        const equiposResponse = await fetch("/api/equipos");
         if (!equiposResponse.ok) {
           throw new Error("Failed to fetch equipos data");
         }
@@ -85,7 +85,7 @@ export default function Subasta() {
         setEquipos(equiposData);
 
         // Fetch FantaEquipos
-        const fantaEquiposResponse = await fetch("/api/getFantaEquipos");
+        const fantaEquiposResponse = await fetch("/api/fantaEquipos");
         if (!fantaEquiposResponse.ok) {
           throw new Error("Failed to fetch equipos data");
         }
@@ -93,7 +93,7 @@ export default function Subasta() {
         setFantaEquipos(fantaEquiposData);
 
         // Fetch Jugadores
-        const jugadoresResponse = await fetch("/api/getJugadores");
+        const jugadoresResponse = await fetch("/api/jugadores");
         if (!jugadoresResponse.ok) {
           throw new Error("Failed to fetch equipos data");
         }
@@ -294,7 +294,7 @@ export default function Subasta() {
 
   const updateJugadores = async (jugador, compradorActual, precioActual) => {
     try {
-      const response = await fetch("/api/putJugadores", {
+      const response = await fetch("/api/jugadores", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -325,7 +325,7 @@ export default function Subasta() {
 
   const updateFantaEquipo = async (compradorActual, precioActual) => {
     try {
-      const response = await fetch("/api/putFantaEquipos", {
+      const response = await fetch("/api/fantaEquipos", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -358,41 +358,66 @@ export default function Subasta() {
   };
 
   const handleRetrieveInfo = async () => {
-    const JugadorRetrieve = jugadoresFiltrados[jugadorActual].id;
-    // console.log(`Jugador: ${JugadorRetrieve}`);
+    const jugadorId = jugadoresFiltrados[jugadorActual].id;
 
     try {
-      const response = await fetch("/api/putJugadorRetrieve", {
+      const response = await fetch("/api/jugadorRetrieve", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          id: JugadorRetrieve,
-        }),
+        body: JSON.stringify({ id: jugadorId }),
       });
 
-      // Procesar la respuesta si es exitosa
       if (response.ok && response.status === 200) {
-        const data = await response.json(); // Obtener los datos de la respuesta
-        // Mostrar el toast solo si hubo una modificación
-        toast.success(`Jugador libre. $${data.monto} reintegrados a ${data.equipo}`, {
-          position: "bottom-left",
+        const data = await response.json();
+        const { equipo, monto } = data;
+
+        toast.success(
+          `Jugador libre. $${monto} reintegrados a ${equipo}`,
+          { position: "bottom-left" }
+        );
+
+        // 🔄 Sincronizamos todo el estado desde la DB
+        await refreshFantaEquipos();
+
+        // 🔒 Limpiamos compradorActual
+        setCompradorActual({
+          fanta_equipo: "",
+          presupuesto: 0,
+          remanente: 0,
         });
-      } else if (response.status === 204) {
-        toast.error(`Jugador libre. Acción sin efecto`, {
-          position: "bottom-left",
-        });
-        // Si no hubo actualización, no hacer nada
+
         return;
-      } else {
-        throw new Error("Failed to update player");
       }
+
+      if (response.status === 204) {
+        toast.error("Jugador libre. Acción sin efecto", {
+          position: "bottom-left",
+        });
+        return;
+      }
+
+      throw new Error("Failed to retrieve player");
     } catch (error) {
       console.error("Error updating player:", error);
-      toast.error(`Error al actualizar ${jugador.jugador}`, {
+      toast.error("Error al liberar el jugador", {
         position: "bottom-left",
       });
+    }
+  };
+
+  const refreshFantaEquipos = async () => {
+    try {
+      const res = await fetch("/api/fantaEquipos");
+      if (!res.ok) throw new Error("Error refrescando fantaEquipos");
+
+      const data = await res.json();
+      setFantaEquipos(data);
+      return data;
+    } catch (error) {
+      console.error("refreshFantaEquipos error:", error);
+      return null;
     }
   };
 
@@ -401,13 +426,11 @@ export default function Subasta() {
     // console.table(fantaEquipos, ["fanta_equipo", "presupuesto", "remanente"]);
 
     try {
-      console.log("Llamando a la API...");
-      const res = await fetch('/api/getFantaEquiposChecker');
+      const res = await fetch('/api/fantaEquiposChecker');
       if (!res.ok) throw new Error(`Error en la API: ${res.status}`);
 
       const equiposChecker = await res.json();
 
-      console.log("Datos recibidos de la API:");
       console.table(equiposChecker, ["fanta_equipo", "presupuesto", "remanente", "gasto", "consistente"]);
 
       setEquiposChecker(equiposChecker);
@@ -424,7 +447,7 @@ export default function Subasta() {
     const remanenteCorregido = fantaEquipo.presupuesto - fantaEquipo.gasto;
 
     try {
-      const response = await fetch("/api/putFantaEquipos", {
+      const response = await fetch("/api/fantaEquipos", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -464,7 +487,7 @@ export default function Subasta() {
 
   const updatePosiciones = async (posAnt, posAct) => {
     try {
-      const response = await fetch("/api/putPosiciones", {
+      const response = await fetch("/api/posiciones", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -484,7 +507,7 @@ export default function Subasta() {
 
   const updateEquipos = async (equipoAct, equipoAnt) => {
     try {
-      const response = await fetch("/api/putEquipos", {
+      const response = await fetch("/api/equipos", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -597,6 +620,28 @@ export default function Subasta() {
                 handleRetrieveInfo={handleRetrieveInfo}
                 handleCheckInfo={handleCheckInfo}
               />
+
+              <div className={style.debug}>
+                <h3>DEBUG – fantaEquipos (state)</h3>
+                <table border="1" cellPadding="4">
+                  <thead>
+                    <tr>
+                      <th>Equipo</th>
+                      <th>Presupuesto</th>
+                      <th>Remanente</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {fantaEquipos.map((e) => (
+                      <tr key={e.fanta_equipo}>
+                        <td>{e.fanta_equipo}</td>
+                        <td>{e.presupuesto}</td>
+                        <td>{e.remanente}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
 
               {mostrarChecker && (
                 <SubastaFantaEquiposChecker equiposChecker={equiposChecker} fixRemanente={fixRemanente} />

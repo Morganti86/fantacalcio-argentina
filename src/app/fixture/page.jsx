@@ -11,7 +11,7 @@ export default function Fixture() {
   useEffect(() => {
     const fetchEquipos = async () => {
       try {
-        const fantaEquiposResponse = await fetch("/api/getFantaEquipos");
+        const fantaEquiposResponse = await fetch("/api/fantaEquipos");
         if (!fantaEquiposResponse.ok) {
           throw new Error("Failed to fetch equipos data");
         }

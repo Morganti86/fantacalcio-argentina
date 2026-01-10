@@ -2,13 +2,12 @@ import Link from "next/link";
 import style from "./ListadoFantaEquipos.module.css";
 
 export function ListaFantaTeams({ fanta }) {
-  const fantaName = fanta.fanta_equipo.toLowerCase();
+  const fantaName =  fanta.fanta_equipo.toLowerCase();
   return (
     <section>
       <Link
         key={fantaName}
-        href="/planteles/[FantaEquipo]"
-        as={`planteles/${fantaName}`}>
+        href={`/planteles/${fantaName}`}>
         <article className={style.teamContainer}>
           <img
             className={style.crest}
