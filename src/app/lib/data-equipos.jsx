@@ -1,3 +1,4 @@
+//tyc - https://ezgif.com/
 const EQUIPOS = [
   { equipo: "Aldosivi", pendiente: true, activo: false },
   { equipo: "Argentinos", pendiente: true, activo: false },
@@ -10,7 +11,7 @@ const EQUIPOS = [
   { equipo: "Defensa y Justicia", pendiente: true, activo: false },
   { equipo: "Estudiantes", pendiente: true, activo: false },
   { equipo: "Gimnasia", pendiente: true, activo: false },
-  { equipo: "Godoy Cruz", pendiente: true, activo: false },
+  { equipo: "Estudiantes RC", pendiente: true, activo: false },
   { equipo: "Huracán", pendiente: true, activo: false },
   { equipo: "Independiente", pendiente: true, activo: false },
   { equipo: "Indepte. Rivadavia", pendiente: true, activo: false },
@@ -23,7 +24,7 @@ const EQUIPOS = [
   { equipo: "River", pendiente: true, activo: false },
   { equipo: "Rosario Central", pendiente: true, activo: false },
   { equipo: "San Lorenzo", pendiente: true, activo: false },
-  { equipo: "San Martin", pendiente: true, activo: false },
+  { equipo: "Gimnasia Mendoza", pendiente: true, activo: false },
   { equipo: "Sarmiento", pendiente: true, activo: false },
   { equipo: "Talleres", pendiente: true, activo: false },
   { equipo: "Tigre", pendiente: true, activo: false },
