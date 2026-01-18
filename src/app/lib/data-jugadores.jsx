@@ -7623,7 +7623,7 @@ const JUGADORES = [
     "posicion": "ARQ",
     "poli": "",
     "fantaEquipo": "Fla 3",
-    "precioCompra": "800"
+    "precioCompra": "700"
   },
   {
     "equipo": "Union",
