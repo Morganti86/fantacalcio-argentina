@@ -6187,6 +6187,15 @@ const JUGADORES = [
   },
   {
     "equipo": "River",
+    "jugador": "Vera, Fausto",
+    "precioBase": "500",
+    "posicion": "MED",
+    "poli": "",
+    "fantaEquipo": "PDC",
+    "precioCompra": "900"
+  },
+  {
+    "equipo": "River",
     "jugador": "Meza, Maximiliano",
     "precioBase": "500",
     "posicion": "MED",
